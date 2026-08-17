@@ -1,0 +1,83 @@
+# Default values for finguard-app.
+
+replicaCount: 2
+
+image:
+  registry: docker.io
+  repositoryPrefix: finguard
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+services:
+  gateway:
+    name: gateway
+    port: 8080
+    replicaCount: 2
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 1024Mi
+      requests:
+        cpu: 500m
+        memory: 512Mi
+
+  authService:
+    name: auth-service
+    port: 8081
+    replicaCount: 2
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 1024Mi
+      requests:
+        cpu: 500m
+        memory: 512Mi
+
+  userService:
+    name: user-service
+    port: 8082
+    replicaCount: 2
+
+  fraudService:
+    name: fraud-service
+    port: 8083
+    replicaCount: 2
+
+  fraudMlEngine:
+    name: fraud-ml-engine
+    port: 8000
+    replicaCount: 2
+
+  notificationService:
+    name: notification-service
+    port: 8085
+    replicaCount: 2
+
+postgres:
+  host: "finguard-postgres-db.cz92oais.us-east-1.rds.amazonaws.com"
+  port: 5432
+  dbName: "finguard_prod"
+  username: "finguard_admin"
+
+redis:
+  host: "finguard-redis.cache.amazonaws.com"
+  port: 6379
+
+kafka:
+  bootstrapServers: "msk-kafka.us-east-1.amazonaws.com:9092"
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  hosts:
+    - host: api.finguard.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: finguard-api-tls
+      hosts:
+        - api.finguard.com

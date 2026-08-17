@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.services.gateway.name }}
+  labels:
+    app: {{ .Values.services.gateway.name }}
+spec:
+  replicas: {{ .Values.services.gateway.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.services.gateway.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.services.gateway.name }}
+    spec:
+      containers:
+        - name: {{ .Values.services.gateway.name }}
+          image: "{{ .Values.image.registry }}/{{ .Values.image.repositoryPrefix }}/{{ .Values.services.gateway.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.services.gateway.port }}
+              name: http
+          env:
+            - name: SPRING_REDIS_HOST
+              value: {{ .Values.redis.host | quote }}
+            - name: SPRING_REDIS_PORT
+              value: {{ .Values.redis.port | quote }}
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.services.gateway.resources | nindent 12 }}

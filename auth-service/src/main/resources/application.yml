@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/finguard_core
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+jwt:
+  # Base64-encoded HMAC-SHA256 key (at least 256 bits)
+  secret: dGhlLXN1cGVyLXNlY3JldC1maW5ndWFyZC1haS1hcGktZ2F0ZXdheS1rZXktMjU2LWJpdHMtZXhhbXBsZQ==
+  expiration: 900000 # 15 minutes (in milliseconds)
+  refresh-expiration: 604800000 # 7 days (in milliseconds)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus

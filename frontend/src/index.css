@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 18% 5%;       /* #0B0D10 */
+    --surface: 215 17% 9%;         /* #13161A */
+    --card: 213 14% 12%;           /* #1B1F24 */
+    
+    --primary: 217 91% 60%;        /* #3B82F6 */
+    --success: 142 70% 45%;        /* #22C55E */
+    --warning: 38 92% 50%;         /* #F59E0B */
+    --danger: 0 84% 60%;           /* #EF4444 */
+    
+    --text: 210 40% 98%;           /* #F8FAFC */
+    --text-muted: 215 16% 65%;     /* #94A3B8 */
+
+    --border: 215 15% 15%;
+    --input: 215 15% 12%;
+    --ring: 217 91% 60%;
+    --radius: 12px;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0B0D10;
+  color: #F8FAFC;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Premium Background & Overlay Grid */
+.bg-cyber-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Aurora Backdrop Glows */
+.aurora-glow-1 {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+}
+.aurora-glow-2 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+}
+
+/* Sleek Glassmorphism Panel */
+.glass-panel {
+  background: rgba(19, 22, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Glassmorphic Cards with Custom Hover Tilt effects */
+.glass-card {
+  background: rgba(27, 31, 36, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(27, 31, 36, 0.7);
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Spotlight Hover Gradients */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.04), transparent 40%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Floating AI Button & Shimmer Effects */
+.btn-shimmer {
+  background: linear-gradient(110deg, #3B82F6 45%, #60A5FA 55%, #3B82F6 65%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Animated Neon Badges */
+.badge-neon-success {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+}
+
+.badge-neon-danger {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0D10;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+/* CSS 3D Card Rotation Classes */
+.perspective-container {
+  perspective: 1000px;
+}
+.perspective-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+}
+.perspective-card-back {
+  backface-visibility: hidden;
+}
