@@ -1790,11 +1790,13 @@ export default function App() {
 
           {/* Brand Header */}
           <div className="flex items-center space-x-3 mb-8 px-2">
-            <Shield className="h-7 w-7 text-indigo-400 flex-shrink-0" />
+            <div className="p-2 bg-[#12141d] border border-[#6366f1]/40 rounded-xl shadow-[0_0_12px_rgba(99,102,241,0.35)] flex items-center justify-center">
+              <Shield className="h-6 w-6 text-[#6366f1] drop-shadow-[0_0_8px_rgba(99,102,241,0.8)] flex-shrink-0" strokeWidth={2.2} />
+            </div>
             {!isSidebarCollapsed && (
               <div>
                 <h2 className="text-lg font-bold tracking-tight text-white leading-none">FinGuard AI</h2>
-                <span className="text-[9px] text-cyan-400 font-mono tracking-widest uppercase">ENTERPRISE</span>
+                <span className="text-[9px] text-indigo-400 font-mono tracking-widest uppercase">ENTERPRISE</span>
               </div>
             )}
           </div>
