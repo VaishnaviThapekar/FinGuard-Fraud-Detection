@@ -1,0 +1,62 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/auth/**
+          filters:
+            # Rate limiting using Redis Token Bucket filter
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                redis-rate-limiter.requestedTokens: 1
+        - id: user-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/users/**
+        - id: fraud-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/v1/fraud/**
+          filters:
+            # Circuit breaker to handle downstream service failures
+            - name: CircuitBreaker
+              args:
+                name: fraudServiceCircuitBreaker
+                fallbackUri: forward:/api/v1/fallback/fraud
+        - id: analytics-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/v1/analytics/**
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      fraudServiceCircuitBreaker:
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: COUNT_BASED
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always

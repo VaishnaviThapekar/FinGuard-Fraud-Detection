@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.services.authService.name }}
+  labels:
+    app: {{ .Values.services.authService.name }}
+spec:
+  replicas: {{ .Values.services.authService.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.services.authService.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.services.authService.name }}
+    spec:
+      containers:
+        - name: {{ .Values.services.authService.name }}
+          image: "{{ .Values.image.registry }}/{{ .Values.image.repositoryPrefix }}/{{ .Values.services.authService.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.services.authService.port }}
+              name: http
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://{{ .Values.postgres.host }}:{{ .Values.postgres.port }}/{{ .Values.postgres.dbName }}"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: {{ .Values.postgres.username | quote }}
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: finguard-db-secrets
+                  key: database-password
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            initialDelaySeconds: 40
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.services.authService.resources | nindent 12 }}
