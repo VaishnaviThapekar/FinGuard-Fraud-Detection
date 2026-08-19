@@ -26,7 +26,6 @@ import {
   ArrowRight,
   Github,
   BookOpen,
-  Check,
   HelpCircle,
   Sun,
   Moon,
@@ -4969,9 +4968,6 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [faqOpen, setFaqOpen] = useState<Record<number, boolean>>({});
-  
-  // Pricing toggle (monthly/yearly)
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
   // Real-time metric fluctuation simulation
   const [anomalyValue, setAnomalyValue] = useState(0.0984);
@@ -5060,7 +5056,6 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
         <div className="flex items-center space-x-4">
           <a href="#features" className="text-xs font-semibold text-slate-400 hover:text-white transition-colors hidden md:inline-block">Features</a>
           <a href="#architecture" className="text-xs font-semibold text-slate-400 hover:text-white transition-colors hidden md:inline-block">Architecture</a>
-          <a href="#pricing" className="text-xs font-semibold text-slate-400 hover:text-white transition-colors hidden md:inline-block">Pricing</a>
           <a href="#faq" className="text-xs font-semibold text-slate-400 hover:text-white transition-colors hidden md:inline-block">FAQ</a>
 
           <button 
@@ -5511,84 +5506,6 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
               {tech.name}
             </span>
           ))}
-        </div>
-      </section>
-
-      {/* 7. PRICING PLANS */}
-      <section id="pricing" className="py-32 bg-slate-950/20 border-y border-white/5 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white">Flexible Developer Pricing</h2>
-            <p className="text-sm md:text-base text-slate-400 max-w-lg mx-auto leading-relaxed">Scale your compliance pipelines with tailored pricing structures.</p>
-            
-            {/* Interactive Billing Cycle Toggle Switch */}
-            <div className="flex items-center justify-center space-x-3 mt-4">
-              <span className={`text-xs font-semibold ${billingCycle === 'monthly' ? 'text-white font-bold' : 'text-slate-500'}`}>Monthly</span>
-              <button 
-                onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
-                className="w-10 h-6 bg-indigo-500/20 hover:bg-indigo-500/30 rounded-full p-1 transition-all flex items-center relative border border-indigo-500/30"
-              >
-                <div 
-                  className={`w-4 h-4 bg-indigo-400 rounded-full transition-transform ${
-                    billingCycle === 'yearly' ? 'translate-x-4' : 'translate-x-0'
-                  }`} 
-                />
-              </button>
-              <span className={`text-xs font-semibold flex items-center space-x-1.5 ${billingCycle === 'yearly' ? 'text-white font-bold' : 'text-slate-500'}`}>
-                <span>Yearly</span>
-                <span className="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-1.5 py-0.5 rounded-full font-mono uppercase font-bold">Save 20%</span>
-              </span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { name: "Developer Tier", price: 0, features: ["FastAPI Scoring", "Local Qdrant Sandbox", "Mock Kafka Logs", "Console Access"] },
-              { name: "Enterprise Console", price: 999, features: ["Autoencoder Pipelines", "Distributed Kafka Clusters", "SHAP/LIME Dashboards", "24/7 SLA Support"] },
-              { name: "L3 Clearance Custom", price: "Custom", features: ["Airgapped Deployments", "Custom LangGraph Routers", "Government Boundary Security", "Dedicated Architect"] }
-            ].map((plan, idx) => {
-              const displayPrice = typeof plan.price === 'number' 
-                ? (billingCycle === 'yearly' ? `$${Math.floor(plan.price * 0.8)}` : `$${plan.price}`)
-                : plan.price;
-
-              return (
-                <div key={idx} className={`glass-card border rounded-2xl p-8 flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-2xl transition-all ${
-                  idx === 1 ? 'border-indigo-500 shadow-xl relative md:scale-105 bg-slate-900/60' : 'border-white/5'
-                }`}>
-                  {idx === 1 && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest font-mono">
-                      Most Popular
-                    </span>
-                  )}
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2.5">{plan.name}</h3>
-                    <div className="flex items-baseline mb-6">
-                      <span className="text-4xl font-extrabold text-white font-mono">{displayPrice}</span>
-                      {typeof plan.price === 'number' && <span className="text-xs text-slate-500 ml-1">/ month</span>}
-                    </div>
-                    <ul className="space-y-3.5 text-xs text-slate-300 font-light mb-8">
-                      {plan.features.map((feat, fidx) => (
-                        <li key={fidx} className="flex items-center space-x-2">
-                          <Check className="h-3.5 w-3.5 text-indigo-400 flex-shrink-0" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <button 
-                    onClick={onStartDemo}
-                    className={`w-full py-3 rounded-xl text-xs font-bold transition-all ${
-                      idx === 1 
-                        ? 'bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg shadow-indigo-500/20' 
-                        : 'bg-slate-900 border border-white/5 hover:bg-slate-800 text-slate-300'
-                    }`}
-                  >
-                    Get Started
-                  </button>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
