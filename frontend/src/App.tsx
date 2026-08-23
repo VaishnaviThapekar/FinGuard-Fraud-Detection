@@ -5046,21 +5046,27 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
       )}
 
       {/* 1. HEADER / NAVIGATION */}
-      <header className="sticky top-0 z-50 backdrop-blur-md border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center transition-colors">
-        <div className="flex items-center space-x-2">
-          <Shield className="h-7 w-7 text-indigo-500" />
-          <span className="text-base md:text-lg font-extrabold tracking-widest uppercase font-mono bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent">FinGuard AI</span>
+      <header className={`sticky top-0 z-50 backdrop-blur-xl border-b py-3.5 px-6 md:px-12 flex justify-between items-center transition-all duration-300 ${
+        theme === 'light' 
+          ? 'bg-white/85 border-slate-200/80 shadow-sm' 
+          : 'bg-[#0B0D14]/85 border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.6)]'
+      }`}>
+        <div className="flex items-center space-x-2.5">
+          <div className="p-1.5 bg-[#12141d] border border-[#6366f1]/40 rounded-xl shadow-[0_0_12px_rgba(99,102,241,0.35)] flex items-center justify-center">
+            <Shield className="h-5 w-5 text-[#6366f1] drop-shadow-[0_0_8px_rgba(99,102,241,0.8)]" strokeWidth={2.2} />
+          </div>
+          <span className="text-base md:text-lg font-extrabold tracking-widest uppercase font-mono bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">FinGuard AI</span>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <a href="#features" className="text-xs font-semibold text-slate-400 hover:text-white transition-colors hidden md:inline-block">Features</a>
-          <a href="#architecture" className="text-xs font-semibold text-slate-400 hover:text-white transition-colors hidden md:inline-block">Architecture</a>
-          <a href="#faq" className="text-xs font-semibold text-slate-400 hover:text-white transition-colors hidden md:inline-block">FAQ</a>
+        <div className="flex items-center space-x-5">
+          <a href="#features" className="text-xs font-bold text-slate-300 hover:text-cyan-400 transition-colors hidden md:inline-block tracking-wide">Features</a>
+          <a href="#architecture" className="text-xs font-bold text-slate-300 hover:text-cyan-400 transition-colors hidden md:inline-block tracking-wide">Architecture</a>
+          <a href="#faq" className="text-xs font-bold text-slate-300 hover:text-cyan-400 transition-colors hidden md:inline-block tracking-wide">FAQ</a>
 
           <button 
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className={`p-2 rounded-xl border transition-colors ${
-              theme === 'light' ? 'bg-slate-200 border-slate-300 hover:bg-slate-300' : 'bg-slate-900 border-white/5 hover:bg-slate-800'
+            className={`p-2 rounded-xl border transition-all hover:scale-105 ${
+              theme === 'light' ? 'bg-slate-200 border-slate-300 hover:bg-slate-300' : 'bg-slate-900 border-white/10 hover:bg-slate-800 hover:border-cyan-500/30'
             }`}
             title="Toggle theme"
           >
@@ -5069,7 +5075,7 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
 
           <button 
             onClick={onStartDemo}
-            className="px-5 py-2.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl text-xs font-bold shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:scale-[1.02] transition-all"
+            className="px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white rounded-xl text-xs font-extrabold shadow-lg shadow-indigo-500/25 hover:shadow-cyan-500/40 hover:scale-[1.03] transition-all cursor-pointer"
           >
             Live Demo Console
           </button>
@@ -5077,7 +5083,7 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
       </header>
 
       {/* 2. HERO SECTION */}
-      <section className="relative py-20 lg:py-32 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
+      <section className="relative pt-8 pb-16 lg:pt-12 lg:pb-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10">
         <div className="space-y-7">
           <div className={`inline-flex items-center space-x-2.5 px-4.5 py-2 rounded-full text-xs font-bold font-mono tracking-widest uppercase border ${
             theme === 'light'
