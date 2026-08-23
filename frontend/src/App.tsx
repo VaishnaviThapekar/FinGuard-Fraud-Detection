@@ -5083,27 +5083,6 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
         </div>
       </header>
 
-      {/* LIVE INGRESS STREAM TICKER */}
-      <div className="bg-[#0D0F17] border-b border-cyan-500/20 py-2.5 px-6 overflow-hidden relative z-20">
-        <div className="max-w-7xl mx-auto flex items-center space-x-4 text-xs font-mono">
-          <div className="flex items-center space-x-2 flex-shrink-0 text-cyan-400 font-bold">
-            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
-            <span className="tracking-widest uppercase">LIVE STREAM INGRESS</span>
-          </div>
-          <div className="flex-1 overflow-hidden whitespace-nowrap">
-            <div className="inline-flex space-x-8 text-slate-300 font-mono">
-              <span>[17:10:42] SWIFT Wire $45,000 (US ➔ UK) ➔ <span className="text-emerald-400 font-bold">CLEARED (Risk: 4%)</span></span>
-              <span>•</span>
-              <span>[17:10:44] Offshore Transfer $180,000 (Cayman) ➔ <span className="text-rose-400 font-bold">CRITICAL FLAG (Risk: 96%)</span></span>
-              <span>•</span>
-              <span>[17:10:46] Mobile Payment $1,200 (CH) ➔ <span className="text-emerald-400 font-bold">CLEARED (Risk: 12%)</span></span>
-              <span>•</span>
-              <span>[17:10:48] Crypto Transfer $340,000 (Panama) ➔ <span className="text-amber-400 font-bold font-mono">EVALUATING (Risk: 68%)</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* 2. HERO SECTION */}
       <section className="relative pt-8 pb-16 lg:pt-12 lg:pb-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10">
         <div className="space-y-7">
