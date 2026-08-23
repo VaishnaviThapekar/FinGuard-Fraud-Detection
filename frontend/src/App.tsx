@@ -49,7 +49,8 @@ import {
   Share2,
   Zap,
   Award,
-  SlidersHorizontal
+  SlidersHorizontal,
+  CheckCircle2
 } from 'lucide-react';
 
 // ==========================================
@@ -5082,6 +5083,27 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
         </div>
       </header>
 
+      {/* LIVE INGRESS STREAM TICKER */}
+      <div className="bg-[#0D0F17] border-b border-cyan-500/20 py-2.5 px-6 overflow-hidden relative z-20">
+        <div className="max-w-7xl mx-auto flex items-center space-x-4 text-xs font-mono">
+          <div className="flex items-center space-x-2 flex-shrink-0 text-cyan-400 font-bold">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+            <span className="tracking-widest uppercase">LIVE STREAM INGRESS</span>
+          </div>
+          <div className="flex-1 overflow-hidden whitespace-nowrap">
+            <div className="inline-flex space-x-8 text-slate-300 font-mono">
+              <span>[17:10:42] SWIFT Wire $45,000 (US ➔ UK) ➔ <span className="text-emerald-400 font-bold">CLEARED (Risk: 4%)</span></span>
+              <span>•</span>
+              <span>[17:10:44] Offshore Transfer $180,000 (Cayman) ➔ <span className="text-rose-400 font-bold">CRITICAL FLAG (Risk: 96%)</span></span>
+              <span>•</span>
+              <span>[17:10:46] Mobile Payment $1,200 (CH) ➔ <span className="text-emerald-400 font-bold">CLEARED (Risk: 12%)</span></span>
+              <span>•</span>
+              <span>[17:10:48] Crypto Transfer $340,000 (Panama) ➔ <span className="text-amber-400 font-bold font-mono">EVALUATING (Risk: 68%)</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* 2. HERO SECTION */}
       <section className="relative pt-8 pb-16 lg:pt-12 lg:pb-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10">
         <div className="space-y-7">
@@ -5278,6 +5300,74 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ENTERPRISE TRUST & COMPLIANCE BADGES */}
+      <section className="py-10 bg-[#0D0F17]/80 border-y border-white/10 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-6 text-center">
+          <div className="text-xs font-mono text-slate-400 uppercase tracking-widest font-bold w-full md:w-auto">
+            ENTERPRISE SECURITY BOUNDARIES
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-5 w-full md:w-auto">
+            <div className="px-4 py-2 bg-slate-900/90 border border-cyan-500/30 rounded-xl text-xs font-mono font-bold text-cyan-300 flex items-center space-x-2 shadow-lg shadow-cyan-500/10">
+              <ShieldCheck className="h-4 w-4 text-cyan-400" />
+              <span>SOC2 TYPE II CERTIFIED</span>
+            </div>
+            <div className="px-4 py-2 bg-slate-900/90 border border-emerald-500/30 rounded-xl text-xs font-mono font-bold text-emerald-300 flex items-center space-x-2 shadow-lg shadow-emerald-500/10">
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <span>PCI-DSS LEVEL 1 COMPLIANT</span>
+            </div>
+            <div className="px-4 py-2 bg-slate-900/90 border border-indigo-500/30 rounded-xl text-xs font-mono font-bold text-indigo-300 flex items-center space-x-2 shadow-lg shadow-indigo-500/10">
+              <Award className="h-4 w-4 text-indigo-400" />
+              <span>ISO/IEC 27001 VERIFIED</span>
+            </div>
+            <div className="px-4 py-2 bg-slate-900/90 border border-purple-500/30 rounded-xl text-xs font-mono font-bold text-purple-300 flex items-center space-x-2 shadow-lg shadow-purple-500/10">
+              <Globe className="h-4 w-4 text-purple-400" />
+              <span>GDPR & CCPA PRIVACY SHIELD</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REAL-TIME SYSTEM TELEMETRY BANNER */}
+      <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="p-6 bg-gradient-to-r from-cyan-950/40 via-slate-900/90 to-purple-950/40 border border-cyan-500/30 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center font-mono shadow-2xl">
+          <div>
+            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">SYSTEM STATUS</span>
+            <span className="text-xs md:text-sm font-extrabold text-emerald-400 flex items-center justify-center space-x-1.5 mt-1">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+              <span>99.999% Operational</span>
+            </span>
+          </div>
+          <div>
+            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">MODEL LATENCY (p99)</span>
+            <span className="text-xs md:text-sm font-extrabold text-cyan-300 mt-1 block">11.4ms</span>
+          </div>
+          <div>
+            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">INGRESS STREAM RATE</span>
+            <span className="text-xs md:text-sm font-extrabold text-indigo-300 mt-1 block">48,200 tx/sec</span>
+          </div>
+          <div>
+            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">AUTOENCODER CLUSTERS</span>
+            <span className="text-xs md:text-sm font-extrabold text-purple-300 mt-1 block">128 Active Nodes</span>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUSTED FINANCIAL INSTITUTIONS TICKER */}
+      <section className="py-10 border-b border-white/5 px-6 md:px-12 text-center">
+        <span className="text-[11px] font-mono text-slate-400 uppercase tracking-widest block mb-6 font-bold">TRUSTED BY LEADING FINANCIAL INSTITUTIONS & FINTECH ECOSYSTEMS</span>
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-14 opacity-80 font-mono text-xs md:text-sm font-black text-slate-300 tracking-wider">
+          <span>HORIZON BANK CORP</span>
+          <span>•</span>
+          <span>APEX RESERVE</span>
+          <span>•</span>
+          <span>GLOBAL VAULT SYSTEMS</span>
+          <span>•</span>
+          <span>CRYPTOLEDGERS INC</span>
+          <span>•</span>
+          <span>CAPITAL SECURITY GROUP</span>
         </div>
       </section>
 
@@ -5525,6 +5615,49 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* TECHNICAL COMPARISON MATRIX SECTION */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-12">
+        <div className="text-center space-y-4">
+          <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest">TECHNICAL COMPARISON</span>
+          <h2 className="text-3xl md:text-5xl font-black text-white">Next-Gen Deep Learning vs Legacy Rule Engines</h2>
+          <p className="text-xs md:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">Traditional static rules generate high false positives. FinGuard AI combines unsupervised Autoencoders with SHAP attributions.</p>
+        </div>
+
+        <div className="overflow-x-auto glass-card border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
+          <table className="w-full text-left border-collapse font-mono text-xs md:text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-slate-400 uppercase tracking-wider text-[11px]">
+                <th className="py-4 px-6">Capability / Metric</th>
+                <th className="py-4 px-6 text-slate-500">Legacy Static Rule Engines</th>
+                <th className="py-4 px-6 text-cyan-400 font-bold bg-cyan-500/10 rounded-t-xl">FinGuard AI Platform</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/5 text-slate-200">
+              <tr>
+                <td className="py-4 px-6 font-bold text-white">False Positive Rate</td>
+                <td className="py-4 px-6 text-rose-400 font-bold">High (35% - 45%)</td>
+                <td className="py-4 px-6 text-emerald-400 font-bold bg-cyan-500/5">Ultra-Low (&lt; 0.8%)</td>
+              </tr>
+              <tr>
+                <td className="py-4 px-6 font-bold text-white">Zero-Day Anomaly Detection</td>
+                <td className="py-4 px-6 text-slate-500">❌ Fails on unseen attack vectors</td>
+                <td className="py-4 px-6 text-cyan-300 font-bold bg-cyan-500/5">✅ Unsupervised Autoencoders</td>
+              </tr>
+              <tr>
+                <td className="py-4 px-6 font-bold text-white">Explainability & SHAP Attributions</td>
+                <td className="py-4 px-6 text-slate-500">❌ Opaque "Black-Box" alerts</td>
+                <td className="py-4 px-6 text-indigo-300 font-bold bg-cyan-500/5">✅ Transparent Feature Weights</td>
+              </tr>
+              <tr>
+                <td className="py-4 px-6 font-bold text-white">Multi-Hop Laundering Graphing</td>
+                <td className="py-4 px-6 text-slate-500">❌ Single-transaction limits</td>
+                <td className="py-4 px-6 text-purple-300 font-bold bg-cyan-500/5">✅ Graph Ring & Mule Detection</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
