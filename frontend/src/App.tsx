@@ -5304,70 +5304,81 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
       </section>
 
       {/* ENTERPRISE TRUST & COMPLIANCE BADGES */}
-      <section className="py-10 bg-[#0D0F17]/80 border-y border-white/10 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-6 text-center">
-          <div className="text-xs font-mono text-slate-400 uppercase tracking-widest font-bold w-full md:w-auto">
-            ENTERPRISE SECURITY BOUNDARIES
+      <section className="py-12 bg-gradient-to-r from-slate-950 via-[#0E121B] to-slate-950 border-y border-cyan-500/20 px-6 md:px-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent pointer-events-none" />
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-6 text-center relative z-10">
+          <div className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-extrabold flex items-center space-x-2 w-full md:w-auto">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+            <span>ENTERPRISE SECURITY BOUNDARIES</span>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-5 w-full md:w-auto">
-            <div className="px-4 py-2 bg-slate-900/90 border border-cyan-500/30 rounded-xl text-xs font-mono font-bold text-cyan-300 flex items-center space-x-2 shadow-lg shadow-cyan-500/10">
-              <ShieldCheck className="h-4 w-4 text-cyan-400" />
-              <span>SOC2 TYPE II CERTIFIED</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 w-full md:w-auto">
+            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-cyan-400/40 hover:border-cyan-400 rounded-2xl text-xs font-mono font-extrabold text-cyan-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:scale-105 transition-all">
+              <ShieldCheck className="h-4.5 w-4.5 text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+              <span className="tracking-wide">SOC2 TYPE II CERTIFIED</span>
             </div>
-            <div className="px-4 py-2 bg-slate-900/90 border border-emerald-500/30 rounded-xl text-xs font-mono font-bold text-emerald-300 flex items-center space-x-2 shadow-lg shadow-emerald-500/10">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span>PCI-DSS LEVEL 1 COMPLIANT</span>
+            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-emerald-400/40 hover:border-emerald-400 rounded-2xl text-xs font-mono font-extrabold text-emerald-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(34,197,94,0.2)] hover:scale-105 transition-all">
+              <CheckCircle2 className="h-4.5 w-4.5 text-emerald-400 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
+              <span className="tracking-wide">PCI-DSS LEVEL 1 COMPLIANT</span>
             </div>
-            <div className="px-4 py-2 bg-slate-900/90 border border-indigo-500/30 rounded-xl text-xs font-mono font-bold text-indigo-300 flex items-center space-x-2 shadow-lg shadow-indigo-500/10">
-              <Award className="h-4 w-4 text-indigo-400" />
-              <span>ISO/IEC 27001 VERIFIED</span>
+            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-indigo-400/40 hover:border-indigo-400 rounded-2xl text-xs font-mono font-extrabold text-indigo-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(99,102,241,0.2)] hover:scale-105 transition-all">
+              <Award className="h-4.5 w-4.5 text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.8)]" />
+              <span className="tracking-wide">ISO/IEC 27001 VERIFIED</span>
             </div>
-            <div className="px-4 py-2 bg-slate-900/90 border border-purple-500/30 rounded-xl text-xs font-mono font-bold text-purple-300 flex items-center space-x-2 shadow-lg shadow-purple-500/10">
-              <Globe className="h-4 w-4 text-purple-400" />
-              <span>GDPR & CCPA PRIVACY SHIELD</span>
+            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-purple-400/40 hover:border-purple-400 rounded-2xl text-xs font-mono font-extrabold text-purple-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:scale-105 transition-all">
+              <Globe className="h-4.5 w-4.5 text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
+              <span className="tracking-wide">GDPR & CCPA PRIVACY SHIELD</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* REAL-TIME SYSTEM TELEMETRY BANNER */}
-      <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="p-6 bg-gradient-to-r from-cyan-950/40 via-slate-900/90 to-purple-950/40 border border-cyan-500/30 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center font-mono shadow-2xl">
-          <div>
-            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">SYSTEM STATUS</span>
-            <span className="text-xs md:text-sm font-extrabold text-emerald-400 flex items-center justify-center space-x-1.5 mt-1">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+      <section className="py-14 px-6 md:px-12 max-w-7xl mx-auto">
+        <SpotlightCard className="p-8 bg-gradient-to-r from-[#0E1322] via-[#12172A] to-[#18122B] border border-cyan-500/40 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center font-mono shadow-[0_0_50px_rgba(6,182,212,0.15)] relative overflow-hidden">
+          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 transition-all">
+            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">SYSTEM STATUS</span>
+            <span className="text-sm md:text-base font-black text-emerald-400 flex items-center justify-center space-x-2 mt-1 drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping" />
               <span>99.999% Operational</span>
             </span>
           </div>
-          <div>
-            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">MODEL LATENCY (p99)</span>
-            <span className="text-xs md:text-sm font-extrabold text-cyan-300 mt-1 block">11.4ms</span>
+          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-cyan-500/30 transition-all">
+            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">MODEL LATENCY (p99)</span>
+            <span className="text-sm md:text-base font-black text-cyan-300 mt-1 block drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]">11.4ms</span>
           </div>
-          <div>
-            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">INGRESS STREAM RATE</span>
-            <span className="text-xs md:text-sm font-extrabold text-indigo-300 mt-1 block">48,200 tx/sec</span>
+          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-indigo-500/30 transition-all">
+            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">INGRESS STREAM RATE</span>
+            <span className="text-sm md:text-base font-black text-indigo-300 mt-1 block drop-shadow-[0_0_8px_rgba(99,102,241,0.6)]">48,200 tx/sec</span>
           </div>
-          <div>
-            <span className="text-[10px] text-slate-400 block uppercase tracking-wider">AUTOENCODER CLUSTERS</span>
-            <span className="text-xs md:text-sm font-extrabold text-purple-300 mt-1 block">128 Active Nodes</span>
+          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-purple-500/30 transition-all">
+            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">AUTOENCODER CLUSTERS</span>
+            <span className="text-sm md:text-base font-black text-purple-300 mt-1 block drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">128 Active Nodes</span>
           </div>
-        </div>
+        </SpotlightCard>
       </section>
 
       {/* TRUSTED FINANCIAL INSTITUTIONS TICKER */}
-      <section className="py-10 border-b border-white/5 px-6 md:px-12 text-center">
-        <span className="text-[11px] font-mono text-slate-400 uppercase tracking-widest block mb-6 font-bold">TRUSTED BY LEADING FINANCIAL INSTITUTIONS & FINTECH ECOSYSTEMS</span>
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-14 opacity-80 font-mono text-xs md:text-sm font-black text-slate-300 tracking-wider">
-          <span>HORIZON BANK CORP</span>
-          <span>•</span>
-          <span>APEX RESERVE</span>
-          <span>•</span>
-          <span>GLOBAL VAULT SYSTEMS</span>
-          <span>•</span>
-          <span>CRYPTOLEDGERS INC</span>
-          <span>•</span>
-          <span>CAPITAL SECURITY GROUP</span>
+      <section className="py-12 border-b border-white/10 px-6 md:px-12 text-center bg-[#0B0D14]/90">
+        <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest block mb-8 font-extrabold flex items-center justify-center space-x-2">
+          <Sparkles className="h-4 w-4 text-cyan-400 animate-pulse" />
+          <span>TRUSTED BY LEADING FINANCIAL INSTITUTIONS & FINTECH ECOSYSTEMS</span>
+        </span>
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+          {[
+            { name: "HORIZON BANK CORP", icon: ShieldCheck, color: "text-cyan-300 border-cyan-500/30" },
+            { name: "APEX RESERVE", icon: Award, color: "text-amber-300 border-amber-500/30" },
+            { name: "GLOBAL VAULT SYSTEMS", icon: Globe, color: "text-purple-300 border-purple-500/30" },
+            { name: "CRYPTOLEDGERS INC", icon: Zap, color: "text-emerald-300 border-emerald-500/30" },
+            { name: "CAPITAL SECURITY GROUP", icon: Shield, color: "text-indigo-300 border-indigo-500/30" },
+          ].map((bank, bidx) => {
+            const BankIcon = bank.icon;
+            return (
+              <div key={bidx} className={`px-5 py-3 bg-[#131622]/90 border rounded-2xl font-mono text-xs md:text-sm font-black flex items-center space-x-2.5 shadow-lg hover:scale-105 transition-all ${bank.color}`}>
+                <BankIcon className="h-4 w-4" />
+                <span className="tracking-wider">{bank.name}</span>
+              </div>
+            );
+          })}
         </div>
       </section>
 
