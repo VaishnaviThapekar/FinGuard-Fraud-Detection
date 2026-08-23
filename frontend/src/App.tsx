@@ -1806,6 +1806,7 @@ export default function App() {
               { id: 'dashboard', label: t.dashboard, icon: LayoutDashboard },
               { id: 'simulator', label: 'Fraud Simulator Studio', icon: FlaskConical },
               { id: 'threatmap', label: 'Global Threat Map', icon: Globe },
+              { id: 'network', label: 'Laundering Graph Network', icon: Share2 },
               { id: 'reports', label: 'Audit & Export Hub', icon: FileSpreadsheet },
               { id: 'rules', label: 'Rule Builder & Webhooks', icon: SlidersHorizontal },
               { id: 'fraud', label: t.fraud, icon: BrainCircuit },
@@ -2037,6 +2038,7 @@ export default function App() {
             )}
             {activeTab === 'simulator' && <FraudSimulatorSection theme={theme} triggerToast={triggerToast} setNotifications={setNotifications} />}
             {activeTab === 'threatmap' && <GlobalThreatMapSection theme={theme} />}
+            {activeTab === 'network' && <MoneyLaunderingNetworkSection triggerToast={triggerToast} />}
             {activeTab === 'reports' && <AuditReportingHubSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'rules' && <VisualRuleBuilderSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'fraud' && <FraudSection />}
@@ -6547,6 +6549,272 @@ function VisualRuleBuilderSection({ triggerToast }: { theme?: string; triggerToa
               <Send className="h-4 w-4" />
               <span>Test Webhook Payload</span>
             </button>
+          </div>
+        </SpotlightCard>
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 15. INTERACTIVE MULTI-HOP MONEY LAUNDERING NETWORK GRAPH
+// ==========================================
+function MoneyLaunderingNetworkSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
+  const [selectedNode, setSelectedNode] = useState<any>(null);
+  const [filterType, setFilterType] = useState<string>('all');
+  const [showRingsOnly, setShowRingsOnly] = useState<boolean>(false);
+
+  const nodes = [
+    { id: 'acc_01', label: 'ACC_ORIGIN_901', type: 'Origin', name: 'Global Asset Corp (US)', x: 120, y: 180, volume: '$1,850,000', risk: 24, status: 'CLEARED', hops: 0 },
+    { id: 'mule_01', label: 'MULE_ACC_402', type: 'Mule', name: 'Individual Mule (CH)', x: 300, y: 100, volume: '$450,000', risk: 78, status: 'EVALUATING', hops: 1 },
+    { id: 'mule_02', label: 'MULE_ACC_881', type: 'Mule', name: 'Smurfing Hub (UK)', x: 300, y: 260, volume: '$620,000', risk: 82, status: 'EVALUATING', hops: 1 },
+    { id: 'shell_01', label: 'SHELL_CORP_99', type: 'Shell Corp', name: 'Apex Ltd (Cayman)', x: 520, y: 180, volume: '$1,420,000', risk: 96, status: 'CRITICAL', hops: 2 },
+    { id: 'vault_01', label: 'OFFSHORE_VAULT_X', type: 'Offshore Vault', name: 'Vault SG-09 (Singapore)', x: 740, y: 120, volume: '$980,000', risk: 88, status: 'CRITICAL', hops: 3 },
+    { id: 'ring_01', label: 'CIRCULAR_LOOP_04', type: 'Circular Ring', name: 'Layering Loop (Panama)', x: 520, y: 320, volume: '$340,000', risk: 94, status: 'CRITICAL', hops: 3 },
+  ];
+
+  const links = [
+    { source: 'acc_01', target: 'mule_01', amount: '$450,000', isRing: false },
+    { source: 'acc_01', target: 'mule_02', amount: '$620,000', isRing: false },
+    { source: 'mule_01', target: 'shell_01', amount: '$410,000', isRing: true },
+    { source: 'mule_02', target: 'shell_01', amount: '$580,000', isRing: true },
+    { source: 'shell_01', target: 'vault_01', amount: '$980,000', isRing: false },
+    { source: 'shell_01', target: 'ring_01', amount: '$340,000', isRing: true },
+    { source: 'ring_01', target: 'mule_02', amount: '$340,000', isRing: true },
+  ];
+
+  const filteredNodes = nodes.filter(n => {
+    if (filterType !== 'all' && n.type !== filterType) return false;
+    if (showRingsOnly && n.type !== 'Circular Ring' && n.type !== 'Shell Corp') return false;
+    return true;
+  });
+
+  const handleQuarantine = (nodeLabel: string) => {
+    triggerToast(`QUARANTINE ENFORCED: Account ${nodeLabel} frozen & flagged across network.`, 'critical');
+    if (selectedNode) setSelectedNode({ ...selectedNode, status: 'QUARANTINED', risk: 99 });
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
+            <Share2 className="h-6 w-6 text-cyan-400" />
+            <span>Interactive Multi-Hop Money Laundering Network Graph</span>
+          </h2>
+          <p className="text-xs text-slate-400 font-medium mt-1">Trace multi-tier account flows (Origin ➔ Mule ➔ Shell Corp ➔ Offshore Vault) & detect circular layering rings.</p>
+        </div>
+
+        <div className="flex items-center space-x-3">
+          <button 
+            onClick={() => setShowRingsOnly(!showRingsOnly)} 
+            className={`px-3.5 py-2 rounded-xl text-xs font-extrabold border transition-all cursor-pointer ${
+              showRingsOnly 
+                ? 'bg-rose-500/20 text-rose-300 border-rose-500/50 shadow-lg shadow-rose-500/20' 
+                : 'bg-slate-900 text-slate-300 border-white/10 hover:border-cyan-400/40'
+            }`}
+          >
+            {showRingsOnly ? "⭕ Circular Rings Active" : "🔍 Highlight Circular Rings"}
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Graph Canvas */}
+        <SpotlightCard className="p-6 lg:col-span-2 relative min-h-[460px] flex flex-col justify-between overflow-hidden">
+          <div className="flex justify-between items-center mb-4 z-10">
+            <div className="flex items-center space-x-2 text-xs font-mono">
+              <span className="text-slate-400">Filter Node Type:</span>
+              <select 
+                value={filterType} 
+                onChange={e => setFilterType(e.target.value)} 
+                className="bg-[#13161A] border border-white/10 text-xs font-bold text-slate-200 rounded-xl p-2 focus:outline-none"
+              >
+                <option value="all">All Nodes (6)</option>
+                <option value="Origin">Origin Vaults</option>
+                <option value="Mule">Money Mules</option>
+                <option value="Shell Corp">Shell Corporations</option>
+                <option value="Circular Ring">Circular Layering Loops</option>
+              </select>
+            </div>
+
+            <div className="text-xs font-mono text-cyan-400 font-bold">
+              MULTI-HOP GRAPH ENGINE: ONLINE
+            </div>
+          </div>
+
+          {/* SVG Multi-Hop Node Canvas */}
+          <div className="relative z-10 w-full h-[360px]">
+            <svg className="w-full h-full" viewBox="0 0 880 400">
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="18" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8" />
+                </marker>
+                <marker id="arrow-ring" viewBox="0 0 10 10" refX="18" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#f43f5e" />
+                </marker>
+              </defs>
+
+              {/* Render Flow Links */}
+              {links.map((link, idx) => {
+                const srcNode = nodes.find(n => n.id === link.source);
+                const tgtNode = nodes.find(n => n.id === link.target);
+                if (!srcNode || !tgtNode) return null;
+
+                const isRingLink = link.isRing;
+                const strokeColor = isRingLink ? (showRingsOnly ? '#f43f5e' : '#fbbf24') : '#38bdf8';
+
+                return (
+                  <g key={idx}>
+                    <path 
+                      d={`M ${srcNode.x} ${srcNode.y} Q ${(srcNode.x + tgtNode.x) / 2} ${(srcNode.y + tgtNode.y) / 2 - (isRingLink ? 30 : 0)} ${tgtNode.x} ${tgtNode.y}`} 
+                      fill="none" 
+                      stroke={strokeColor} 
+                      strokeWidth={isRingLink ? "2.5" : "1.8"} 
+                      strokeDasharray={isRingLink ? "5 5" : "none"}
+                      markerEnd={isRingLink ? "url(#arrow-ring)" : "url(#arrow)"}
+                      className={isRingLink ? "animate-pulse" : ""}
+                    />
+                    <text 
+                      x={(srcNode.x + tgtNode.x) / 2} 
+                      y={(srcNode.y + tgtNode.y) / 2 - (isRingLink ? 35 : 8)} 
+                      textAnchor="middle" 
+                      fill={strokeColor} 
+                      fontSize="9" 
+                      fontWeight="700" 
+                      className="font-mono"
+                    >
+                      {link.amount}
+                    </text>
+                  </g>
+                );
+              })}
+
+              {/* Render Account Nodes */}
+              {filteredNodes.map((n) => {
+                const isSelected = selectedNode?.id === n.id;
+                const isCritical = n.status === 'CRITICAL' || n.status === 'QUARANTINED';
+
+                return (
+                  <g 
+                    key={n.id} 
+                    onClick={() => setSelectedNode(n)} 
+                    className="cursor-pointer group"
+                  >
+                    <circle 
+                      cx={n.x} 
+                      cy={n.y} 
+                      r={isSelected ? '22' : isCritical ? '18' : '14'} 
+                      fill={
+                        n.status === 'QUARANTINED' ? 'rgba(239,68,68,0.4)' :
+                        n.type === 'Circular Ring' ? 'rgba(244,63,94,0.35)' :
+                        n.type === 'Shell Corp' ? 'rgba(245,158,11,0.3)' :
+                        n.type === 'Mule' ? 'rgba(56,189,248,0.25)' : 'rgba(34,197,94,0.25)'
+                      } 
+                      stroke={isSelected ? '#ffffff' : 'none'}
+                      strokeWidth="2"
+                      className={isCritical ? "animate-ping" : ""}
+                    />
+                    <circle 
+                      cx={n.x} 
+                      cy={n.y} 
+                      r={isSelected ? '14' : '10'} 
+                      fill={
+                        n.status === 'QUARANTINED' ? '#ef4444' :
+                        n.type === 'Circular Ring' ? '#f43f5e' :
+                        n.type === 'Shell Corp' ? '#f59e0b' :
+                        n.type === 'Mule' ? '#38bdf8' : '#22c55e'
+                      } 
+                    />
+                    <text 
+                      x={n.x} 
+                      y={n.y - 22} 
+                      textAnchor="middle" 
+                      fill="#ffffff" 
+                      fontSize="10" 
+                      fontWeight="800" 
+                      className="font-mono shadow-sm"
+                    >
+                      {n.label}
+                    </text>
+                    <text 
+                      x={n.x} 
+                      y={n.y + 26} 
+                      textAnchor="middle" 
+                      fill="#94a3b8" 
+                      fontSize="8" 
+                      fontWeight="600" 
+                      className="font-mono"
+                    >
+                      {n.type} ({n.volume})
+                    </text>
+                  </g>
+                );
+              })}
+            </svg>
+          </div>
+
+          <div className="relative z-10 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-white/10 pt-3">
+            <span>🕸️ NETWORK NODES: 6 ACTIVE | 2 CIRCULAR LOOPS FLAGGED</span>
+            <span className="text-cyan-400 font-bold">CLICK NODE TO INSPECT</span>
+          </div>
+        </SpotlightCard>
+
+        {/* Node Inspector Panel */}
+        <SpotlightCard className="p-6 flex flex-col justify-between">
+          <div>
+            <h3 className="text-sm font-extrabold text-white uppercase tracking-wider mb-4 flex items-center space-x-2">
+              <BrainCircuit className="h-4 w-4 text-cyan-400" />
+              <span>Graph Account Inspector</span>
+            </h3>
+
+            {selectedNode ? (
+              <div className="space-y-4">
+                <div className="p-4 bg-slate-900/80 border border-white/10 rounded-2xl space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-cyan-400 font-extrabold uppercase font-mono">{selectedNode.label}</span>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black border ${
+                      selectedNode.status === 'QUARANTINED' ? 'bg-red-500/20 text-red-300 border-red-500/40' :
+                      selectedNode.status === 'CRITICAL' ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                    }`}>{selectedNode.status}</span>
+                  </div>
+
+                  <p className="text-xs font-bold text-white">{selectedNode.name}</p>
+
+                  <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5 text-xs font-mono">
+                    <div>
+                      <span className="text-slate-400 text-[10px] block">Node Classification</span>
+                      <span className="text-slate-200 font-bold">{selectedNode.type}</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 text-[10px] block">Laundering Risk</span>
+                      <span className="text-rose-400 font-bold">{selectedNode.risk}%</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 text-[10px] block">24h Flow Volume</span>
+                      <span className="text-cyan-300 font-bold">{selectedNode.volume}</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 text-[10px] block">Graph Hops</span>
+                      <span className="text-amber-300 font-bold">{selectedNode.hops} Hops</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button 
+                  onClick={() => handleQuarantine(selectedNode.label)} 
+                  className="w-full py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-extrabold flex items-center justify-center space-x-2 shadow-lg shadow-rose-600/30 transition-all cursor-pointer"
+                >
+                  <Zap className="h-4 w-4" />
+                  <span>Quarantine Account & Freeze Wire</span>
+                </button>
+              </div>
+            ) : (
+              <div className="text-center py-12 text-slate-500 space-y-2">
+                <Share2 className="h-10 w-10 mx-auto text-slate-600 animate-pulse" />
+                <p className="text-xs font-medium">Click any account node on the graph canvas to inspect multi-hop transfer telemetry.</p>
+              </div>
+            )}
           </div>
         </SpotlightCard>
       </div>
