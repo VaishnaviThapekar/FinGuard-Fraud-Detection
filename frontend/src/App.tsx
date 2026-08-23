@@ -4966,9 +4966,6 @@ interface LandingPageProps {
 }
 
 function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
-  const [emailSubscribed, setEmailSubscribed] = useState(false);
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [contactSubmitted, setContactSubmitted] = useState(false);
   const [faqOpen, setFaqOpen] = useState<Record<number, boolean>>({});
 
   // Real-time metric fluctuation simulation
@@ -5130,20 +5127,6 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
             >
               <BookOpen className={`h-4 w-4 ${theme === 'light' ? 'text-indigo-600' : 'text-cyan-400'}`} />
               <span>Developer Specs</span>
-            </a>
-
-            <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`px-6 py-4 border rounded-2xl text-xs md:text-sm font-bold flex items-center space-x-2 transition-all hover:scale-[1.03] ${
-                theme === 'light' 
-                  ? 'bg-white border-slate-300 text-slate-800 hover:bg-slate-100 shadow-sm' 
-                  : 'bg-[#13161A]/80 border-cyan-500/20 text-slate-200 hover:bg-[#1B1F24] hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/10'
-              }`}
-            >
-              <Github className={`h-4 w-4 ${theme === 'light' ? 'text-purple-600' : 'text-purple-400'}`} />
-              <span>GitHub Sandbox</span>
             </a>
           </div>
 
@@ -5568,85 +5551,6 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. CONTACT FORM & NEWSLETTER SUBSCRIPTION */}
-      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        {/* Contact Form */}
-        <div className="glass-card border border-white/5 rounded-2xl p-8 space-y-6">
-          <div>
-            <h3 className="text-base font-bold text-white uppercase tracking-wider">Contact Compliance Specialist</h3>
-            <p className="text-xs text-slate-400 font-light mt-1.5">Get in touch to arrange proof-of-concept audits.</p>
-          </div>
-
-          {contactSubmitted ? (
-            <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs rounded-xl text-center font-mono">
-              ✔ Thank you! Our analyst will get back to you within 24 hours.
-            </div>
-          ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setContactSubmitted(true); }} className="space-y-4 text-xs">
-              <div>
-                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Your Name</label>
-                <input 
-                  type="text" 
-                  required 
-                  className="w-full bg-slate-950 border border-slate-900 rounded-xl px-4 py-3 text-xs text-slate-300 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all"
-                />
-              </div>
-              <div>
-                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Business Email</label>
-                <input 
-                  type="email" 
-                  required 
-                  className="w-full bg-slate-950 border border-slate-900 rounded-xl px-4 py-3 text-xs text-slate-300 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all"
-                />
-              </div>
-              <div>
-                <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Message / Inquiry</label>
-                <textarea 
-                  rows={4} 
-                  required 
-                  className="w-full bg-slate-950 border border-slate-900 rounded-xl px-4 py-3 text-xs text-slate-300 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all"
-                />
-              </div>
-              <button 
-                type="submit"
-                className="w-full py-3.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all shadow-lg hover:shadow-indigo-500/20"
-              >
-                Submit Request
-              </button>
-            </form>
-          )}
-        </div>
-
-        {/* Newsletter Subscription */}
-        <div className="glass-card border border-white/5 rounded-2xl p-8 space-y-6">
-          <div>
-            <h3 className="text-base font-bold text-white uppercase tracking-wider">Join Newsletter</h3>
-            <p className="text-xs text-slate-400 font-light mt-1.5">Receive technical risk modeling logs and model updates twice a month.</p>
-          </div>
-
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <input 
-                type="email" 
-                placeholder="analyst@firm.com"
-                value={newsletterEmail}
-                onChange={e => setNewsletterEmail(e.target.value)}
-                className="flex-1 bg-slate-950 border border-slate-900 rounded-xl px-4 py-3.5 text-xs text-slate-300 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all"
-              />
-              <button 
-                onClick={() => { if (newsletterEmail) setEmailSubscribed(true); }}
-                className="px-5 py-3.5 bg-indigo-500 hover:bg-indigo-600 rounded-xl text-xs text-white font-bold transition-all shadow-lg hover:shadow-indigo-500/20"
-              >
-                Subscribe
-              </button>
-            </div>
-            {emailSubscribed && (
-              <p className="text-xs text-emerald-400 font-semibold font-mono">✔ Subscribed successfully to security logs updates feed.</p>
-            )}
           </div>
         </div>
       </section>
