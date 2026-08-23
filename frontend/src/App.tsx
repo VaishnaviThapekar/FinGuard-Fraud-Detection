@@ -5303,79 +5303,118 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
         </div>
       </section>
 
-      {/* ENTERPRISE TRUST & COMPLIANCE BADGES */}
-      <section className="py-12 bg-gradient-to-r from-slate-950 via-[#0E121B] to-slate-950 border-y border-cyan-500/20 px-6 md:px-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-6 text-center relative z-10">
-          <div className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-extrabold flex items-center space-x-2 w-full md:w-auto">
-            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
-            <span>ENTERPRISE SECURITY BOUNDARIES</span>
+      {/* ENTERPRISE TRUST & COMPLIANCE BADGES (VERTICAL CARDS: BIG ICON ABOVE, NAME BELOW) */}
+      <section className={`py-14 border-y px-6 md:px-12 transition-colors ${
+        theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-[#0B0D14]/90 border-cyan-500/20'
+      }`}>
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="text-center space-y-2">
+            <span className={`text-xs font-mono font-extrabold uppercase tracking-widest ${
+              theme === 'light' ? 'text-indigo-600' : 'text-cyan-400'
+            }`}>
+              🛡️ ENTERPRISE COMPLIANCE & SECURITY BOUNDARIES
+            </span>
+            <h2 className={`text-2xl md:text-3xl font-black ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+              Audited & Certified Banking Standards
+            </h2>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 w-full md:w-auto">
-            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-cyan-400/40 hover:border-cyan-400 rounded-2xl text-xs font-mono font-extrabold text-cyan-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:scale-105 transition-all">
-              <ShieldCheck className="h-4.5 w-4.5 text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
-              <span className="tracking-wide">SOC2 TYPE II CERTIFIED</span>
-            </div>
-            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-emerald-400/40 hover:border-emerald-400 rounded-2xl text-xs font-mono font-extrabold text-emerald-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(34,197,94,0.2)] hover:scale-105 transition-all">
-              <CheckCircle2 className="h-4.5 w-4.5 text-emerald-400 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
-              <span className="tracking-wide">PCI-DSS LEVEL 1 COMPLIANT</span>
-            </div>
-            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-indigo-400/40 hover:border-indigo-400 rounded-2xl text-xs font-mono font-extrabold text-indigo-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(99,102,241,0.2)] hover:scale-105 transition-all">
-              <Award className="h-4.5 w-4.5 text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.8)]" />
-              <span className="tracking-wide">ISO/IEC 27001 VERIFIED</span>
-            </div>
-            <div className="px-4.5 py-2.5 bg-[#121622]/90 border border-purple-400/40 hover:border-purple-400 rounded-2xl text-xs font-mono font-extrabold text-purple-300 flex items-center space-x-2.5 shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:scale-105 transition-all">
-              <Globe className="h-4.5 w-4.5 text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
-              <span className="tracking-wide">GDPR & CCPA PRIVACY SHIELD</span>
-            </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "SOC2 TYPE II", sub: "Audited Enterprise Security", icon: ShieldCheck, color: "cyan" },
+              { title: "PCI-DSS LEVEL 1", sub: "Payment Data Protection", icon: CheckCircle2, color: "emerald" },
+              { title: "ISO/IEC 27001", sub: "Global Governance Standard", icon: Award, color: "indigo" },
+              { title: "GDPR & CCPA", sub: "Data Privacy Compliance", icon: Globe, color: "purple" },
+            ].map((badge, idx) => {
+              const BadgeIcon = badge.icon;
+              return (
+                <div key={idx} className={`p-6 rounded-2xl border text-center space-y-4 flex flex-col items-center justify-center transition-all hover:-translate-y-1 ${
+                  theme === 'light' 
+                    ? 'bg-white border-slate-200 shadow-md hover:shadow-xl text-slate-800' 
+                    : 'bg-[#121624] border-white/10 shadow-xl hover:border-cyan-400/50 text-white'
+                }`}>
+                  <div className={`p-3.5 rounded-2xl border flex items-center justify-center ${
+                    badge.color === 'cyan' ? 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400' :
+                    badge.color === 'emerald' ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' :
+                    badge.color === 'indigo' ? 'bg-indigo-500/10 border-indigo-500/30 text-indigo-400' : 'bg-purple-500/10 border-purple-500/30 text-purple-400'
+                  }`}>
+                    <BadgeIcon className="h-8 w-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-extrabold font-mono tracking-wider">{badge.title}</h3>
+                    <p className={`text-[11px] font-medium mt-1 ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>{badge.sub}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* REAL-TIME SYSTEM TELEMETRY BANNER */}
-      <section className="py-14 px-6 md:px-12 max-w-7xl mx-auto">
-        <SpotlightCard className="p-8 bg-gradient-to-r from-[#0E1322] via-[#12172A] to-[#18122B] border border-cyan-500/40 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center font-mono shadow-[0_0_50px_rgba(6,182,212,0.15)] relative overflow-hidden">
-          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 transition-all">
-            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">SYSTEM STATUS</span>
-            <span className="text-sm md:text-base font-black text-emerald-400 flex items-center justify-center space-x-2 mt-1 drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]">
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping" />
+      {/* REAL-TIME SYSTEM TELEMETRY BANNER (HORIZONTAL 4-COLUMN CARDS) */}
+      <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className={`p-6 md:p-8 rounded-3xl border shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 font-mono text-center transition-colors ${
+          theme === 'light' 
+            ? 'bg-white border-indigo-100 shadow-xl text-slate-800' 
+            : 'bg-gradient-to-r from-[#0E1322] via-[#12172A] to-[#18122B] border-cyan-500/30 text-white shadow-2xl'
+        }`}>
+          <div className={`p-4 rounded-2xl border flex flex-col justify-center items-center space-y-1.5 ${
+            theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-slate-900/60 border-white/5'
+          }`}>
+            <span className={`text-[10px] uppercase tracking-widest font-bold ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>SYSTEM STATUS</span>
+            <span className="text-sm md:text-base font-black text-emerald-500 flex items-center justify-center space-x-2 mt-1">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping" />
               <span>99.999% Operational</span>
             </span>
           </div>
-          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-cyan-500/30 transition-all">
-            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">MODEL LATENCY (p99)</span>
-            <span className="text-sm md:text-base font-black text-cyan-300 mt-1 block drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]">11.4ms</span>
+          <div className={`p-4 rounded-2xl border flex flex-col justify-center items-center space-y-1.5 ${
+            theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-slate-900/60 border-white/5'
+          }`}>
+            <span className={`text-[10px] uppercase tracking-widest font-bold ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>MODEL LATENCY (p99)</span>
+            <span className={`text-sm md:text-base font-black mt-1 ${theme === 'light' ? 'text-cyan-600' : 'text-cyan-300'}`}>11.4ms</span>
           </div>
-          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-indigo-500/30 transition-all">
-            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">INGRESS STREAM RATE</span>
-            <span className="text-sm md:text-base font-black text-indigo-300 mt-1 block drop-shadow-[0_0_8px_rgba(99,102,241,0.6)]">48,200 tx/sec</span>
+          <div className={`p-4 rounded-2xl border flex flex-col justify-center items-center space-y-1.5 ${
+            theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-slate-900/60 border-white/5'
+          }`}>
+            <span className={`text-[10px] uppercase tracking-widest font-bold ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>INGRESS STREAM RATE</span>
+            <span className={`text-sm md:text-base font-black mt-1 ${theme === 'light' ? 'text-indigo-600' : 'text-indigo-300'}`}>48,200 tx/sec</span>
           </div>
-          <div className="space-y-1.5 p-3 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-purple-500/30 transition-all">
-            <span className="text-[10px] text-slate-400 block uppercase tracking-widest font-bold">AUTOENCODER CLUSTERS</span>
-            <span className="text-sm md:text-base font-black text-purple-300 mt-1 block drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">128 Active Nodes</span>
+          <div className={`p-4 rounded-2xl border flex flex-col justify-center items-center space-y-1.5 ${
+            theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-slate-900/60 border-white/5'
+          }`}>
+            <span className={`text-[10px] uppercase tracking-widest font-bold ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>AUTOENCODER CLUSTERS</span>
+            <span className={`text-sm md:text-base font-black mt-1 ${theme === 'light' ? 'text-purple-600' : 'text-purple-300'}`}>128 Active Nodes</span>
           </div>
-        </SpotlightCard>
+        </div>
       </section>
 
       {/* TRUSTED FINANCIAL INSTITUTIONS TICKER */}
-      <section className="py-12 border-b border-white/10 px-6 md:px-12 text-center bg-[#0B0D14]/90">
-        <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest block mb-8 font-extrabold flex items-center justify-center space-x-2">
+      <section className={`py-12 border-b px-6 md:px-12 text-center transition-colors ${
+        theme === 'light' ? 'bg-slate-100/80 border-slate-200' : 'bg-[#0B0D14]/90 border-white/10'
+      }`}>
+        <span className={`text-xs font-mono uppercase tracking-widest block mb-8 font-extrabold flex items-center justify-center space-x-2 ${
+          theme === 'light' ? 'text-indigo-600' : 'text-cyan-400'
+        }`}>
           <Sparkles className="h-4 w-4 text-cyan-400 animate-pulse" />
           <span>TRUSTED BY LEADING FINANCIAL INSTITUTIONS & FINTECH ECOSYSTEMS</span>
         </span>
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
           {[
-            { name: "HORIZON BANK CORP", icon: ShieldCheck, color: "text-cyan-300 border-cyan-500/30" },
-            { name: "APEX RESERVE", icon: Award, color: "text-amber-300 border-amber-500/30" },
-            { name: "GLOBAL VAULT SYSTEMS", icon: Globe, color: "text-purple-300 border-purple-500/30" },
-            { name: "CRYPTOLEDGERS INC", icon: Zap, color: "text-emerald-300 border-emerald-500/30" },
-            { name: "CAPITAL SECURITY GROUP", icon: Shield, color: "text-indigo-300 border-indigo-500/30" },
+            { name: "HORIZON BANK CORP", icon: ShieldCheck },
+            { name: "APEX RESERVE", icon: Award },
+            { name: "GLOBAL VAULT SYSTEMS", icon: Globe },
+            { name: "CRYPTOLEDGERS INC", icon: Zap },
+            { name: "CAPITAL SECURITY GROUP", icon: Shield },
           ].map((bank, bidx) => {
             const BankIcon = bank.icon;
             return (
-              <div key={bidx} className={`px-5 py-3 bg-[#131622]/90 border rounded-2xl font-mono text-xs md:text-sm font-black flex items-center space-x-2.5 shadow-lg hover:scale-105 transition-all ${bank.color}`}>
-                <BankIcon className="h-4 w-4" />
-                <span className="tracking-wider">{bank.name}</span>
+              <div key={bidx} className={`p-4 border rounded-2xl font-mono text-xs font-black flex items-center justify-center space-x-2.5 shadow-sm transition-all hover:scale-105 ${
+                theme === 'light' 
+                  ? 'bg-white border-slate-300 text-slate-800 hover:border-indigo-500' 
+                  : 'bg-[#131622]/90 border-white/10 text-slate-200 hover:border-cyan-400'
+              }`}>
+                <BankIcon className="h-4.5 w-4.5 text-indigo-500" />
+                <span className="tracking-wide">{bank.name}</span>
               </div>
             );
           })}
