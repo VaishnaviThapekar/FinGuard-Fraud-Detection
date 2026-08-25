@@ -54,7 +54,8 @@ import {
   Coins,
   Wallet,
   Bot,
-  Code
+  Code,
+  Camera
 } from 'lucide-react';
 
 // ==========================================
@@ -1815,6 +1816,7 @@ export default function App() {
               { id: 'crypto', label: 'Web3 Crypto Threat Scanner', icon: Coins },
               { id: 'auto-responder', label: 'Autonomous AI Auto-Responder', icon: Bot },
               { id: 'developer-api', label: 'Developer API Sandbox', icon: Code },
+              { id: 'kyc-shield', label: 'Biometric KYC Liveness Shield', icon: UserCheck },
               { id: 'reports', label: 'Audit & Export Hub', icon: FileSpreadsheet },
               { id: 'rules', label: 'Rule Builder & Webhooks', icon: SlidersHorizontal },
               { id: 'fraud', label: t.fraud, icon: BrainCircuit },
@@ -2050,6 +2052,7 @@ export default function App() {
             {activeTab === 'crypto' && <CryptoThreatScannerSection triggerToast={triggerToast} />}
             {activeTab === 'auto-responder' && <AutonomousAutoResponderSection triggerToast={triggerToast} />}
             {activeTab === 'developer-api' && <DeveloperApiSandboxSection triggerToast={triggerToast} />}
+            {activeTab === 'kyc-shield' && <BiometricKycShieldSection triggerToast={triggerToast} />}
             {activeTab === 'reports' && <AuditReportingHubSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'rules' && <VisualRuleBuilderSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'fraud' && <FraudSection />}
@@ -7466,6 +7469,147 @@ response = requests.post(
 
           <div className="p-4 bg-slate-950 border border-white/10 rounded-2xl font-mono text-xs text-cyan-300 overflow-x-auto min-h-[260px]">
             <pre>{jsonResponse}</pre>
+          </div>
+        </SpotlightCard>
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 19. BIOMETRIC LIVENESS & AI DEEPFAKE KYC SHIELD
+// ==========================================
+function BiometricKycShieldSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
+  const [isScanning, setIsScanning] = useState<boolean>(false);
+  const [livenessResult, setLivenessResult] = useState<any>({
+    confidence: 99.8,
+    status: 'REAL HUMAN VERIFIED',
+    deepfakeScore: 0.02,
+    landmarks: 128,
+    livenessPass: true,
+  });
+
+  const handleScan = () => {
+    setIsScanning(true);
+    triggerToast('Initializing camera feed... Scanning facial liveness & anti-spoofing depth...', 'info');
+
+    setTimeout(() => {
+      setIsScanning(false);
+      setLivenessResult({
+        confidence: 99.8,
+        status: 'REAL HUMAN VERIFIED',
+        deepfakeScore: 0.02,
+        landmarks: 128,
+        livenessPass: true,
+      });
+      triggerToast('LIVENESS VERIFIED: 99.8% Real Human Confidence (0.02% Deepfake Risk)', 'success');
+    }, 1200);
+  };
+
+  const handleRejectSpoof = () => {
+    setLivenessResult({
+      confidence: 14.2,
+      status: 'SYNTHETIC DEEPFAKE SPOOF DETECTED',
+      deepfakeScore: 98.4,
+      landmarks: 42,
+      livenessPass: false,
+    });
+    triggerToast('SECURITY REJECT: Synthetic Identity Deepfake Spoof Blocked!', 'critical');
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
+            <UserCheck className="h-6 w-6 text-cyan-400" />
+            <span>Biometric Liveness & AI Deepfake KYC Shield</span>
+          </h2>
+          <p className="text-xs text-slate-400 font-medium mt-1">Prevent synthetic identity fraud & deepfake photo spoofs during high-risk wire authorizations.</p>
+        </div>
+
+        <button
+          onClick={handleScan}
+          disabled={isScanning}
+          className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-indigo-500 text-white rounded-xl text-xs font-extrabold flex items-center space-x-2 shadow-lg shadow-cyan-500/25 cursor-pointer disabled:opacity-50 transition-all"
+        >
+          <Camera className={`h-4 w-4 ${isScanning ? 'animate-spin' : ''}`} />
+          <span>{isScanning ? 'Scanning Facial Mesh...' : 'Run Live Facial Liveness Scan'}</span>
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Visual Facial Scanner Box */}
+        <SpotlightCard className="p-6 lg:col-span-2 relative min-h-[380px] flex flex-col justify-between overflow-hidden">
+          <div className="flex justify-between items-center z-10 border-b border-white/10 pb-3">
+            <span className="text-xs font-mono font-bold text-cyan-400">FACIAL DEPTH SCANNER: ACTIVE</span>
+            <span className={`px-3 py-1 rounded-full text-[10px] font-black border font-mono ${
+              livenessResult.livenessPass ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' : 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+            }`}>
+              {livenessResult.status}
+            </span>
+          </div>
+
+          {/* Scanner Overlay Visual */}
+          <div className="relative z-10 my-6 flex flex-col items-center justify-center p-8 bg-slate-950/80 border border-white/10 rounded-3xl">
+            <div className={`relative h-44 w-36 rounded-[45%] border-2 flex items-center justify-center transition-all ${
+              isScanning ? 'border-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.4)] animate-pulse' :
+              livenessResult.livenessPass ? 'border-emerald-400 shadow-[0_0_30px_rgba(34,197,94,0.3)]' : 'border-rose-500 shadow-[0_0_30px_rgba(244,63,94,0.4)]'
+            }`}>
+              <UserCheck className={`h-16 w-16 ${livenessResult.livenessPass ? 'text-emerald-400' : 'text-rose-400'}`} />
+              <div className="absolute inset-x-0 top-0 h-0.5 bg-cyan-400 animate-bounce shadow-md shadow-cyan-400" />
+            </div>
+
+            <div className="mt-4 text-center space-y-1 font-mono text-xs">
+              <p className="text-white font-bold">Target Wire: $180,000.00 (Customer CUST-804192)</p>
+              <p className="text-slate-400">Blink & Depth Vectors Verified: 128 Points</p>
+            </div>
+          </div>
+
+          <div className="relative z-10 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-white/10 pt-3">
+            <span>REAL-TIME ANTI-SPOOFING MODEL v4.2</span>
+            <span className="text-emerald-400 font-bold">100% HARDWARE ENCLAVE SECURE</span>
+          </div>
+        </SpotlightCard>
+
+        {/* Telemetry & Action Card */}
+        <SpotlightCard className="p-6 space-y-6 flex flex-col justify-between">
+          <div className="space-y-4">
+            <h3 className="text-sm font-extrabold text-white uppercase tracking-wider flex items-center space-x-2">
+              <BrainCircuit className="h-4 w-4 text-cyan-400" />
+              <span>Biometric Telemetry</span>
+            </h3>
+
+            <div className="p-4 bg-slate-900/80 border border-white/10 rounded-2xl space-y-3 font-mono text-xs">
+              <div className="flex justify-between">
+                <span className="text-slate-400">Human Liveness Score</span>
+                <span className="text-emerald-400 font-bold">{livenessResult.confidence}%</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-400">Deepfake Spoof Risk</span>
+                <span className="text-rose-400 font-bold">{livenessResult.deepfakeScore}%</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-400">Facial Mesh Points</span>
+                <span className="text-cyan-300 font-bold">{livenessResult.landmarks} Points</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => triggerToast('AUTHORIZED: High-risk wire $180,000 released via biometrics.', 'success')}
+              className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-extrabold flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/30 cursor-pointer transition-all"
+            >
+              <CheckCircle2 className="h-4 w-4" />
+              <span>Authorize High-Risk Wire Transfer</span>
+            </button>
+
+            <button
+              onClick={handleRejectSpoof}
+              className="w-full py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-extrabold flex items-center justify-center space-x-2 shadow-lg shadow-rose-600/30 cursor-pointer transition-all"
+            >
+              <AlertTriangle className="h-4 w-4" />
+              <span>Simulate Synthetic Deepfake Spoof</span>
+            </button>
           </div>
         </SpotlightCard>
       </div>
