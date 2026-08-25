@@ -53,7 +53,8 @@ import {
   CheckCircle2,
   Coins,
   Wallet,
-  Bot
+  Bot,
+  Code
 } from 'lucide-react';
 
 // ==========================================
@@ -1813,6 +1814,7 @@ export default function App() {
               { id: 'network', label: 'Laundering Graph Network', icon: Share2 },
               { id: 'crypto', label: 'Web3 Crypto Threat Scanner', icon: Coins },
               { id: 'auto-responder', label: 'Autonomous AI Auto-Responder', icon: Bot },
+              { id: 'developer-api', label: 'Developer API Sandbox', icon: Code },
               { id: 'reports', label: 'Audit & Export Hub', icon: FileSpreadsheet },
               { id: 'rules', label: 'Rule Builder & Webhooks', icon: SlidersHorizontal },
               { id: 'fraud', label: t.fraud, icon: BrainCircuit },
@@ -2047,6 +2049,7 @@ export default function App() {
             {activeTab === 'network' && <MoneyLaunderingNetworkSection triggerToast={triggerToast} />}
             {activeTab === 'crypto' && <CryptoThreatScannerSection triggerToast={triggerToast} />}
             {activeTab === 'auto-responder' && <AutonomousAutoResponderSection triggerToast={triggerToast} />}
+            {activeTab === 'developer-api' && <DeveloperApiSandboxSection triggerToast={triggerToast} />}
             {activeTab === 'reports' && <AuditReportingHubSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'rules' && <VisualRuleBuilderSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'fraud' && <FraudSection />}
@@ -7291,6 +7294,178 @@ function AutonomousAutoResponderSection({ triggerToast }: { triggerToast: (msg: 
                 </div>
               );
             })}
+          </div>
+        </SpotlightCard>
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 18. INTERACTIVE DEVELOPER API SANDBOX
+// ==========================================
+function DeveloperApiSandboxSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
+  const [selectedEndpoint, setSelectedEndpoint] = useState<string>('score');
+  const [selectedLang, setSelectedLang] = useState<string>('curl');
+  const [isSending, setIsSending] = useState<boolean>(false);
+  const [jsonResponse, setJsonResponse] = useState<string>(JSON.stringify({
+    status: 200,
+    message: "Transaction anomaly score evaluated successfully",
+    eval_id: "tx_901842",
+    risk_score: 0.942,
+    decision: "CHALLENGE_2FA",
+    latency_ms: 11.4,
+    shap_attributions: {
+      amount: 0.82,
+      country_match: 0.54,
+      device_velocity: 0.00,
+      ip_reputation: -0.21
+    }
+  }, null, 2));
+
+  const snippets: { [key: string]: { [lang: string]: string } } = {
+    score: {
+      curl: `curl -X POST "https://api.finguard-ai.io/v1/score" \\
+  -H "Authorization: Bearer fg_live_9018428" \\
+  -H "Content-Type: application/json" \\
+  -d '{"amount": 180000, "country": "KY", "channel": "WIRE"}'`,
+      python: `import requests
+
+url = "https://api.finguard-ai.io/v1/score"
+headers = {"Authorization": "Bearer fg_live_9018428", "Content-Type": "application/json"}
+payload = {"amount": 180000, "country": "KY", "channel": "WIRE"}
+
+response = requests.post(url, json=payload, headers=headers)
+print(response.json())`,
+      node: `const response = await fetch("https://api.finguard-ai.io/v1/score", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer fg_live_9018428",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ amount: 180000, country: "KY", channel: "WIRE" })
+});
+const data = await response.json();
+console.log(data);`
+    },
+    quarantine: {
+      curl: `curl -X POST "https://api.finguard-ai.io/v1/quarantine" \\
+  -H "Authorization: Bearer fg_live_9018428" \\
+  -d '{"account_id": "ACC_SHELL_99", "reason": "MONEY_LAUNDERING_RING"}'`,
+      python: `import requests
+response = requests.post(
+    "https://api.finguard-ai.io/v1/quarantine",
+    json={"account_id": "ACC_SHELL_99", "reason": "MONEY_LAUNDERING_RING"},
+    headers={"Authorization": "Bearer fg_live_9018428"}
+)`,
+      node: `await fetch("https://api.finguard-ai.io/v1/quarantine", {
+  method: "POST",
+  headers: { "Authorization": "Bearer fg_live_9018428", "Content-Type": "application/json" },
+  body: JSON.stringify({ account_id: "ACC_SHELL_99", reason: "MONEY_LAUNDERING_RING" })
+});`
+    }
+  };
+
+  const handleSendApi = () => {
+    setIsSending(true);
+    triggerToast(`Sending API request to /v1/${selectedEndpoint}...`, 'info');
+
+    setTimeout(() => {
+      setIsSending(false);
+      setJsonResponse(JSON.stringify({
+        status: 200,
+        timestamp: new Date().toISOString(),
+        endpoint: `/api/v1/${selectedEndpoint}`,
+        latency_ms: 11.4,
+        result: selectedEndpoint === 'score' ? {
+          risk_score: 0.96,
+          action: "QUARANTINE_WIRE",
+          shap_attributions: { amount: 0.88, velocity: 0.74 }
+        } : {
+          status: "ACCOUNT_FROZEN",
+          quarantine_id: "QRT-90184",
+          clearing_house_broadcast: true
+        }
+      }, null, 2));
+      triggerToast(`HTTP 200 OK: Response received in 11.4ms!`, 'success');
+    }, 600);
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
+            <Code className="h-6 w-6 text-cyan-400" />
+            <span>Interactive Developer API Sandbox</span>
+          </h2>
+          <p className="text-xs text-slate-400 font-medium mt-1">Test RESTful API endpoints, view cURL/Python code snippets, and execute live JSON response payloads.</p>
+        </div>
+
+        <div className="flex items-center space-x-2 text-xs font-mono text-cyan-300 bg-cyan-950/40 border border-cyan-500/30 px-3.5 py-1.5 rounded-xl font-bold">
+          <span>OPENAPI SPEC v3.0.4</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Request & Snippets Panel */}
+        <SpotlightCard className="p-6 space-y-4">
+          <div className="flex justify-between items-center">
+            <span className="text-xs font-mono font-bold text-slate-400">SELECT ENDPOINT</span>
+            <select
+              value={selectedEndpoint}
+              onChange={e => setSelectedEndpoint(e.target.value)}
+              className="bg-[#13161A] border border-white/10 text-xs font-mono font-bold text-cyan-300 rounded-xl p-2 focus:outline-none"
+            >
+              <option value="score">POST /api/v1/score (Risk Evaluation)</option>
+              <option value="quarantine">POST /api/v1/quarantine (Freeze Account)</option>
+            </select>
+          </div>
+
+          {/* Snippet Language Switcher */}
+          <div className="flex space-x-2 border-b border-white/10 pb-3">
+            {['curl', 'python', 'node'].map(lang => (
+              <button
+                key={lang}
+                onClick={() => setSelectedLang(lang)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold border transition-all cursor-pointer ${
+                  selectedLang === lang 
+                    ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400' 
+                    : 'bg-slate-900 text-slate-400 border-white/5 hover:text-white'
+                }`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+
+          {/* Code Snippet Display */}
+          <div className="p-4 bg-slate-950 border border-white/10 rounded-2xl font-mono text-xs text-slate-200 overflow-x-auto">
+            <pre>{snippets[selectedEndpoint]?.[selectedLang] || snippets['score']['curl']}</pre>
+          </div>
+
+          <button
+            onClick={handleSendApi}
+            disabled={isSending}
+            className="w-full py-3 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-indigo-500 text-white rounded-xl text-xs font-extrabold flex items-center justify-center space-x-2 shadow-lg shadow-cyan-500/25 cursor-pointer disabled:opacity-50"
+          >
+            <Zap className={`h-4 w-4 ${isSending ? 'animate-spin' : ''}`} />
+            <span>{isSending ? 'Sending Request...' : 'Send Test API Request'}</span>
+          </button>
+        </SpotlightCard>
+
+        {/* Live Response Panel */}
+        <SpotlightCard className="p-6 space-y-4">
+          <div className="flex justify-between items-center border-b border-white/10 pb-3">
+            <div className="flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="text-xs font-mono font-extrabold text-emerald-400">HTTP 200 OK</span>
+            </div>
+            <span className="text-xs font-mono text-cyan-300 font-bold">LATENCY: 11.4ms</span>
+          </div>
+
+          <div className="p-4 bg-slate-950 border border-white/10 rounded-2xl font-mono text-xs text-cyan-300 overflow-x-auto min-h-[260px]">
+            <pre>{jsonResponse}</pre>
           </div>
         </SpotlightCard>
       </div>
