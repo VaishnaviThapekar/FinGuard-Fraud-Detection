@@ -1,0 +1,16 @@
+{
+  "short_name": "FinGuard AI",
+  "name": "FinGuard AI - Enterprise Fraud Prevention & SOC Platform",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B0D14",
+  "theme_color": "#6366f1",
+  "display": "standalone",
+  "orientation": "any"
+}
