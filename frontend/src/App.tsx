@@ -52,7 +52,8 @@ import {
   SlidersHorizontal,
   CheckCircle2,
   Coins,
-  Wallet
+  Wallet,
+  Bot
 } from 'lucide-react';
 
 // ==========================================
@@ -1811,6 +1812,7 @@ export default function App() {
               { id: 'threatmap', label: 'Global Threat Map', icon: Globe },
               { id: 'network', label: 'Laundering Graph Network', icon: Share2 },
               { id: 'crypto', label: 'Web3 Crypto Threat Scanner', icon: Coins },
+              { id: 'auto-responder', label: 'Autonomous AI Auto-Responder', icon: Bot },
               { id: 'reports', label: 'Audit & Export Hub', icon: FileSpreadsheet },
               { id: 'rules', label: 'Rule Builder & Webhooks', icon: SlidersHorizontal },
               { id: 'fraud', label: t.fraud, icon: BrainCircuit },
@@ -2044,6 +2046,7 @@ export default function App() {
             {activeTab === 'threatmap' && <GlobalThreatMapSection theme={theme} />}
             {activeTab === 'network' && <MoneyLaunderingNetworkSection triggerToast={triggerToast} />}
             {activeTab === 'crypto' && <CryptoThreatScannerSection triggerToast={triggerToast} />}
+            {activeTab === 'auto-responder' && <AutonomousAutoResponderSection triggerToast={triggerToast} />}
             {activeTab === 'reports' && <AuditReportingHubSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'rules' && <VisualRuleBuilderSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'fraud' && <FraudSection />}
@@ -7128,6 +7131,169 @@ function CryptoThreatScannerSection({ triggerToast }: { triggerToast: (msg: stri
           </SpotlightCard>
         </div>
       )}
+    </div>
+  );
+}
+
+// ==========================================
+// 17. AUTONOMOUS AI SOC INCIDENT RESPONDER
+// ==========================================
+function AutonomousAutoResponderSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
+  const [activeIncident, setActiveIncident] = useState<any>({
+    id: 'INC-9041',
+    title: 'High-Velocity SWIFT Wire to Cayman Shell Account',
+    amount: '$180,000',
+    riskScore: 96,
+    user: 'acc_shell_99',
+    ip: '185.220.101.4',
+    status: 'AUTO-REMEDIATION COMPLETE',
+    timestamp: 'Just Now',
+  });
+
+  const [isRunningSim, setIsRunningSim] = useState<boolean>(false);
+  const [stepStatus, setStepStatus] = useState<{ [key: number]: 'idle' | 'running' | 'done' }>({
+    1: 'done',
+    2: 'done',
+    3: 'done',
+    4: 'done',
+  });
+
+  const incidents = [
+    { id: 'INC-9041', title: 'High-Velocity Wire ($180,000 to Cayman)', risk: 96, status: 'REMEDIATED' },
+    { id: 'INC-8812', title: 'Tornado Cash Mixer Deposit (42.8 ETH)', risk: 98, status: 'REMEDIATED' },
+    { id: 'INC-4402', title: 'Mobile Login Velocity Anomaly', risk: 64, status: 'EVALUATING' },
+  ];
+
+  const handleRunSim = () => {
+    setIsRunningSim(true);
+    setStepStatus({ 1: 'running', 2: 'idle', 3: 'idle', 4: 'idle' });
+    triggerToast('Simulating high-threat attack... Auto-Responder Agent activated!', 'info');
+
+    setTimeout(() => {
+      setStepStatus(prev => ({ ...prev, 1: 'done', 2: 'running' }));
+      triggerToast('Step 1 Complete: Account frozen & funds quarantined.', 'critical');
+    }, 800);
+
+    setTimeout(() => {
+      setStepStatus(prev => ({ ...prev, 2: 'done', 3: 'running' }));
+      triggerToast('Step 2 Complete: Ingress IP 185.220.101.4 blocked at firewall.', 'critical');
+    }, 1600);
+
+    setTimeout(() => {
+      setStepStatus(prev => ({ ...prev, 3: 'done', 4: 'running' }));
+      triggerToast('Step 3 Complete: Generated Security Ticket SEC-9041.', 'info');
+    }, 2400);
+
+    setTimeout(() => {
+      setStepStatus(prev => ({ ...prev, 4: 'done' }));
+      setIsRunningSim(false);
+      triggerToast('SUCCESS: 4-Step Auto-Remediation Workflow fully executed in 2.8s!', 'success');
+    }, 3200);
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
+            <Bot className="h-6 w-6 text-cyan-400" />
+            <span>Autonomous AI SOC Incident Responder</span>
+          </h2>
+          <p className="text-xs text-slate-400 font-medium mt-1">Self-acting AI security workflows that execute 4-step auto-remediation protocols when risk exceeds 90%.</p>
+        </div>
+
+        <button
+          onClick={handleRunSim}
+          disabled={isRunningSim}
+          className="px-5 py-2.5 bg-gradient-to-r from-rose-600 to-indigo-600 hover:from-rose-500 hover:to-indigo-500 text-white rounded-xl text-xs font-extrabold flex items-center space-x-2 shadow-lg shadow-rose-600/30 cursor-pointer disabled:opacity-50 transition-all"
+        >
+          <Zap className={`h-4 w-4 ${isRunningSim ? 'animate-spin' : ''}`} />
+          <span>{isRunningSim ? 'Executing Auto-Remediation...' : 'Test Attack & Run Auto-Responder'}</span>
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Incident Queue */}
+        <SpotlightCard className="p-6 space-y-4">
+          <h3 className="text-sm font-extrabold text-white uppercase tracking-wider flex items-center space-x-2">
+            <AlertTriangle className="h-4 w-4 text-rose-400" />
+            <span>Live Security Incidents</span>
+          </h3>
+
+          <div className="space-y-3">
+            {incidents.map((inc, idx) => (
+              <div 
+                key={idx}
+                onClick={() => setActiveIncident({ ...activeIncident, id: inc.id, title: inc.title, riskScore: inc.risk })}
+                className={`p-4 rounded-2xl border cursor-pointer transition-all ${
+                  activeIncident.id === inc.id 
+                    ? 'bg-rose-950/40 border-rose-500/50 shadow-lg shadow-rose-500/10' 
+                    : 'bg-slate-900/60 border-white/5 hover:border-white/20'
+                }`}
+              >
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-xs font-mono font-bold text-cyan-400">{inc.id}</span>
+                  <span className={`px-2 py-0.5 rounded-full text-[9px] font-black border font-mono ${
+                    inc.risk > 90 ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' : 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                  }`}>
+                    {inc.risk}% RISK
+                  </span>
+                </div>
+                <p className="text-xs font-bold text-white">{inc.title}</p>
+              </div>
+            ))}
+          </div>
+        </SpotlightCard>
+
+        {/* Workflow Timeline Visualizer */}
+        <SpotlightCard className="p-6 lg:col-span-2 space-y-6">
+          <div className="flex justify-between items-center border-b border-white/10 pb-3">
+            <div>
+              <span className="text-xs font-mono text-slate-400">ACTIVE REMEDIATION WORKFLOW</span>
+              <h4 className="text-sm font-extrabold text-white">{activeIncident.title}</h4>
+            </div>
+
+            <span className="px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-xl text-xs font-mono font-bold">
+              AI AGENT: AUTONOMOUS ACTIVE
+            </span>
+          </div>
+
+          {/* 4-Step Incident Response Timeline */}
+          <div className="space-y-4">
+            {[
+              { num: 1, title: 'Auto-Freeze Bank Account & Quarantine Funds', detail: `Locked ${activeIncident.user} across clearing house`, time: '0.8s' },
+              { num: 2, title: 'Block Ingress IP & Revoke Session Tokens', detail: `Firewall blacklisted IP ${activeIncident.ip}`, time: '1.4s' },
+              { num: 3, title: 'Auto-Generate Security Incident Ticket', detail: `Created ticket SEC-${activeIncident.id} in Jira/ServiceNow`, time: '2.1s' },
+              { num: 4, title: 'Broadcast Webhook Alert & Slack Notification', detail: `Dispatched payload to #soc-alerts channel`, time: '2.8s' },
+            ].map((step) => {
+              const status = stepStatus[step.num];
+
+              return (
+                <div key={step.num} className={`p-4 rounded-2xl border transition-all flex items-center justify-between ${
+                  status === 'done' ? 'bg-emerald-950/20 border-emerald-500/40 text-slate-200' :
+                  status === 'running' ? 'bg-cyan-950/40 border-cyan-400 animate-pulse text-white' : 'bg-slate-900/40 border-white/5 text-slate-500'
+                }`}>
+                  <div className="flex items-center space-x-4">
+                    <div className={`h-8 w-8 rounded-xl font-mono text-xs font-bold flex items-center justify-center border ${
+                      status === 'done' ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-400' :
+                      status === 'running' ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300' : 'bg-slate-800 border-white/10 text-slate-500'
+                    }`}>
+                      {step.num}
+                    </div>
+
+                    <div>
+                      <h5 className="text-xs font-bold font-mono">{step.title}</h5>
+                      <p className="text-[11px] text-slate-400">{step.detail}</p>
+                    </div>
+                  </div>
+
+                  <span className="text-xs font-mono font-bold text-slate-400">{step.time}</span>
+                </div>
+              );
+            })}
+          </div>
+        </SpotlightCard>
+      </div>
     </div>
   );
 }
