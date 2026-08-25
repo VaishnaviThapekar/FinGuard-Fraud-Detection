@@ -50,7 +50,9 @@ import {
   Zap,
   Award,
   SlidersHorizontal,
-  CheckCircle2
+  CheckCircle2,
+  Coins,
+  Wallet
 } from 'lucide-react';
 
 // ==========================================
@@ -1808,6 +1810,7 @@ export default function App() {
               { id: 'simulator', label: 'Fraud Simulator Studio', icon: FlaskConical },
               { id: 'threatmap', label: 'Global Threat Map', icon: Globe },
               { id: 'network', label: 'Laundering Graph Network', icon: Share2 },
+              { id: 'crypto', label: 'Web3 Crypto Threat Scanner', icon: Coins },
               { id: 'reports', label: 'Audit & Export Hub', icon: FileSpreadsheet },
               { id: 'rules', label: 'Rule Builder & Webhooks', icon: SlidersHorizontal },
               { id: 'fraud', label: t.fraud, icon: BrainCircuit },
@@ -2040,6 +2043,7 @@ export default function App() {
             {activeTab === 'simulator' && <FraudSimulatorSection theme={theme} triggerToast={triggerToast} setNotifications={setNotifications} />}
             {activeTab === 'threatmap' && <GlobalThreatMapSection theme={theme} />}
             {activeTab === 'network' && <MoneyLaunderingNetworkSection triggerToast={triggerToast} />}
+            {activeTab === 'crypto' && <CryptoThreatScannerSection triggerToast={triggerToast} />}
             {activeTab === 'reports' && <AuditReportingHubSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'rules' && <VisualRuleBuilderSection theme={theme} triggerToast={triggerToast} />}
             {activeTab === 'fraud' && <FraudSection />}
@@ -6890,6 +6894,240 @@ function MoneyLaunderingNetworkSection({ triggerToast }: { triggerToast: (msg: s
           </div>
         </SpotlightCard>
       </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 16. WEB3 & CRYPTO WALLET THREAT SCANNER
+// ==========================================
+function CryptoThreatScannerSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
+  const [walletInput, setWalletInput] = useState<string>('0x12D90b2d699042b322a275467468146900a89B');
+  const [isScanning, setIsScanning] = useState<boolean>(false);
+  const [scanResult, setScanResult] = useState<any>({
+    address: '0x12D90b2d699042b322a275467468146900a89B',
+    chain: 'Ethereum Mainnet (ERC-20)',
+    riskScore: 98,
+    status: 'CRITICAL MIXER FLAG',
+    balance: '42.8 ETH ($148,200)',
+    txCount: 1420,
+    firstSeen: 'Nov 2022',
+    flags: [
+      { name: 'Tornado Cash v2 Mixer Intercept', severity: 'CRITICAL', desc: 'Direct interaction with sanctioned mixer pool' },
+      { name: 'OFAC Sanctions List Match', severity: 'HIGH', desc: 'Wallet linked to Specially Designated Nationals (SDN)' },
+      { name: 'High Hop Velocity Layering', severity: 'HIGH', desc: '14 rapid transfers under 180 seconds across bridges' },
+    ]
+  });
+
+  const presetWallets = [
+    { label: '0x12D...89B (Tornado Cash)', addr: '0x12D90b2d699042b322a275467468146900a89B', risk: 98, status: 'CRITICAL MIXER FLAG', chain: 'Ethereum Mainnet', bal: '42.8 ETH', txs: 1420 },
+    { label: 'bc1q9...x42 (Darknet Deposit)', addr: 'bc1q9x42k98a213l0048s91a274bb090x42', risk: 94, status: 'DARKNET MARKET LINK', chain: 'Bitcoin Network', bal: '8.4 BTC', txs: 890 },
+    { label: '0x54A...991 (Reentrancy Risk)', addr: '0x54A9090b4412c332900991823901a182900991', risk: 72, status: 'SMART CONTRACT WARNING', chain: 'Arbitrum One', bal: '120.5 ETH', txs: 3400 },
+    { label: '0x71C...301 (Clean Coinbase Vault)', addr: '0x71C9010049281a823019042890182301', risk: 12, status: 'CLEARED INSTITUTIONAL', chain: 'Ethereum Mainnet', bal: '1,450 ETH', txs: 12400 },
+  ];
+
+  const handleScan = (addrToScan?: string) => {
+    const targetAddr = addrToScan || walletInput;
+    setIsScanning(true);
+    triggerToast(`Initiating deep on-chain scanner for ${targetAddr.substring(0, 10)}...`, 'info');
+
+    setTimeout(() => {
+      setIsScanning(false);
+      const matchedPreset = presetWallets.find(p => p.addr === targetAddr);
+      if (matchedPreset) {
+        setScanResult({
+          address: matchedPreset.addr,
+          chain: matchedPreset.chain,
+          riskScore: matchedPreset.risk,
+          status: matchedPreset.status,
+          balance: matchedPreset.bal,
+          txCount: matchedPreset.txs,
+          firstSeen: '2022-2024',
+          flags: matchedPreset.risk > 70 ? [
+            { name: 'On-Chain Mixer Intercept', severity: 'CRITICAL', desc: 'Interaction with privacy pools' },
+            { name: 'Rapid Layering Hop', severity: 'HIGH', desc: 'Cross-chain bridge velocity anomaly' }
+          ] : [
+            { name: 'Verified KYC Exchange Vault', severity: 'LOW', desc: 'No sanctioned entity interactions' }
+          ]
+        });
+      } else {
+        setScanResult({
+          address: targetAddr,
+          chain: 'EVM Multi-Chain Scan',
+          riskScore: 84,
+          status: 'UNVERIFIED HIGH RISK',
+          balance: '18.4 ETH',
+          txCount: 420,
+          firstSeen: 'Jan 2024',
+          flags: [
+            { name: 'Unverified Contract Interaction', severity: 'HIGH', desc: 'Recent deployment without source verification' }
+          ]
+        });
+      }
+      triggerToast(`On-Chain Scan Complete: Risk Score ${matchedPreset ? matchedPreset.risk : 84}%`, matchedPreset && matchedPreset.risk < 50 ? 'success' : 'critical');
+    }, 900);
+  };
+
+  const handleBlacklist = () => {
+    triggerToast(`BLACK-LISTED: Wallet ${scanResult.address.substring(0, 12)} blocked across Web3 SOC firewall.`, 'critical');
+    setScanResult({ ...scanResult, status: 'PERMANENTLY BLACKLISTED', riskScore: 99 });
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
+            <Coins className="h-6 w-6 text-cyan-400" />
+            <span>Web3 & Crypto Wallet Threat Scanner</span>
+          </h2>
+          <p className="text-xs text-slate-400 font-medium mt-1">Scan Bitcoin & Ethereum addresses, detect crypto mixers (Tornado Cash), darknet deposits, and smart contract exploits.</p>
+        </div>
+
+        <div className="flex items-center space-x-2 text-xs font-mono text-cyan-400 font-bold bg-cyan-500/10 border border-cyan-500/30 px-3.5 py-1.5 rounded-xl">
+          <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+          <span>ON-CHAIN RADAR: ACTIVE</span>
+        </div>
+      </div>
+
+      {/* Preset Quick Buttons */}
+      <div className="space-y-2">
+        <span className="text-xs font-mono text-slate-400 font-bold">Quick Sample Wallet Scans:</span>
+        <div className="flex flex-wrap gap-3">
+          {presetWallets.map((p, idx) => (
+            <button
+              key={idx}
+              onClick={() => { setWalletInput(p.addr); handleScan(p.addr); }}
+              className={`px-3.5 py-2 rounded-xl text-xs font-mono font-bold border transition-all cursor-pointer ${
+                walletInput === p.addr 
+                  ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400 shadow-lg shadow-cyan-500/20' 
+                  : 'bg-slate-900 text-slate-300 border-white/10 hover:border-cyan-500/40'
+              }`}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Main Scanner Input Box */}
+      <SpotlightCard className="p-6">
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          <div className="relative flex-1 w-full">
+            <Wallet className="absolute left-4 top-3.5 h-5 w-5 text-slate-400" />
+            <input 
+              type="text" 
+              value={walletInput} 
+              onChange={e => setWalletInput(e.target.value)} 
+              placeholder="Paste ETH (0x...) or BTC (bc1...) Wallet Address or Transaction Hash"
+              className="w-full bg-[#13161A] border border-white/10 text-xs font-mono text-cyan-300 rounded-2xl pl-12 pr-4 py-3.5 focus:outline-none focus:border-cyan-400 transition-all"
+            />
+          </div>
+
+          <button 
+            onClick={() => handleScan()} 
+            disabled={isScanning}
+            className="w-full md:w-auto px-6 py-3.5 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-indigo-500 text-white rounded-2xl text-xs font-extrabold flex items-center justify-center space-x-2 shadow-lg shadow-cyan-500/25 cursor-pointer disabled:opacity-50"
+          >
+            {isScanning ? (
+              <>
+                <RefreshCw className="h-4 w-4 animate-spin" />
+                <span>Scanning Chain...</span>
+              </>
+            ) : (
+              <>
+                <Zap className="h-4 w-4" />
+                <span>Run Deep On-Chain Scan</span>
+              </>
+            )}
+          </button>
+        </div>
+      </SpotlightCard>
+
+      {/* Telemetry Scan Results Grid */}
+      {scanResult && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Gauge & Overview Card */}
+          <SpotlightCard className="p-6 space-y-6 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                <span className="text-xs text-slate-400 font-mono font-bold">TARGET ADDRESS</span>
+                <span className={`px-3 py-1 rounded-full text-[10px] font-black border font-mono ${
+                  scanResult.riskScore > 75 ? 'bg-red-500/20 text-red-300 border-red-500/40' :
+                  scanResult.riskScore > 50 ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+                }`}>
+                  {scanResult.status}
+                </span>
+              </div>
+
+              <div className="text-center space-y-2 py-4">
+                <div className="text-5xl font-black font-mono tracking-tight text-white">
+                  <span className={scanResult.riskScore > 75 ? 'text-rose-400 drop-shadow-[0_0_12px_rgba(244,63,94,0.6)]' : scanResult.riskScore > 50 ? 'text-amber-400' : 'text-emerald-400'}>
+                    {scanResult.riskScore}%
+                  </span>
+                </div>
+                <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">ON-CHAIN THREAT INDEX</p>
+              </div>
+
+              <div className="space-y-2 text-xs font-mono pt-3 border-t border-white/10">
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Blockchain Network</span>
+                  <span className="text-cyan-300 font-bold">{scanResult.chain}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Wallet Balance</span>
+                  <span className="text-white font-bold">{scanResult.balance}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Transaction Count</span>
+                  <span className="text-indigo-300 font-bold">{scanResult.txCount} Txs</span>
+                </div>
+              </div>
+            </div>
+
+            <button 
+              onClick={handleBlacklist} 
+              className="w-full py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-extrabold flex items-center justify-center space-x-2 shadow-lg shadow-rose-600/30 cursor-pointer transition-all"
+            >
+              <AlertTriangle className="h-4 w-4" />
+              <span>Blacklist Wallet Address Across SOC</span>
+            </button>
+          </SpotlightCard>
+
+          {/* On-Chain Risk Attributions List */}
+          <SpotlightCard className="p-6 lg:col-span-2 space-y-4">
+            <h3 className="text-sm font-extrabold text-white uppercase tracking-wider flex items-center space-x-2">
+              <BrainCircuit className="h-4 w-4 text-cyan-400" />
+              <span>On-Chain Forensic Attributions & Risk Flags</span>
+            </h3>
+
+            <div className="space-y-3">
+              {scanResult.flags.map((flag: any, idx: number) => (
+                <div key={idx} className="p-4 bg-slate-900/80 border border-white/10 rounded-2xl flex items-start justify-between">
+                  <div className="space-y-1">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-xs font-bold text-white font-mono">{flag.name}</span>
+                    </div>
+                    <p className="text-xs text-slate-400 font-medium">{flag.desc}</p>
+                  </div>
+
+                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black border font-mono ${
+                    flag.severity === 'CRITICAL' ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' :
+                    flag.severity === 'HIGH' ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                  }`}>
+                    {flag.severity}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-4 bg-cyan-950/30 border border-cyan-500/30 rounded-2xl text-xs font-mono text-cyan-300 flex justify-between items-center">
+              <span>🛡️ SMART CONTRACT VULNERABILITY MATRIX: PASSED</span>
+              <span className="font-bold text-white">REENTRANCY: 0.00%</span>
+            </div>
+          </SpotlightCard>
+        </div>
+      )}
     </div>
   );
 }
