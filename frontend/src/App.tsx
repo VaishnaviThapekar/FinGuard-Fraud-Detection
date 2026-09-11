@@ -1109,6 +1109,7 @@ export default function App() {
       return (
         <LandingPage 
           onStartDemo={() => setShowAuthModal(true)} 
+          onLoginDirect={() => { setAuthMode('signin'); setShowAuthModal(true); }}
           theme={theme}
           setTheme={setTheme}
         />
@@ -2010,6 +2011,20 @@ export default function App() {
                 </div>
               )}
             </div>
+
+            {/* Sign Out / Back to Landing Button */}
+            <button 
+              onClick={() => {
+                setIsLoggedIn(false);
+                setShowAuthModal(false);
+                triggerToast("Logged out to Landing Page", "info");
+              }}
+              className="p-2.5 bg-rose-500/10 border border-rose-500/30 text-rose-300 hover:bg-rose-500/20 rounded-xl transition-all flex items-center space-x-1.5 text-xs font-bold cursor-pointer"
+              title="Sign Out / Back to Landing Page"
+            >
+              <LogOut className="h-4 w-4" />
+              <span className="hidden sm:inline">Sign Out</span>
+            </button>
           </div>
         </header>
 
@@ -4975,11 +4990,12 @@ function ProfileSection({
 
 interface LandingPageProps {
   onStartDemo: () => void;
+  onLoginDirect?: () => void;
   theme: 'dark' | 'light';
   setTheme: (t: 'dark' | 'light') => void;
 }
 
-function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
+function LandingPage({ onStartDemo, onLoginDirect, theme, setTheme }: LandingPageProps) {
   const [faqOpen, setFaqOpen] = useState<Record<number, boolean>>({});
 
   // Real-time metric fluctuation simulation
@@ -5085,6 +5101,13 @@ function LandingPage({ onStartDemo, theme, setTheme }: LandingPageProps) {
             title="Toggle theme"
           >
             {theme === 'light' ? <Moon className="h-4 w-4 text-slate-800" /> : <Sun className="h-4 w-4 text-amber-400" />}
+          </button>
+
+          <button 
+            onClick={onLoginDirect || onStartDemo}
+            className="px-4 py-2 bg-slate-900 border border-white/10 hover:border-cyan-500/40 text-slate-200 hover:text-white rounded-xl text-xs font-bold transition-all cursor-pointer"
+          >
+            Sign In / Login
           </button>
 
           <button 
