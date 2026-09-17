@@ -1623,6 +1623,15 @@ export default function App() {
             <div className="p-3 max-h-60 overflow-y-auto space-y-1 bg-[#0B0D10]/95">
               {[
                 { name: "Go to Banking Dashboard", type: "tab", value: "dashboard" },
+                { name: "Fraud Simulator Studio", type: "tab", value: "simulator" },
+                { name: "Global Threat Map (3D)", type: "tab", value: "threatmap" },
+                { name: "Multi-Hop Laundering Graph Network", type: "tab", value: "network" },
+                { name: "Web3 Crypto Threat Scanner", type: "tab", value: "crypto" },
+                { name: "Autonomous AI SOC Auto-Responder", type: "tab", value: "auto-responder" },
+                { name: "Interactive Developer API Sandbox", type: "tab", value: "developer-api" },
+                { name: "Biometric KYC Liveness Shield", type: "tab", value: "kyc-shield" },
+                { name: "Audit Reporting & Certificate Hub", type: "tab", value: "reports" },
+                { name: "Visual Rule Builder & Webhooks", type: "tab", value: "rules" },
                 { name: "AI Fraud & Attribution (SHAP)", type: "tab", value: "fraud" },
                 { name: "RAG Document Chat Assistant", type: "tab", value: "assistant" },
                 { name: "Extract KYC OCR Document", type: "tab", value: "ocr" },
