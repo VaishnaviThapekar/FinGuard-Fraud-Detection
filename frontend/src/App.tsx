@@ -55,7 +55,9 @@ import {
   Wallet,
   Bot,
   Code,
-  Camera
+  Camera,
+  Building2,
+  Users
 } from 'lucide-react';
 
 // ==========================================
@@ -331,6 +333,7 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTenant, setActiveTenant] = useState('chase');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [lang, setLang] = useState('en');
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -1825,6 +1828,8 @@ export default function App() {
               { id: 'network', label: 'Laundering Graph Network', icon: Share2 },
               { id: 'crypto', label: 'Web3 Crypto Threat Scanner', icon: Coins },
               { id: 'auto-responder', label: 'Autonomous AI Auto-Responder', icon: Bot },
+              { id: 'agent-swarm', label: 'Multi-Agent AI Swarm SOC', icon: Users },
+              { id: 'forecasting', label: 'ML Threat Forecasting', icon: TrendingUp },
               { id: 'developer-api', label: 'Developer API Sandbox', icon: Code },
               { id: 'kyc-shield', label: 'Biometric KYC Liveness Shield', icon: UserCheck },
               { id: 'reports', label: 'Audit & Export Hub', icon: FileSpreadsheet },
@@ -1950,6 +1955,25 @@ export default function App() {
               {theme === 'dark' ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4 text-indigo-400" />}
             </button>
             
+            {/* Multi-Tenant Institutional Switcher */}
+            <div className="hidden lg:flex items-center space-x-2 bg-[#13161A] border border-cyan-500/30 rounded-2xl px-3 py-1.5">
+              <Building2 className="h-4 w-4 text-cyan-400" />
+              <select
+                value={activeTenant}
+                onChange={e => {
+                  setActiveTenant(e.target.value);
+                  const names: any = { chase: 'JPMorgan Chase (US)', revolut: 'Revolut Bank (EU)', dbs: 'DBS Bank (SG)', sc: 'Standard Chartered (UK)' };
+                  triggerToast(`Switched active workspace tenant to ${names[e.target.value]}`, 'info');
+                }}
+                className="bg-transparent text-xs font-mono font-bold text-cyan-300 focus:outline-none cursor-pointer"
+              >
+                <option value="chase" className="bg-slate-900 text-cyan-300">🇺🇸 JPMorgan Chase (US)</option>
+                <option value="revolut" className="bg-slate-900 text-cyan-300">🇪🇺 Revolut Bank (EU)</option>
+                <option value="dbs" className="bg-slate-900 text-cyan-300">🇸🇬 DBS Bank (SG)</option>
+                <option value="sc" className="bg-slate-900 text-cyan-300">🇬🇧 Standard Chartered (UK)</option>
+              </select>
+            </div>
+
             {/* Web Speech Voice Navigation Control */}
             <button 
               onClick={startVoiceNav}
@@ -2075,6 +2099,8 @@ export default function App() {
             {activeTab === 'network' && <MoneyLaunderingNetworkSection triggerToast={triggerToast} />}
             {activeTab === 'crypto' && <CryptoThreatScannerSection triggerToast={triggerToast} />}
             {activeTab === 'auto-responder' && <AutonomousAutoResponderSection triggerToast={triggerToast} />}
+            {activeTab === 'agent-swarm' && <MultiAgentSwarmSection triggerToast={triggerToast} />}
+            {activeTab === 'forecasting' && <MlThreatForecastingSection triggerToast={triggerToast} />}
             {activeTab === 'developer-api' && <DeveloperApiSandboxSection triggerToast={triggerToast} />}
             {activeTab === 'kyc-shield' && <BiometricKycShieldSection triggerToast={triggerToast} />}
             {activeTab === 'reports' && <AuditReportingHubSection theme={theme} triggerToast={triggerToast} />}
@@ -7645,6 +7671,254 @@ function BiometricKycShieldSection({ triggerToast }: { triggerToast: (msg: strin
           </div>
         </SpotlightCard>
       </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 20. MULTI-AGENT AUTONOMOUS AI SOC SWARM
+// ==========================================
+function MultiAgentSwarmSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
+  const [isInvestigating, setIsInvestigating] = useState(false);
+  const [swarmLogs, setSwarmLogs] = useState<any[]>([
+    { agent: 'Agent Alpha (Security)', color: 'text-indigo-400', msg: 'Flagged wire transfer #INC-9041 ($180,000 to Cayman Islands). IP velocity: 14 req/sec.', time: '10:14:02' },
+    { agent: 'Agent Beta (Crypto/Mixer)', color: 'text-cyan-400', msg: 'Cross-referencing destination wallet 0x71a... Match found in Tornado Cash mixer pool.', time: '10:14:03' },
+    { agent: 'Agent Gamma (Legal/Compliance)', color: 'text-purple-400', msg: 'OFAC Sanctions match verified under 31 CFR 501. Immediate wire freeze mandated.', time: '10:14:04' },
+    { agent: 'SWARM CONSENSUS', color: 'text-emerald-400 font-bold', msg: 'UNANIMOUS VOTE (3/3): Quarantine Account ACC_SHELL_99 & Broadcast Slack Alert.', time: '10:14:05' },
+  ]);
+
+  const handleRunSwarm = () => {
+    setIsInvestigating(true);
+    triggerToast('Activating 3-Agent AI Swarm Consensus Protocol...', 'info');
+
+    setTimeout(() => {
+      setSwarmLogs(prev => [
+        ...prev,
+        { agent: 'Agent Alpha (Security)', color: 'text-indigo-400', msg: 'New anomaly detected: High-frequency API payload tampering from IP 185.220.101.4.', time: new Date().toLocaleTimeString() }
+      ]);
+    }, 1000);
+
+    setTimeout(() => {
+      setSwarmLogs(prev => [
+        ...prev,
+        { agent: 'Agent Beta (Crypto/Mixer)', color: 'text-cyan-400', msg: 'Analyzed smart contract bytecode. Reentrancy vulnerability exploit vector flagged.', time: new Date().toLocaleTimeString() }
+      ]);
+    }, 2000);
+
+    setTimeout(() => {
+      setSwarmLogs(prev => [
+        ...prev,
+        { agent: 'Agent Gamma (Legal/Compliance)', color: 'text-purple-400', msg: 'Dispatched automated FinCEN Suspicious Activity Report (SAR-8041).', time: new Date().toLocaleTimeString() },
+        { agent: 'SWARM CONSENSUS', color: 'text-emerald-400 font-bold', msg: 'UNANIMOUS CONSENSUS REACHED: Blocked Ingress & Executed Auto-Freeze.', time: new Date().toLocaleTimeString() }
+      ]);
+      setIsInvestigating(false);
+      triggerToast('SWARM CONSENSUS EXECUTED: All 3 AI agents reached 100% agreement!', 'success');
+    }, 3200);
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
+            <Users className="h-6 w-6 text-cyan-400" />
+            <span>Multi-Agent Autonomous AI SOC Swarm</span>
+          </h2>
+          <p className="text-xs text-slate-400 font-medium mt-1">3 Specialized AI Agents collaborating in real-time to reach unanimous consensus on critical security threats.</p>
+        </div>
+
+        <button
+          onClick={handleRunSwarm}
+          disabled={isInvestigating}
+          className="px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white rounded-xl text-xs font-extrabold flex items-center space-x-2 shadow-lg shadow-indigo-500/25 cursor-pointer disabled:opacity-50 transition-all"
+        >
+          <Zap className={`h-4 w-4 ${isInvestigating ? 'animate-spin' : ''}`} />
+          <span>{isInvestigating ? 'Agents Collaborating...' : 'Trigger Live Swarm Consensus Debate'}</span>
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Agent 1: Security */}
+        <SpotlightCard className="p-6 space-y-3 border-t-2 border-t-indigo-500">
+          <div className="flex items-center space-x-3">
+            <div className="h-10 w-10 rounded-2xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-400 flex items-center justify-center font-extrabold font-mono text-sm">
+              α
+            </div>
+            <div>
+              <h3 className="text-xs font-bold text-white font-mono uppercase">Agent Alpha</h3>
+              <p className="text-[10px] text-indigo-300">Security & Payload Auditor</p>
+            </div>
+          </div>
+          <p className="text-xs text-slate-400 leading-relaxed font-light">Analyzes transaction velocity, IP reputation scores, and high-frequency API payload tampering.</p>
+          <div className="pt-2 flex justify-between text-[10px] font-mono text-emerald-400 font-bold">
+            <span>STATUS: ACTIVE</span>
+            <span>CONFIDENCE: 98.4%</span>
+          </div>
+        </SpotlightCard>
+
+        {/* Agent 2: Crypto */}
+        <SpotlightCard className="p-6 space-y-3 border-t-2 border-t-cyan-500">
+          <div className="flex items-center space-x-3">
+            <div className="h-10 w-10 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 flex items-center justify-center font-extrabold font-mono text-sm">
+              β
+            </div>
+            <div>
+              <h3 className="text-xs font-bold text-white font-mono uppercase">Agent Beta</h3>
+              <p className="text-[10px] text-cyan-300">Blockchain & Mixer Specialist</p>
+            </div>
+          </div>
+          <p className="text-xs text-slate-400 leading-relaxed font-light">Traces multi-hop wallet transfers, Tornado Cash mixer deposits, and smart contract bytecode bugs.</p>
+          <div className="pt-2 flex justify-between text-[10px] font-mono text-emerald-400 font-bold">
+            <span>STATUS: ACTIVE</span>
+            <span>CONFIDENCE: 99.1%</span>
+          </div>
+        </SpotlightCard>
+
+        {/* Agent 3: Legal */}
+        <SpotlightCard className="p-6 space-y-3 border-t-2 border-t-purple-500">
+          <div className="flex items-center space-x-3">
+            <div className="h-10 w-10 rounded-2xl bg-purple-500/20 border border-purple-500/40 text-purple-400 flex items-center justify-center font-extrabold font-mono text-sm">
+              γ
+            </div>
+            <div>
+              <h3 className="text-xs font-bold text-white font-mono uppercase">Agent Gamma</h3>
+              <p className="text-[10px] text-purple-300">Legal & Regulatory Officer</p>
+            </div>
+          </div>
+          <p className="text-xs text-slate-400 leading-relaxed font-light">Evaluates OFAC Sanctions, FinCEN SAR compliance, FATF Travel Rule, and GDPR Article 22 mandates.</p>
+          <div className="pt-2 flex justify-between text-[10px] font-mono text-emerald-400 font-bold">
+            <span>STATUS: ACTIVE</span>
+            <span>CONFIDENCE: 99.8%</span>
+          </div>
+        </SpotlightCard>
+
+        {/* Live Swarm Discussion Terminal */}
+        <SpotlightCard className="p-6 lg:col-span-3 space-y-4">
+          <div className="flex justify-between items-center border-b border-white/10 pb-3">
+            <div className="flex items-center space-x-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping" />
+              <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">Live Agent-to-Agent Consensus Chatter</h3>
+            </div>
+            <span className="text-xs font-mono text-cyan-300 font-bold">PROTOCOLS: UNANIMOUS (3/3)</span>
+          </div>
+
+          <div className="p-4 bg-slate-950 border border-white/10 rounded-2xl font-mono text-xs space-y-2 max-h-64 overflow-y-auto">
+            {swarmLogs.map((log, idx) => (
+              <div key={idx} className="flex space-x-3 text-[11px]">
+                <span className="text-slate-500 flex-shrink-0">[{log.time}]</span>
+                <span className={`font-bold flex-shrink-0 ${log.color}`}>{log.agent}:</span>
+                <span className="text-slate-300">{log.msg}</span>
+              </div>
+            ))}
+          </div>
+        </SpotlightCard>
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 21. TIME-SERIES ML THREAT FORECASTING
+// ==========================================
+function MlThreatForecastingSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
+  const [timeHorizon, setTimeHorizon] = useState<number>(24);
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
+            <TrendingUp className="h-6 w-6 text-cyan-400" />
+            <span>Time-Series Machine Learning Threat Forecasting</span>
+          </h2>
+          <p className="text-xs text-slate-400 font-medium mt-1">Predictive LSTM neural network projecting fraud velocity spikes and confidence bounds over 24-72 hours.</p>
+        </div>
+
+        {/* Time Horizon Selector */}
+        <div className="flex space-x-2 bg-slate-900 border border-white/10 p-1.5 rounded-xl text-xs font-mono">
+          {[24, 48, 72].map(hours => (
+            <button
+              key={hours}
+              onClick={() => {
+                setTimeHorizon(hours);
+                triggerToast(`Switched threat forecast horizon to +${hours} Hours`, 'info');
+              }}
+              className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                timeHorizon === hours ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              +{hours}h Forecast
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Metric Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <SpotlightCard className="p-6 space-y-2">
+          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Projected Peak Ingress Stream</span>
+          <div className="flex items-baseline space-x-2">
+            <span className="text-2xl font-black text-white font-mono">48,200</span>
+            <span className="text-xs font-bold text-rose-400 font-mono">+34% Spike</span>
+          </div>
+          <p className="text-[11px] text-slate-400 font-light">Expected peak traffic at 03:00 UTC during Asian market open.</p>
+        </SpotlightCard>
+
+        <SpotlightCard className="p-6 space-y-2">
+          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Projected Fraud Outflow</span>
+          <div className="flex items-baseline space-x-2">
+            <span className="text-2xl font-black text-white font-mono">$1.42M</span>
+            <span className="text-xs font-bold text-emerald-400 font-mono">Quarantined</span>
+          </div>
+          <p className="text-[11px] text-slate-400 font-light">Auto-responder rules active for high-value wire channels.</p>
+        </SpotlightCard>
+
+        <SpotlightCard className="p-6 space-y-2">
+          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">LSTM Model Confidence</span>
+          <div className="flex items-baseline space-x-2">
+            <span className="text-2xl font-black text-cyan-400 font-mono">95.4%</span>
+            <span className="text-xs font-bold text-cyan-300 font-mono">Upper Bound</span>
+          </div>
+          <p className="text-[11px] text-slate-400 font-light">Trained on 1.2M historical transaction cycles.</p>
+        </SpotlightCard>
+      </div>
+
+      {/* Visual Time-Series Forecast Graphic */}
+      <SpotlightCard className="p-6 space-y-4">
+        <div className="flex justify-between items-center border-b border-white/10 pb-3">
+          <span className="text-xs font-mono font-bold text-white">PREDICTIVE ATTACK VELOCITY CURVE (+{timeHorizon} HOURS)</span>
+          <span className="text-xs font-mono text-emerald-400 font-bold">MODEL STATUS: HIGH CONFIDENCE</span>
+        </div>
+
+        {/* SVG Time-Series Curve */}
+        <div className="relative h-56 bg-slate-950 border border-white/10 rounded-2xl p-4 flex flex-col justify-between overflow-hidden">
+          <svg className="absolute inset-0 w-full h-full p-4" preserveAspectRatio="none" viewBox="0 0 500 150">
+            {/* Upper Confidence Shading */}
+            <path d="M0,100 Q125,20 250,70 T500,30 L500,150 L0,150 Z" fill="rgba(6,182,212,0.08)" />
+            {/* Main Forecast Line */}
+            <path d="M0,110 Q125,35 250,85 T500,45" fill="none" stroke="#06b6d4" strokeWidth="3" />
+            {/* Projected Spike Point */}
+            <circle cx="250" cy="85" r="6" fill="#f43f5e" className="animate-ping" />
+            <circle cx="250" cy="85" r="4" fill="#f43f5e" />
+          </svg>
+
+          <div className="relative z-10 flex justify-between text-[10px] font-mono text-slate-500">
+            <span>NOW</span>
+            <span>+{timeHorizon/2}h (Targeted Botnet Surge)</span>
+            <span>+{timeHorizon}h</span>
+          </div>
+
+          <div className="relative z-10 p-3 bg-rose-950/40 border border-rose-500/40 rounded-xl text-xs font-mono text-rose-300 flex justify-between items-center">
+            <span>🚨 PREDICTIVE ALERT: Potential Botnet Carding Sweep projected at +{timeHorizon/2}h.</span>
+            <button
+              onClick={() => triggerToast('Pre-emptively increased firewall rate-limits by +25%!', 'success')}
+              className="px-3 py-1 bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-bold text-[10px] transition-all cursor-pointer"
+            >
+              Pre-emptively Rate-Limit
+            </button>
+          </div>
+        </div>
+      </SpotlightCard>
     </div>
   );
 }
