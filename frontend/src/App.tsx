@@ -7188,6 +7188,23 @@ function CryptoThreatScannerSection({ triggerToast }: { triggerToast: (msg: stri
               ))}
             </div>
 
+            {/* Smart Contract Decompiler & Bytecode Exploit Inspector */}
+            <div className="p-4 bg-slate-950 border border-white/10 rounded-2xl space-y-3">
+              <div className="flex justify-between items-center border-b border-white/10 pb-2">
+                <span className="text-xs font-mono font-bold text-cyan-400">SOLIDITY BYTECODE DECOMPILER & EXPLOIT INSPECTOR</span>
+                <span className="text-[10px] font-mono text-rose-400 font-bold">EXPLOIT RISK: REENTRANCY</span>
+              </div>
+              <div className="font-mono text-[11px] leading-relaxed text-slate-300 space-y-1 bg-black/60 p-3 rounded-xl overflow-x-auto">
+                <p className="text-slate-500">// Decompiled contract at target address</p>
+                <p className="text-cyan-300">function withdraw(uint256 amount) public &#123;</p>
+                <p className="text-slate-300 ml-4">require(balances[msg.sender] &gt;= amount);</p>
+                <p className="text-rose-400 font-bold ml-4 animate-pulse">// VULNERABILITY: Raw external call before state balance update</p>
+                <p className="text-rose-300 font-mono ml-4">(bool success, ) = msg.sender.call&#123;value: amount&#125;("");</p>
+                <p className="text-amber-300 ml-4 font-bold">balances[msg.sender] -= amount; // Reentrancy state update bug</p>
+                <p className="text-cyan-300">&#125;</p>
+              </div>
+            </div>
+
             <div className="p-4 bg-cyan-950/30 border border-cyan-500/30 rounded-2xl text-xs font-mono text-cyan-300 flex justify-between items-center">
               <span>🛡️ SMART CONTRACT VULNERABILITY MATRIX: PASSED</span>
               <span className="font-bold text-white">REENTRANCY: 0.00%</span>
