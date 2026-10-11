@@ -6416,14 +6416,60 @@ function FraudSimulatorSection({ triggerToast, setNotifications }: { theme?: str
                   }`}>{result.status}</span>
                 </div>
 
-                <div className="space-y-2">
-                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider block">SHAP Factor Contributions</span>
-                  {result.shapFactors.map((f: any, idx: number) => (
-                    <div key={idx} className="flex justify-between text-xs font-mono p-2 bg-slate-950/60 rounded-xl border border-white/5">
-                      <span className="text-slate-300 truncate max-w-[180px]">{f.name}</span>
-                      <span className="font-bold text-rose-400">{f.impact}</span>
+                {/* Interactive SHAP Waterfall Chart Visualizer */}
+                <div className="space-y-2 pt-2 border-t border-white/10">
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider block font-mono">SHAP Waterfall Decision Path</span>
+                  <div className="space-y-1.5 font-mono text-[11px] bg-slate-950/80 p-3 rounded-xl border border-white/5">
+                    <div className="flex justify-between items-center text-slate-400">
+                      <span>Baseline Population Risk:</span>
+                      <span className="font-bold text-slate-300">12.0%</span>
                     </div>
-                  ))}
+                    <div className="flex justify-between items-center text-rose-300">
+                      <span>+ Amount Weight (${amount.toLocaleString()}):</span>
+                      <span className="font-bold">+{Math.min(45, Math.round(amount / 8000))}.0%</span>
+                    </div>
+                    <div className="flex justify-between items-center text-rose-300">
+                      <span>+ Geo Flag ({country}):</span>
+                      <span className="font-bold">+{country.includes('Cayman') || country.includes('Nigeria') ? 28 : 8}.0%</span>
+                    </div>
+                    <div className="flex justify-between items-center text-rose-300">
+                      <span>+ Velocity Surge ({velocity} req/m):</span>
+                      <span className="font-bold">+{Math.min(30, Math.round(velocity * 0.4))}.0%</span>
+                    </div>
+                    <div className="flex justify-between items-center text-emerald-400">
+                      <span>- Device Authentication Factor:</span>
+                      <span className="font-bold">-6.5%</span>
+                    </div>
+                    <div className="flex justify-between items-center pt-2 border-t border-white/10 font-bold text-white">
+                      <span>= Calculated Risk Metric:</span>
+                      <span className={result.riskScore > 70 ? 'text-rose-400' : 'text-emerald-400'}>{result.riskScore}%</span>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const reportData = {
+                        audit_id: `SIM-${Date.now()}`,
+                        timestamp: new Date().toISOString(),
+                        model: "XGBoost-v4.2 + PyTorch Autoencoder",
+                        inputs: { amount, velocity, country, channel, ipReputation },
+                        output: result,
+                        sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                      };
+                      const blob = new Blob([JSON.stringify(reportData, null, 2)], { type: 'application/json' });
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = url;
+                      a.download = `finguard-simulation-audit-${Date.now()}.json`;
+                      a.click();
+                      URL.revokeObjectURL(url);
+                      triggerToast("Downloaded Simulation Audit Report (JSON)!", "success");
+                    }}
+                    className="w-full mt-2 py-2 bg-slate-900 border border-white/10 hover:border-cyan-400 text-slate-200 hover:text-white rounded-xl text-xs font-bold font-mono transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
+                  >
+                    <Download className="h-3.5 w-3.5 text-cyan-400" />
+                    <span>Download Simulation Audit Report</span>
+                  </button>
                 </div>
               </div>
             ) : (
@@ -6706,6 +6752,7 @@ function MoneyLaunderingNetworkSection({ triggerToast }: { triggerToast: (msg: s
   const [selectedNode, setSelectedNode] = useState<any>(null);
   const [filterType, setFilterType] = useState<string>('all');
   const [showRingsOnly, setShowRingsOnly] = useState<boolean>(false);
+  const [hopDepth, setHopDepth] = useState<number>(3);
 
   const nodes = [
     { id: 'acc_01', label: 'ACC_ORIGIN_901', type: 'Origin', name: 'Global Asset Corp (US)', x: 120, y: 180, volume: '$1,850,000', risk: 24, status: 'CLEARED', hops: 0 },
@@ -6727,6 +6774,7 @@ function MoneyLaunderingNetworkSection({ triggerToast }: { triggerToast: (msg: s
   ];
 
   const filteredNodes = nodes.filter(n => {
+    if (n.hops > hopDepth) return false;
     if (filterType !== 'all' && n.type !== filterType) return false;
     if (showRingsOnly && n.type !== 'Circular Ring' && n.type !== 'Shell Corp') return false;
     return true;
@@ -6749,6 +6797,24 @@ function MoneyLaunderingNetworkSection({ triggerToast }: { triggerToast: (msg: s
         </div>
 
         <div className="flex items-center space-x-3">
+          {/* Dynamic Hop Depth Control */}
+          <div className="hidden sm:flex items-center space-x-2 bg-slate-900 border border-white/10 px-3 py-1.5 rounded-xl font-mono text-xs">
+            <span className="text-slate-400">Hop Depth:</span>
+            <span className="text-cyan-400 font-bold">{hopDepth} Hops</span>
+            <input 
+              type="range" 
+              min={1} 
+              max={3} 
+              value={hopDepth} 
+              onChange={e => {
+                const val = Number(e.target.value);
+                setHopDepth(val);
+                triggerToast(`Filtered graph to ${val}-Hop network depth`, 'info');
+              }} 
+              className="w-16 accent-cyan-400 cursor-pointer"
+            />
+          </div>
+
           <button 
             onClick={() => setShowRingsOnly(!showRingsOnly)} 
             className={`px-3.5 py-2 rounded-xl text-xs font-extrabold border transition-all cursor-pointer ${
@@ -7231,6 +7297,7 @@ function AutonomousAutoResponderSection({ triggerToast }: { triggerToast: (msg: 
     timestamp: 'Just Now',
   });
 
+  const [selectedPlaybook, setSelectedPlaybook] = useState<'laundering' | 'stuffing' | 'api_hijack'>('laundering');
   const [isRunningSim, setIsRunningSim] = useState<boolean>(false);
   const [stepStatus, setStepStatus] = useState<{ [key: number]: 'idle' | 'running' | 'done' }>({
     1: 'done',
@@ -7238,6 +7305,36 @@ function AutonomousAutoResponderSection({ triggerToast }: { triggerToast: (msg: 
     3: 'done',
     4: 'done',
   });
+
+  const playbooks = {
+    laundering: {
+      name: 'Playbook A: Severe Money Laundering',
+      steps: [
+        { num: 1, title: 'Auto-Freeze Bank Account & Quarantine Funds', detail: 'Locked target clearing house account', time: '0.8s' },
+        { num: 2, title: 'Block Ingress IP & Revoke Session Tokens', detail: 'Firewall blacklisted IP 185.220.101.4', time: '1.4s' },
+        { num: 3, title: 'Auto-Generate Security Incident Ticket', detail: 'Created FinCEN compliance ticket SEC-9041', time: '2.1s' },
+        { num: 4, title: 'Broadcast Webhook Alert & Slack Notification', detail: 'Dispatched payload to #soc-alerts channel', time: '2.8s' },
+      ]
+    },
+    stuffing: {
+      name: 'Playbook B: Credential Stuffing Surge',
+      steps: [
+        { num: 1, title: 'Terminate Active User Sessions & JWTs', detail: 'Revoked 42 concurrent auth tokens', time: '0.6s' },
+        { num: 2, title: 'Enforce Step-Up FIDO2 / 2FA Challenge', detail: 'Gated login route behind biometric challenge', time: '1.2s' },
+        { num: 3, title: 'Apply Global /24 Subnet Rate-Limiting', detail: 'Throttled botnet ingress to 2 req/min', time: '1.9s' },
+        { num: 4, title: 'Dispatch SOC Tier-2 Incident Ticket', detail: 'Logged anomalous brute-force signature', time: '2.5s' },
+      ]
+    },
+    api_hijack: {
+      name: 'Playbook C: API Key Exfiltration & Hijack',
+      steps: [
+        { num: 1, title: 'Instantly Invalidate Compromised API Key', detail: 'Revoked developer token fg_live_90184', time: '0.5s' },
+        { num: 2, title: 'Flush Redis Token Blacklist Cache', detail: 'Purged active ingress connection pools', time: '1.1s' },
+        { num: 3, title: 'Rotate Microservice Secret Credentials', detail: 'Regenerated HMAC signature encryption keys', time: '1.8s' },
+        { num: 4, title: 'Trigger High-Priority PagerDuty Incident', detail: 'Paged on-call security engineering team', time: '2.4s' },
+      ]
+    }
+  };
 
   const incidents = [
     { id: 'INC-9041', title: 'High-Velocity Wire ($180,000 to Cayman)', risk: 96, status: 'REMEDIATED' },
@@ -7248,33 +7345,33 @@ function AutonomousAutoResponderSection({ triggerToast }: { triggerToast: (msg: 
   const handleRunSim = () => {
     setIsRunningSim(true);
     setStepStatus({ 1: 'running', 2: 'idle', 3: 'idle', 4: 'idle' });
-    triggerToast('Simulating high-threat attack... Auto-Responder Agent activated!', 'info');
+    triggerToast(`Executing ${playbooks[selectedPlaybook].name}... Auto-Responder active!`, 'info');
 
     setTimeout(() => {
       setStepStatus(prev => ({ ...prev, 1: 'done', 2: 'running' }));
-      triggerToast('Step 1 Complete: Account frozen & funds quarantined.', 'critical');
+      triggerToast('Step 1 Complete: Remediation gate enforced.', 'critical');
     }, 800);
 
     setTimeout(() => {
       setStepStatus(prev => ({ ...prev, 2: 'done', 3: 'running' }));
-      triggerToast('Step 2 Complete: Ingress IP 185.220.101.4 blocked at firewall.', 'critical');
+      triggerToast('Step 2 Complete: Ingress firewall rules updated.', 'critical');
     }, 1600);
 
     setTimeout(() => {
       setStepStatus(prev => ({ ...prev, 3: 'done', 4: 'running' }));
-      triggerToast('Step 3 Complete: Generated Security Ticket SEC-9041.', 'info');
+      triggerToast('Step 3 Complete: Incident documentation dispatched.', 'info');
     }, 2400);
 
     setTimeout(() => {
       setStepStatus(prev => ({ ...prev, 4: 'done' }));
       setIsRunningSim(false);
-      triggerToast('SUCCESS: 4-Step Auto-Remediation Workflow fully executed in 2.8s!', 'success');
+      triggerToast(`SUCCESS: ${playbooks[selectedPlaybook].name} completed in 2.8s!`, 'success');
     }, 3200);
   };
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-white/10 pb-4">
         <div>
           <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
             <Bot className="h-6 w-6 text-cyan-400" />
@@ -7283,14 +7380,30 @@ function AutonomousAutoResponderSection({ triggerToast }: { triggerToast: (msg: 
           <p className="text-xs text-slate-400 font-medium mt-1">Self-acting AI security workflows that execute 4-step auto-remediation protocols when risk exceeds 90%.</p>
         </div>
 
-        <button
-          onClick={handleRunSim}
-          disabled={isRunningSim}
-          className="px-5 py-2.5 bg-gradient-to-r from-rose-600 to-indigo-600 hover:from-rose-500 hover:to-indigo-500 text-white rounded-xl text-xs font-extrabold flex items-center space-x-2 shadow-lg shadow-rose-600/30 cursor-pointer disabled:opacity-50 transition-all"
-        >
-          <Zap className={`h-4 w-4 ${isRunningSim ? 'animate-spin' : ''}`} />
-          <span>{isRunningSim ? 'Executing Auto-Remediation...' : 'Test Attack & Run Auto-Responder'}</span>
-        </button>
+        <div className="flex items-center space-x-3 w-full sm:w-auto">
+          {/* Playbook Switcher Dropdown */}
+          <select
+            value={selectedPlaybook}
+            onChange={(e: any) => {
+              setSelectedPlaybook(e.target.value);
+              triggerToast(`Switched active incident response playbook`, 'info');
+            }}
+            className="bg-[#13161A] border border-cyan-500/40 text-xs font-mono font-bold text-cyan-300 rounded-xl p-2.5 focus:outline-none cursor-pointer"
+          >
+            <option value="laundering">🧊 Playbook A: Money Laundering Wire</option>
+            <option value="stuffing">🔑 Playbook B: Credential Stuffing Surge</option>
+            <option value="api_hijack">🚨 Playbook C: API Key Exfiltration</option>
+          </select>
+
+          <button
+            onClick={handleRunSim}
+            disabled={isRunningSim}
+            className="px-5 py-2.5 bg-gradient-to-r from-rose-600 to-indigo-600 hover:from-rose-500 hover:to-indigo-500 text-white rounded-xl text-xs font-extrabold flex items-center space-x-2 shadow-lg shadow-rose-600/30 cursor-pointer disabled:opacity-50 transition-all flex-shrink-0"
+          >
+            <Zap className={`h-4 w-4 ${isRunningSim ? 'animate-spin' : ''}`} />
+            <span>{isRunningSim ? 'Executing...' : 'Run Auto-Responder'}</span>
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -7341,12 +7454,7 @@ function AutonomousAutoResponderSection({ triggerToast }: { triggerToast: (msg: 
 
           {/* 4-Step Incident Response Timeline */}
           <div className="space-y-4">
-            {[
-              { num: 1, title: 'Auto-Freeze Bank Account & Quarantine Funds', detail: `Locked ${activeIncident.user} across clearing house`, time: '0.8s' },
-              { num: 2, title: 'Block Ingress IP & Revoke Session Tokens', detail: `Firewall blacklisted IP ${activeIncident.ip}`, time: '1.4s' },
-              { num: 3, title: 'Auto-Generate Security Incident Ticket', detail: `Created ticket SEC-${activeIncident.id} in Jira/ServiceNow`, time: '2.1s' },
-              { num: 4, title: 'Broadcast Webhook Alert & Slack Notification', detail: `Dispatched payload to #soc-alerts channel`, time: '2.8s' },
-            ].map((step) => {
+            {playbooks[selectedPlaybook].steps.map((step) => {
               const status = stepStatus[step.num];
 
               return (
@@ -7839,10 +7947,12 @@ function MultiAgentSwarmSection({ triggerToast }: { triggerToast: (msg: string, 
 // ==========================================
 function MlThreatForecastingSection({ triggerToast }: { triggerToast: (msg: string, type?: 'info'|'success'|'critical') => void }) {
   const [timeHorizon, setTimeHorizon] = useState<number>(24);
+  const [isMitigated, setIsMitigated] = useState<boolean>(false);
+  const [activeSpikeDetail, setActiveSpikeDetail] = useState<string | null>(null);
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center border-b border-white/10 pb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-white/10 pb-4">
         <div>
           <h2 className="text-xl md:text-2xl font-black text-white flex items-center space-x-2">
             <TrendingUp className="h-6 w-6 text-cyan-400" />
@@ -7851,22 +7961,39 @@ function MlThreatForecastingSection({ triggerToast }: { triggerToast: (msg: stri
           <p className="text-xs text-slate-400 font-medium mt-1">Predictive LSTM neural network projecting fraud velocity spikes and confidence bounds over 24-72 hours.</p>
         </div>
 
-        {/* Time Horizon Selector */}
-        <div className="flex space-x-2 bg-slate-900 border border-white/10 p-1.5 rounded-xl text-xs font-mono">
-          {[24, 48, 72].map(hours => (
-            <button
-              key={hours}
-              onClick={() => {
-                setTimeHorizon(hours);
-                triggerToast(`Switched threat forecast horizon to +${hours} Hours`, 'info');
-              }}
-              className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
-                timeHorizon === hours ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400' : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              +{hours}h Forecast
-            </button>
-          ))}
+        <div className="flex items-center space-x-3">
+          {/* Mitigation Simulation Toggle */}
+          <button
+            onClick={() => {
+              setIsMitigated(!isMitigated);
+              triggerToast(isMitigated ? "Mitigation disabled: Showing raw unmitigated threat projection." : "Mitigation active: Threat curve flattened by -68%!", isMitigated ? 'info' : 'success');
+            }}
+            className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold border transition-all cursor-pointer ${
+              isMitigated 
+                ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50 shadow-lg shadow-emerald-500/20' 
+                : 'bg-slate-900 text-slate-400 border-white/10 hover:text-white'
+            }`}
+          >
+            {isMitigated ? '🛡️ Mitigation Active (Curve Flattened)' : '⚡ Simulate AI Mitigation'}
+          </button>
+
+          {/* Time Horizon Selector */}
+          <div className="flex space-x-1.5 bg-slate-900 border border-white/10 p-1.5 rounded-xl text-xs font-mono">
+            {[24, 48, 72].map(hours => (
+              <button
+                key={hours}
+                onClick={() => {
+                  setTimeHorizon(hours);
+                  triggerToast(`Switched threat forecast horizon to +${hours} Hours`, 'info');
+                }}
+                className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                  timeHorizon === hours ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                +{hours}h
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -7875,17 +8002,19 @@ function MlThreatForecastingSection({ triggerToast }: { triggerToast: (msg: stri
         <SpotlightCard className="p-6 space-y-2">
           <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Projected Peak Ingress Stream</span>
           <div className="flex items-baseline space-x-2">
-            <span className="text-2xl font-black text-white font-mono">48,200</span>
-            <span className="text-xs font-bold text-rose-400 font-mono">+34% Spike</span>
+            <span className="text-2xl font-black text-white font-mono">{isMitigated ? '15,400' : '48,200'}</span>
+            <span className={`text-xs font-bold font-mono ${isMitigated ? 'text-emerald-400' : 'text-rose-400'}`}>
+              {isMitigated ? '-68% Mitigated' : '+34% Spike'}
+            </span>
           </div>
-          <p className="text-[11px] text-slate-400 font-light">Expected peak traffic at 03:00 UTC during Asian market open.</p>
+          <p className="text-[11px] text-slate-400 font-light">{isMitigated ? 'Adaptive AI rate-limiting successfully flattened incoming surge.' : 'Expected peak traffic at 03:00 UTC during Asian market open.'}</p>
         </SpotlightCard>
 
         <SpotlightCard className="p-6 space-y-2">
           <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Projected Fraud Outflow</span>
           <div className="flex items-baseline space-x-2">
-            <span className="text-2xl font-black text-white font-mono">$1.42M</span>
-            <span className="text-xs font-bold text-emerald-400 font-mono">Quarantined</span>
+            <span className="text-2xl font-black text-white font-mono">{isMitigated ? '$120K' : '$1.42M'}</span>
+            <span className="text-xs font-bold text-emerald-400 font-mono">{isMitigated ? 'Protected' : 'Quarantined'}</span>
           </div>
           <p className="text-[11px] text-slate-400 font-light">Auto-responder rules active for high-value wire channels.</p>
         </SpotlightCard>
@@ -7904,31 +8033,58 @@ function MlThreatForecastingSection({ triggerToast }: { triggerToast: (msg: stri
       <SpotlightCard className="p-6 space-y-4">
         <div className="flex justify-between items-center border-b border-white/10 pb-3">
           <span className="text-xs font-mono font-bold text-white">PREDICTIVE ATTACK VELOCITY CURVE (+{timeHorizon} HOURS)</span>
-          <span className="text-xs font-mono text-emerald-400 font-bold">MODEL STATUS: HIGH CONFIDENCE</span>
+          <span className={`text-xs font-mono font-bold ${isMitigated ? 'text-emerald-400' : 'text-rose-400 animate-pulse'}`}>
+            {isMitigated ? 'STATUS: MITIGATED SAFE BASELINE' : 'STATUS: CRITICAL ANOMALY PROJECTED'}
+          </span>
         </div>
 
         {/* SVG Time-Series Curve */}
         <div className="relative h-56 bg-slate-950 border border-white/10 rounded-2xl p-4 flex flex-col justify-between overflow-hidden">
           <svg className="absolute inset-0 w-full h-full p-4" preserveAspectRatio="none" viewBox="0 0 500 150">
-            {/* Upper Confidence Shading */}
-            <path d="M0,100 Q125,20 250,70 T500,30 L500,150 L0,150 Z" fill="rgba(6,182,212,0.08)" />
+            {/* Shading */}
+            <path 
+              d={isMitigated ? "M0,120 Q125,115 250,118 T500,122 L500,150 L0,150 Z" : "M0,100 Q125,20 250,70 T500,30 L500,150 L0,150 Z"} 
+              fill={isMitigated ? "rgba(34,197,94,0.08)" : "rgba(6,182,212,0.08)"} 
+            />
             {/* Main Forecast Line */}
-            <path d="M0,110 Q125,35 250,85 T500,45" fill="none" stroke="#06b6d4" strokeWidth="3" />
+            <path 
+              d={isMitigated ? "M0,120 Q125,115 250,118 T500,122" : "M0,110 Q125,35 250,85 T500,45"} 
+              fill="none" 
+              stroke={isMitigated ? "#22c55e" : "#06b6d4"} 
+              strokeWidth="3" 
+            />
             {/* Projected Spike Point */}
-            <circle cx="250" cy="85" r="6" fill="#f43f5e" className="animate-ping" />
-            <circle cx="250" cy="85" r="4" fill="#f43f5e" />
+            {!isMitigated && (
+              <g 
+                onClick={() => setActiveSpikeDetail('Projected Carding Botnet Surge: 48,200 req/sec from residential IP proxy cluster')}
+                className="cursor-pointer"
+              >
+                <circle cx="250" cy="85" r="8" fill="#f43f5e" className="animate-ping" />
+                <circle cx="250" cy="85" r="5" fill="#f43f5e" />
+              </g>
+            )}
           </svg>
 
           <div className="relative z-10 flex justify-between text-[10px] font-mono text-slate-500">
             <span>NOW</span>
-            <span>+{timeHorizon/2}h (Targeted Botnet Surge)</span>
+            <span>+{timeHorizon/2}h {isMitigated ? '(Rate-Limited)' : '(Targeted Botnet Surge)'}</span>
             <span>+{timeHorizon}h</span>
           </div>
 
+          {activeSpikeDetail && (
+            <div className="relative z-10 p-2.5 bg-black/80 border border-cyan-400 text-cyan-300 text-xs font-mono rounded-xl flex justify-between items-center">
+              <span>🔍 {activeSpikeDetail}</span>
+              <button onClick={() => setActiveSpikeDetail(null)} className="text-slate-400 hover:text-white font-bold ml-2">✕</button>
+            </div>
+          )}
+
           <div className="relative z-10 p-3 bg-rose-950/40 border border-rose-500/40 rounded-xl text-xs font-mono text-rose-300 flex justify-between items-center">
-            <span>🚨 PREDICTIVE ALERT: Potential Botnet Carding Sweep projected at +{timeHorizon/2}h.</span>
+            <span>🚨 PREDICTIVE ALERT: {isMitigated ? 'Surge prevented via automated rate-limiting.' : `Potential Botnet Carding Sweep projected at +${timeHorizon/2}h.`}</span>
             <button
-              onClick={() => triggerToast('Pre-emptively increased firewall rate-limits by +25%!', 'success')}
+              onClick={() => {
+                setIsMitigated(true);
+                triggerToast('Pre-emptively increased firewall rate-limits by +25%! Curve flattened.', 'success');
+              }}
               className="px-3 py-1 bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-bold text-[10px] transition-all cursor-pointer"
             >
               Pre-emptively Rate-Limit
