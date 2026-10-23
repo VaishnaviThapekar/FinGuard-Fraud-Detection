@@ -1038,6 +1038,28 @@ export default function App() {
         setActiveTab("fraud");
       } else if (transcript.includes("dashboard") || transcript.includes("tablero") || transcript.includes("tableau")) {
         setActiveTab("dashboard");
+      } else if (transcript.includes("simulator")) {
+        setActiveTab("simulator");
+      } else if (transcript.includes("map") || transcript.includes("threat")) {
+        setActiveTab("threatmap");
+      } else if (transcript.includes("network") || transcript.includes("laundering")) {
+        setActiveTab("network");
+      } else if (transcript.includes("crypto") || transcript.includes("web3")) {
+        setActiveTab("crypto");
+      } else if (transcript.includes("responder") || transcript.includes("auto")) {
+        setActiveTab("auto-responder");
+      } else if (transcript.includes("swarm") || transcript.includes("agent")) {
+        setActiveTab("agent-swarm");
+      } else if (transcript.includes("forecast") || transcript.includes("predict")) {
+        setActiveTab("forecasting");
+      } else if (transcript.includes("api") || transcript.includes("developer")) {
+        setActiveTab("developer-api");
+      } else if (transcript.includes("kyc") || transcript.includes("liveness") || transcript.includes("biometric")) {
+        setActiveTab("kyc-shield");
+      } else if (transcript.includes("report") || transcript.includes("audit")) {
+        setActiveTab("reports");
+      } else if (transcript.includes("rules") || transcript.includes("webhook")) {
+        setActiveTab("rules");
       } else if (transcript.includes("chat") || transcript.includes("ai")) {
         setActiveTab("assistant");
       } else if (transcript.includes("ocr")) {
@@ -1631,6 +1653,8 @@ export default function App() {
                 { name: "Multi-Hop Laundering Graph Network", type: "tab", value: "network" },
                 { name: "Web3 Crypto Threat Scanner", type: "tab", value: "crypto" },
                 { name: "Autonomous AI SOC Auto-Responder", type: "tab", value: "auto-responder" },
+                { name: "Multi-Agent AI Swarm SOC", type: "tab", value: "agent-swarm" },
+                { name: "ML Threat Forecasting Engine", type: "tab", value: "forecasting" },
                 { name: "Interactive Developer API Sandbox", type: "tab", value: "developer-api" },
                 { name: "Biometric KYC Liveness Shield", type: "tab", value: "kyc-shield" },
                 { name: "Audit Reporting & Certificate Hub", type: "tab", value: "reports" },

@@ -1,6 +1,6 @@
 # FinGuard AI — Enterprise Financial Fraud Detection & Security Command Center
 
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo_Console-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://finguard-fraud-detection.vercel.app)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo_Console-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://fin-guard-fraud-detection-blue.vercel.app)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/VaishnaviThapekar/FinGuard-Fraud-Detection)
 [![React 19](https://img.shields.io/badge/React_19-Vite_5-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -11,7 +11,7 @@
 ---
 
 ## 🌐 Live Production Demo
-👉 **[Click Here to Open FinGuard AI Live Console](https://finguard-fraud-detection.vercel.app)**
+👉 **[Click Here to Open FinGuard AI Live Console](https://fin-guard-fraud-detection-blue.vercel.app)**
 
 ---
 
@@ -55,7 +55,10 @@ flowchart TD
 | **Fraud Simulator Studio** | 🧪 | Real-time sliders (*Amount, Velocity, IP Risk*) with instant XGBoost scoring, SHAP feature attributions, and 1-click attack stress testers (*Carding Surge, Bot Blitz*). |
 | **Multi-Hop Laundering Graph** | 🕸️ | Interactive D3/SVG node graph visualizer that traces fund flows (*Origin ➔ Mule ➔ Shell Corp ➔ Offshore Vault*) and highlights circular layering loops. |
 | **Web3 Crypto Threat Radar** | 🪙 | Scans Bitcoin & Ethereum wallet addresses to detect privacy mixers (**Tornado Cash**), darknet flags, OFAC sanctions, and reentrancy exploits. |
-| **Autonomous AI Auto-Responder** | 🤖 | Self-acting AI agent that executes 4-step auto-remediation protocols (*Account Freeze, IP Block, Security Ticket, Slack Alert*) when risk > 90%. |
+| **Autonomous AI Auto-Responder** | 🤖 | Self-acting AI agent that executes 4-step auto-remediation protocols across multiple playbooks (*Account Freeze, IP Block, Security Ticket, Slack Alert*) when risk > 90%. |
+| **Multi-Agent AI Swarm SOC** | 👥 | 3 autonomous specialized AI agents (Security Auditor, Crypto Forensic Specialist, Legal Compliance Officer) that debate and form unanimous threat consensus. |
+| **Time-Series ML Threat Forecasting** | 📈 | Predictive LSTM neural network projecting fraud velocity spikes and upper/lower confidence bounds over 24-72 hours with AI mitigation simulation. |
+| **Multi-Tenant Banking Switcher** | 🏦 | Instant institutional workspace switcher between **JPMorgan Chase (US)**, **Revolut Bank (EU)**, **DBS Bank (SG)**, and **Standard Chartered (UK)**. |
 | **Biometric KYC Liveness Shield** | 🎭 | 128-point facial depth mesh scanner verifying real-human liveness to block synthetic identity fraud and deepfake photo spoofs. |
 | **Interactive Developer API Sandbox**| 📜 | OpenAPI spec tester featuring copyable **cURL**, **Python**, and **Node.js** code snippets with live JSON response execution. |
 | **3D Global Threat Map** | 🌍 | Interactive 3D SVG world map visualizing cross-border SWIFT transaction wire flows between international banking hubs (*New York, London, Singapore*). |
@@ -81,7 +84,7 @@ flowchart TD
 
 ### 1. Evaluate Transaction Anomaly Risk
 ```bash
-curl -X POST "https://finguard-fraud-detection.vercel.app/api/v1/score" \
+curl -X POST "https://fin-guard-fraud-detection-blue.vercel.app/api/v1/score" \
   -H "Authorization: Bearer fg_live_9018428" \
   -H "Content-Type: application/json" \
   -d '{
@@ -112,7 +115,7 @@ curl -X POST "https://finguard-fraud-detection.vercel.app/api/v1/score" \
 
 ### 2. Freeze Account & Enforce Network Quarantine
 ```bash
-curl -X POST "https://finguard-fraud-detection.vercel.app/api/v1/quarantine" \
+curl -X POST "https://fin-guard-fraud-detection-blue.vercel.app/api/v1/quarantine" \
   -H "Authorization: Bearer fg_live_9018428" \
   -H "Content-Type: application/json" \
   -d '{
