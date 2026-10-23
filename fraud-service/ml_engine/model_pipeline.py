@@ -1,6 +1,8 @@
 # model_pipeline.py
 # Machine Learning pipelines for XGBoost, Autoencoder, Isolation Forest and SHAP/LIME explanation.
 
+import os
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
@@ -22,7 +24,22 @@ class FraudDetectorPipeline:
         self.xgb_model = xgb.XGBClassifier(n_estimators=10, max_depth=3)
         self.iso_forest = IsolationForest(contamination=0.05, random_state=42)
         self.is_trained = False
-        self._fit_mock_models()
+
+        model_dir = os.path.join(os.path.dirname(__file__), "saved_models")
+        xgb_path = os.path.join(model_dir, "xgb_model.json")
+        iso_path = os.path.join(model_dir, "iso_forest.joblib")
+
+        if os.path.exists(xgb_path) and os.path.exists(iso_path):
+            try:
+                self.xgb_model.load_model(xgb_path)
+                self.iso_forest = joblib.load(iso_path)
+                self.is_trained = True
+                print("FinGuard AI: Successfully loaded trained models from saved_models directory.")
+            except Exception as load_err:
+                print(f"FinGuard AI: Error loading saved models: {load_err}, falling back to mock fit.")
+                self._fit_mock_models()
+        else:
+            self._fit_mock_models()
 
     def _fit_mock_models(self):
         # Generate representative synthetic transaction training set

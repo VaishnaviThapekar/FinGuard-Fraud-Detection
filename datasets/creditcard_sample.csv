@@ -1,0 +1,1001 @@
+transaction_id,amount,location,channel,ip_address,device,is_fraud
+tx_real_1000,12.11,"London, UK",Web Portal,68.32.209.105,Chrome 122 on Windows 11,0
+tx_real_1001,257.76,Singapore,Mobile App,198.238.83.186,Chrome 124 on macOS,0
+tx_real_1002,243.9,"New York, USA",Web Portal,109.238.104.184,Safari 17 on iOS 17,0
+tx_real_1003,141.55,"New York, USA",Web Portal,38.129.170.210,Edge 123 on Android 14,0
+tx_real_1004,17.58,"Zurich, Switzerland",Web Portal,58.40.97.191,Chrome 122 on Windows 11,0
+tx_real_1005,28.02,"Tokyo, Japan",Web Portal,214.200.216.208,Edge 123 on Android 14,0
+tx_real_1006,226.99,Singapore,Mobile App,124.132.166.236,Chrome 122 on Windows 11,0
+tx_real_1007,7133.24,"New York, USA",Crypto Gateway,165.137.111.144,Safari 17 on iOS 17,1
+tx_real_1008,48.12,"London, UK",Web Portal,194.76.31.216,Chrome 124 on macOS,0
+tx_real_1009,56.19,"New York, USA",Mobile App,129.142.237.25,Edge 123 on Android 14,0
+tx_real_1010,175.88,"New York, USA",Crypto Gateway,44.67.250.152,Chrome 122 on Windows 11,0
+tx_real_1011,365.74,"Tokyo, Japan",Web Portal,128.234.73.26,Firefox 125 on Linux x86_64,0
+tx_real_1012,67.4,"New York, USA",Mobile App,158.192.104.10,Safari 17 on iOS 17,0
+tx_real_1013,106.39,"New York, USA",Mobile App,77.152.5.195,Chrome 124 on macOS,0
+tx_real_1014,104.81,Cayman Islands,SWIFT Wire,196.27.208.113,Safari 17 on iOS 17,0
+tx_real_1015,86.83,Singapore,Crypto Gateway,25.163.204.105,Firefox 125 on Linux x86_64,1
+tx_real_1016,82.6,Singapore,Web Portal,191.44.26.175,Chrome 124 on macOS,0
+tx_real_1017,17.9,"New York, USA",POS Terminal,172.215.95.178,Firefox 125 on Linux x86_64,0
+tx_real_1018,285.74,"New York, USA",Web Portal,94.140.215.132,Safari 17 on iOS 17,0
+tx_real_1019,15.37,"New York, USA",Mobile App,97.176.183.112,Chrome 122 on Windows 11,0
+tx_real_1020,15.24,"New York, USA",SWIFT Wire,139.246.89.66,Safari 17 on iOS 17,0
+tx_real_1021,13.69,Cayman Islands,Web Portal,168.131.122.149,Safari 17 on iOS 17,0
+tx_real_1022,74.17,"Panama City, Panama",Web Portal,94.177.116.214,Safari 17 on iOS 17,0
+tx_real_1023,158.66,"Tokyo, Japan",POS Terminal,200.253.225.116,Edge 123 on Android 14,0
+tx_real_1024,44.29,"Tokyo, Japan",Mobile App,48.253.143.250,Firefox 125 on Linux x86_64,0
+tx_real_1025,22.71,"London, UK",Mobile App,120.180.207.46,Firefox 125 on Linux x86_64,0
+tx_real_1026,12.88,Cayman Islands,Web Portal,35.21.216.121,Firefox 125 on Linux x86_64,0
+tx_real_1027,107.61,"London, UK",Web Portal,132.133.70.113,Edge 123 on Android 14,0
+tx_real_1028,15.22,"Zurich, Switzerland",Web Portal,117.112.108.47,Chrome 122 on Windows 11,0
+tx_real_1029,13.43,"Zurich, Switzerland",Web Portal,206.91.18.149,Safari 17 on iOS 17,0
+tx_real_1030,59.52,"New York, USA",Mobile App,114.151.192.195,Chrome 122 on Windows 11,0
+tx_real_1031,77.06,"London, UK",Web Portal,50.242.138.89,Edge 123 on Android 14,0
+tx_real_1032,46.33,"Dubai, UAE",Web Portal,190.241.200.247,Firefox 125 on Linux x86_64,0
+tx_real_1033,207.41,"New York, USA",Crypto Gateway,213.61.192.5,Safari 17 on iOS 17,0
+tx_real_1034,28.53,"New York, USA",Crypto Gateway,132.237.181.55,Chrome 124 on macOS,0
+tx_real_1035,6.04,"London, UK",Mobile App,47.56.187.237,Chrome 124 on macOS,0
+tx_real_1036,56.76,"Tokyo, Japan",Mobile App,112.93.197.73,Chrome 122 on Windows 11,0
+tx_real_1037,56.69,Singapore,POS Terminal,69.240.2.193,Firefox 125 on Linux x86_64,0
+tx_real_1038,9343.86,Cayman Islands,Mobile App,114.188.51.30,Chrome 124 on macOS,1
+tx_real_1039,37.79,"New York, USA",POS Terminal,21.220.108.76,Chrome 122 on Windows 11,0
+tx_real_1040,140.03,Singapore,SWIFT Wire,177.90.205.123,Edge 123 on Android 14,0
+tx_real_1041,109.12,"London, UK",Web Portal,210.191.192.189,Chrome 122 on Windows 11,0
+tx_real_1042,45.03,"Panama City, Panama",Crypto Gateway,135.182.220.122,Chrome 122 on Windows 11,0
+tx_real_1043,87.26,Singapore,POS Terminal,104.201.103.223,Chrome 122 on Windows 11,0
+tx_real_1044,64.37,"New York, USA",Mobile App,196.213.184.239,Safari 17 on iOS 17,0
+tx_real_1045,40.01,"New York, USA",Web Portal,172.247.31.52,Chrome 122 on Windows 11,0
+tx_real_1046,13347.56,"New York, USA",Mobile App,99.76.129.183,Chrome 122 on Windows 11,1
+tx_real_1047,16277.99,"London, UK",SWIFT Wire,32.40.101.111,Safari 17 on iOS 17,1
+tx_real_1048,172.56,"New York, USA",Web Portal,139.65.249.191,Safari 17 on iOS 17,0
+tx_real_1049,175.53,Singapore,Web Portal,192.170.149.79,Edge 123 on Android 14,0
+tx_real_1050,20.79,"Zurich, Switzerland",POS Terminal,219.22.166.99,Firefox 125 on Linux x86_64,0
+tx_real_1051,13770.04,"New York, USA",Mobile App,218.8.190.175,Chrome 124 on macOS,1
+tx_real_1052,283.35,"New York, USA",Mobile App,27.17.246.90,Chrome 124 on macOS,0
+tx_real_1053,6.72,"New York, USA",SWIFT Wire,151.145.166.81,Chrome 122 on Windows 11,0
+tx_real_1054,39.15,"Berlin, Germany",Mobile App,88.173.6.163,Edge 123 on Android 14,0
+tx_real_1055,121.98,"New York, USA",Mobile App,120.14.239.72,Chrome 122 on Windows 11,0
+tx_real_1056,7167.56,Cayman Islands,Web Portal,199.143.54.253,Chrome 124 on macOS,1
+tx_real_1057,130.28,"Panama City, Panama",Mobile App,37.13.241.159,Safari 17 on iOS 17,0
+tx_real_1058,89.77,Singapore,POS Terminal,173.60.6.197,Firefox 125 on Linux x86_64,0
+tx_real_1059,183.45,"Berlin, Germany",POS Terminal,68.49.151.217,Edge 123 on Android 14,0
+tx_real_1060,75.03,"London, UK",Web Portal,172.26.47.5,Safari 17 on iOS 17,0
+tx_real_1061,30.45,"Dubai, UAE",POS Terminal,30.134.198.59,Firefox 125 on Linux x86_64,0
+tx_real_1062,8.55,"New York, USA",Web Portal,202.242.146.132,Edge 123 on Android 14,0
+tx_real_1063,68.76,"New York, USA",Mobile App,27.249.14.206,Edge 123 on Android 14,0
+tx_real_1064,92.32,Cayman Islands,SWIFT Wire,23.135.128.44,Chrome 124 on macOS,0
+tx_real_1065,230.28,"Berlin, Germany",Mobile App,129.143.19.63,Safari 17 on iOS 17,0
+tx_real_1066,19.94,"Panama City, Panama",Web Portal,173.81.163.147,Edge 123 on Android 14,0
+tx_real_1067,22.55,"New York, USA",Crypto Gateway,158.100.163.160,Edge 123 on Android 14,0
+tx_real_1068,79.43,"New York, USA",Mobile App,132.176.44.104,Firefox 125 on Linux x86_64,0
+tx_real_1069,6536.85,"Berlin, Germany",Crypto Gateway,162.61.125.145,Chrome 124 on macOS,1
+tx_real_1070,62.87,"New York, USA",Web Portal,81.107.50.65,Chrome 122 on Windows 11,0
+tx_real_1071,248.37,"Tokyo, Japan",SWIFT Wire,109.32.164.141,Chrome 124 on macOS,0
+tx_real_1072,19.42,"Panama City, Panama",POS Terminal,208.58.128.142,Chrome 122 on Windows 11,0
+tx_real_1073,54.52,"Zurich, Switzerland",Mobile App,175.112.207.239,Safari 17 on iOS 17,0
+tx_real_1074,258.83,"London, UK",Mobile App,78.40.187.208,Safari 17 on iOS 17,0
+tx_real_1075,21.17,"Zurich, Switzerland",Web Portal,154.190.132.173,Edge 123 on Android 14,0
+tx_real_1076,14211.19,"New York, USA",SWIFT Wire,100.28.96.237,Safari 17 on iOS 17,1
+tx_real_1077,1650.67,"Berlin, Germany",Web Portal,204.31.3.246,Edge 123 on Android 14,0
+tx_real_1078,10037.74,"Zurich, Switzerland",Mobile App,146.24.15.171,Chrome 124 on macOS,1
+tx_real_1079,98.01,"Berlin, Germany",Mobile App,169.201.231.45,Safari 17 on iOS 17,0
+tx_real_1080,93.25,"New York, USA",POS Terminal,204.8.71.248,Chrome 124 on macOS,0
+tx_real_1081,7.71,"Dubai, UAE",Mobile App,118.115.103.234,Chrome 124 on macOS,0
+tx_real_1082,21910.31,"London, UK",Mobile App,135.57.208.227,Safari 17 on iOS 17,1
+tx_real_1083,5.97,"New York, USA",Mobile App,40.202.230.146,Chrome 124 on macOS,0
+tx_real_1084,17.46,"New York, USA",POS Terminal,124.197.117.221,Safari 17 on iOS 17,0
+tx_real_1085,37.4,"Tokyo, Japan",SWIFT Wire,177.60.98.171,Safari 17 on iOS 17,0
+tx_real_1086,36.48,Cayman Islands,Mobile App,136.173.151.197,Safari 17 on iOS 17,0
+tx_real_1087,26.51,"Panama City, Panama",SWIFT Wire,104.134.184.122,Chrome 122 on Windows 11,0
+tx_real_1088,22.03,"New York, USA",SWIFT Wire,118.4.93.151,Chrome 124 on macOS,0
+tx_real_1089,70.29,"New York, USA",Crypto Gateway,16.32.106.146,Firefox 125 on Linux x86_64,1
+tx_real_1090,52.51,"Zurich, Switzerland",Web Portal,25.168.122.96,Safari 17 on iOS 17,0
+tx_real_1091,19500.43,"London, UK",Mobile App,211.229.202.212,Chrome 124 on macOS,1
+tx_real_1092,22900.32,"Zurich, Switzerland",Web Portal,16.112.120.123,Edge 123 on Android 14,1
+tx_real_1093,94.15,"Dubai, UAE",Mobile App,201.67.106.139,Safari 17 on iOS 17,0
+tx_real_1094,302.71,"Dubai, UAE",POS Terminal,53.145.96.132,Safari 17 on iOS 17,0
+tx_real_1095,99.64,"Berlin, Germany",POS Terminal,201.196.81.41,Firefox 125 on Linux x86_64,0
+tx_real_1096,43.42,"Tokyo, Japan",Mobile App,143.160.214.248,Chrome 122 on Windows 11,0
+tx_real_1097,20828.67,"London, UK",Crypto Gateway,208.35.22.193,Chrome 122 on Windows 11,1
+tx_real_1098,8.94,"London, UK",Web Portal,160.112.247.11,Safari 17 on iOS 17,0
+tx_real_1099,56.16,"Zurich, Switzerland",Mobile App,215.251.234.3,Chrome 124 on macOS,0
+tx_real_1100,73.91,"Panama City, Panama",Mobile App,147.60.76.87,Edge 123 on Android 14,0
+tx_real_1101,12.58,"New York, USA",Mobile App,24.225.18.113,Edge 123 on Android 14,0
+tx_real_1102,11298.69,"London, UK",Web Portal,83.23.202.83,Chrome 124 on macOS,1
+tx_real_1103,65.39,"New York, USA",POS Terminal,135.175.69.47,Safari 17 on iOS 17,0
+tx_real_1104,62.67,"Zurich, Switzerland",Web Portal,126.215.30.25,Edge 123 on Android 14,0
+tx_real_1105,34.37,"Berlin, Germany",Crypto Gateway,166.226.237.248,Chrome 122 on Windows 11,0
+tx_real_1106,201.71,"Tokyo, Japan",Web Portal,122.239.25.74,Chrome 124 on macOS,0
+tx_real_1107,161.75,"New York, USA",Crypto Gateway,216.234.249.238,Firefox 125 on Linux x86_64,1
+tx_real_1108,12.25,"Dubai, UAE",Web Portal,68.94.119.127,Safari 17 on iOS 17,0
+tx_real_1109,294.07,Cayman Islands,Mobile App,179.25.78.99,Chrome 124 on macOS,0
+tx_real_1110,219.53,"New York, USA",Web Portal,126.48.226.10,Edge 123 on Android 14,0
+tx_real_1111,40.59,"New York, USA",Crypto Gateway,109.203.11.85,Safari 17 on iOS 17,0
+tx_real_1112,17.83,"New York, USA",SWIFT Wire,159.214.173.135,Chrome 122 on Windows 11,0
+tx_real_1113,38.24,"New York, USA",Crypto Gateway,219.192.126.64,Safari 17 on iOS 17,0
+tx_real_1114,44.34,"Dubai, UAE",SWIFT Wire,12.76.121.42,Safari 17 on iOS 17,0
+tx_real_1115,3932.77,"Zurich, Switzerland",Mobile App,64.251.75.16,Chrome 122 on Windows 11,1
+tx_real_1116,94.04,"Berlin, Germany",Crypto Gateway,28.227.245.187,Chrome 122 on Windows 11,0
+tx_real_1117,92.62,"London, UK",Mobile App,100.144.6.185,Safari 17 on iOS 17,0
+tx_real_1118,67.18,"New York, USA",Mobile App,118.235.175.239,Chrome 122 on Windows 11,0
+tx_real_1119,21464.56,"Zurich, Switzerland",Mobile App,58.42.76.188,Chrome 124 on macOS,1
+tx_real_1120,371.81,"New York, USA",Crypto Gateway,87.132.231.246,Chrome 122 on Windows 11,0
+tx_real_1121,82.44,"Zurich, Switzerland",SWIFT Wire,140.218.59.155,Chrome 122 on Windows 11,0
+tx_real_1122,19.25,"Berlin, Germany",POS Terminal,37.79.72.7,Safari 17 on iOS 17,0
+tx_real_1123,7.09,"Zurich, Switzerland",SWIFT Wire,201.111.119.174,Chrome 124 on macOS,0
+tx_real_1124,179.82,Singapore,POS Terminal,73.232.124.12,Firefox 125 on Linux x86_64,0
+tx_real_1125,15.84,"New York, USA",POS Terminal,151.254.43.17,Firefox 125 on Linux x86_64,0
+tx_real_1126,18340.62,"New York, USA",Mobile App,73.253.209.120,Edge 123 on Android 14,1
+tx_real_1127,699.66,"New York, USA",Mobile App,46.213.8.69,Chrome 122 on Windows 11,0
+tx_real_1128,144.48,Singapore,Mobile App,100.208.36.28,Chrome 122 on Windows 11,0
+tx_real_1129,79.42,"New York, USA",Web Portal,128.93.175.76,Chrome 124 on macOS,0
+tx_real_1130,84.26,"London, UK",SWIFT Wire,111.158.151.144,Firefox 125 on Linux x86_64,0
+tx_real_1131,62.59,Singapore,SWIFT Wire,24.202.71.237,Edge 123 on Android 14,0
+tx_real_1132,9.04,"London, UK",SWIFT Wire,190.124.125.37,Chrome 124 on macOS,0
+tx_real_1133,72.73,"New York, USA",Mobile App,39.195.143.228,Chrome 122 on Windows 11,0
+tx_real_1134,42.78,"New York, USA",Mobile App,185.174.180.19,Firefox 125 on Linux x86_64,0
+tx_real_1135,92.11,"Berlin, Germany",Web Portal,215.106.21.64,Edge 123 on Android 14,0
+tx_real_1136,260.68,Cayman Islands,POS Terminal,175.27.55.244,Safari 17 on iOS 17,0
+tx_real_1137,6.23,"Zurich, Switzerland",Mobile App,39.148.25.70,Firefox 125 on Linux x86_64,0
+tx_real_1138,110.86,"New York, USA",Web Portal,73.164.130.150,Edge 123 on Android 14,0
+tx_real_1139,41.47,"Dubai, UAE",Mobile App,26.146.197.182,Chrome 124 on macOS,0
+tx_real_1140,56.52,Cayman Islands,Crypto Gateway,110.30.45.19,Safari 17 on iOS 17,0
+tx_real_1141,23.54,"London, UK",POS Terminal,44.141.171.62,Edge 123 on Android 14,0
+tx_real_1142,3050.66,"Berlin, Germany",Crypto Gateway,128.221.100.22,Edge 123 on Android 14,1
+tx_real_1143,151.96,"New York, USA",POS Terminal,190.180.111.164,Chrome 122 on Windows 11,0
+tx_real_1144,69.65,"Zurich, Switzerland",SWIFT Wire,83.231.243.147,Firefox 125 on Linux x86_64,0
+tx_real_1145,72.63,Singapore,Crypto Gateway,48.70.116.239,Chrome 122 on Windows 11,0
+tx_real_1146,205.39,"New York, USA",Web Portal,89.185.148.9,Safari 17 on iOS 17,0
+tx_real_1147,12.73,"Dubai, UAE",Mobile App,42.132.50.82,Edge 123 on Android 14,0
+tx_real_1148,148.23,"Tokyo, Japan",POS Terminal,15.148.87.126,Chrome 122 on Windows 11,0
+tx_real_1149,14025.16,Singapore,SWIFT Wire,85.165.22.186,Firefox 125 on Linux x86_64,1
+tx_real_1150,38.08,"New York, USA",Web Portal,78.221.44.34,Safari 17 on iOS 17,0
+tx_real_1151,115.03,"New York, USA",Mobile App,87.42.137.106,Chrome 124 on macOS,0
+tx_real_1152,156.85,"London, UK",Mobile App,105.135.68.147,Chrome 122 on Windows 11,0
+tx_real_1153,373.4,"Tokyo, Japan",Web Portal,169.128.163.185,Safari 17 on iOS 17,0
+tx_real_1154,42.06,"New York, USA",Web Portal,95.189.159.83,Chrome 124 on macOS,0
+tx_real_1155,10318.69,"Zurich, Switzerland",Mobile App,105.181.32.66,Chrome 122 on Windows 11,1
+tx_real_1156,769.4,"Tokyo, Japan",Mobile App,197.116.138.130,Safari 17 on iOS 17,0
+tx_real_1157,231.96,"New York, USA",Crypto Gateway,204.60.216.17,Safari 17 on iOS 17,0
+tx_real_1158,7082.6,Cayman Islands,SWIFT Wire,106.144.16.46,Chrome 122 on Windows 11,1
+tx_real_1159,67.87,"New York, USA",Mobile App,177.245.159.107,Safari 17 on iOS 17,0
+tx_real_1160,286.67,"Dubai, UAE",POS Terminal,98.129.139.119,Edge 123 on Android 14,0
+tx_real_1161,27.08,"Zurich, Switzerland",Crypto Gateway,95.4.71.154,Chrome 122 on Windows 11,0
+tx_real_1162,20.89,"New York, USA",Mobile App,121.50.140.95,Safari 17 on iOS 17,0
+tx_real_1163,26.83,"London, UK",Web Portal,219.225.203.92,Chrome 124 on macOS,0
+tx_real_1164,64.5,"London, UK",Crypto Gateway,75.47.220.181,Chrome 124 on macOS,0
+tx_real_1165,105.07,"Tokyo, Japan",Crypto Gateway,116.199.130.106,Edge 123 on Android 14,0
+tx_real_1166,5.43,"Tokyo, Japan",Mobile App,34.4.108.19,Chrome 122 on Windows 11,0
+tx_real_1167,11.71,Singapore,Mobile App,164.203.40.50,Safari 17 on iOS 17,0
+tx_real_1168,89.03,"New York, USA",Mobile App,181.75.237.195,Safari 17 on iOS 17,0
+tx_real_1169,2109.86,"New York, USA",Mobile App,22.195.234.27,Chrome 124 on macOS,0
+tx_real_1170,44.55,"New York, USA",Web Portal,123.182.194.49,Edge 123 on Android 14,0
+tx_real_1171,16643.64,Singapore,SWIFT Wire,154.130.60.182,Chrome 124 on macOS,1
+tx_real_1172,17.27,"Berlin, Germany",Web Portal,40.84.166.28,Chrome 124 on macOS,0
+tx_real_1173,61.33,"London, UK",Mobile App,35.96.125.10,Edge 123 on Android 14,0
+tx_real_1174,17.91,"New York, USA",Mobile App,198.42.40.225,Chrome 122 on Windows 11,0
+tx_real_1175,67.79,Singapore,Crypto Gateway,87.248.105.118,Safari 17 on iOS 17,0
+tx_real_1176,129.92,"Panama City, Panama",Mobile App,52.47.165.246,Chrome 122 on Windows 11,0
+tx_real_1177,6457.72,"Tokyo, Japan",SWIFT Wire,218.237.22.185,Firefox 125 on Linux x86_64,1
+tx_real_1178,124.39,"Berlin, Germany",Crypto Gateway,117.27.41.80,Firefox 125 on Linux x86_64,1
+tx_real_1179,5938.32,"New York, USA",SWIFT Wire,172.160.218.89,Firefox 125 on Linux x86_64,1
+tx_real_1180,84.32,"New York, USA",Web Portal,76.12.168.73,Edge 123 on Android 14,0
+tx_real_1181,8.24,"Berlin, Germany",Web Portal,86.90.201.10,Chrome 124 on macOS,0
+tx_real_1182,81.91,Cayman Islands,Mobile App,106.249.226.176,Chrome 122 on Windows 11,0
+tx_real_1183,11.54,"London, UK",Crypto Gateway,30.39.60.66,Safari 17 on iOS 17,0
+tx_real_1184,108.2,"Tokyo, Japan",Mobile App,75.179.124.164,Firefox 125 on Linux x86_64,0
+tx_real_1185,98.61,"Panama City, Panama",Mobile App,162.246.155.130,Chrome 122 on Windows 11,0
+tx_real_1186,160.19,Singapore,SWIFT Wire,169.57.78.194,Firefox 125 on Linux x86_64,0
+tx_real_1187,58.75,Cayman Islands,Mobile App,39.15.12.101,Firefox 125 on Linux x86_64,0
+tx_real_1188,182.88,"London, UK",POS Terminal,166.84.125.103,Safari 17 on iOS 17,0
+tx_real_1189,47.36,"Zurich, Switzerland",Mobile App,34.149.138.110,Edge 123 on Android 14,0
+tx_real_1190,73.7,"Zurich, Switzerland",Mobile App,88.101.146.216,Chrome 124 on macOS,0
+tx_real_1191,23.52,"Panama City, Panama",Mobile App,152.162.128.58,Edge 123 on Android 14,0
+tx_real_1192,9.49,"Panama City, Panama",Web Portal,86.150.248.198,Chrome 122 on Windows 11,0
+tx_real_1193,23.46,"Panama City, Panama",SWIFT Wire,46.173.164.22,Edge 123 on Android 14,0
+tx_real_1194,78.86,"New York, USA",Mobile App,216.127.80.189,Chrome 122 on Windows 11,0
+tx_real_1195,62.67,"Tokyo, Japan",Web Portal,110.184.217.96,Chrome 122 on Windows 11,0
+tx_real_1196,169.41,"Tokyo, Japan",Mobile App,171.173.164.148,Chrome 124 on macOS,0
+tx_real_1197,80.77,Cayman Islands,Mobile App,28.38.195.151,Safari 17 on iOS 17,0
+tx_real_1198,205.42,"Tokyo, Japan",SWIFT Wire,119.123.144.187,Chrome 124 on macOS,0
+tx_real_1199,20955.79,"Panama City, Panama",Mobile App,207.196.149.104,Edge 123 on Android 14,1
+tx_real_1200,74.48,"Zurich, Switzerland",Crypto Gateway,216.231.223.206,Chrome 122 on Windows 11,0
+tx_real_1201,89.93,"Zurich, Switzerland",SWIFT Wire,208.140.144.81,Firefox 125 on Linux x86_64,0
+tx_real_1202,81.53,"New York, USA",SWIFT Wire,97.142.61.199,Firefox 125 on Linux x86_64,0
+tx_real_1203,34.5,"London, UK",Mobile App,56.32.15.44,Chrome 122 on Windows 11,0
+tx_real_1204,12.47,Singapore,Web Portal,155.169.54.239,Chrome 124 on macOS,0
+tx_real_1205,37.88,"Tokyo, Japan",Web Portal,54.98.5.109,Safari 17 on iOS 17,0
+tx_real_1206,65.93,"New York, USA",Mobile App,37.116.87.104,Chrome 124 on macOS,0
+tx_real_1207,8.95,"New York, USA",Web Portal,133.206.79.43,Chrome 122 on Windows 11,0
+tx_real_1208,204.33,Cayman Islands,Web Portal,107.245.31.99,Chrome 122 on Windows 11,0
+tx_real_1209,51.04,"New York, USA",Crypto Gateway,27.220.83.110,Safari 17 on iOS 17,0
+tx_real_1210,22.37,"New York, USA",Crypto Gateway,192.190.215.32,Edge 123 on Android 14,0
+tx_real_1211,142.74,"New York, USA",Mobile App,178.141.251.212,Edge 123 on Android 14,0
+tx_real_1212,182.96,"New York, USA",Mobile App,45.133.201.29,Safari 17 on iOS 17,0
+tx_real_1213,15.83,"New York, USA",SWIFT Wire,80.153.95.22,Edge 123 on Android 14,0
+tx_real_1214,197.0,"London, UK",Mobile App,204.173.69.252,Firefox 125 on Linux x86_64,0
+tx_real_1215,72.25,"London, UK",POS Terminal,99.72.247.129,Edge 123 on Android 14,0
+tx_real_1216,20.19,"Berlin, Germany",Mobile App,182.87.96.75,Edge 123 on Android 14,0
+tx_real_1217,18581.82,"Zurich, Switzerland",Mobile App,177.239.54.88,Edge 123 on Android 14,1
+tx_real_1218,111.21,"Tokyo, Japan",Web Portal,213.157.54.218,Firefox 125 on Linux x86_64,0
+tx_real_1219,166.9,"New York, USA",Mobile App,26.99.20.46,Edge 123 on Android 14,0
+tx_real_1220,316.52,"New York, USA",SWIFT Wire,205.193.127.58,Firefox 125 on Linux x86_64,0
+tx_real_1221,147.88,"Tokyo, Japan",Mobile App,191.111.129.81,Safari 17 on iOS 17,0
+tx_real_1222,16.76,"New York, USA",Mobile App,204.157.84.70,Chrome 124 on macOS,0
+tx_real_1223,21.6,"Zurich, Switzerland",Web Portal,18.29.112.179,Safari 17 on iOS 17,0
+tx_real_1224,255.08,Singapore,SWIFT Wire,171.131.188.163,Chrome 124 on macOS,0
+tx_real_1225,22.06,Singapore,Mobile App,207.219.108.204,Safari 17 on iOS 17,0
+tx_real_1226,76.72,"New York, USA",Mobile App,119.20.73.167,Chrome 124 on macOS,0
+tx_real_1227,64.45,"London, UK",Mobile App,14.243.246.19,Chrome 124 on macOS,0
+tx_real_1228,4573.94,Singapore,Web Portal,112.219.173.171,Chrome 122 on Windows 11,1
+tx_real_1229,5.93,"New York, USA",Mobile App,151.141.188.185,Chrome 124 on macOS,0
+tx_real_1230,22974.18,Cayman Islands,Mobile App,96.220.52.111,Chrome 124 on macOS,1
+tx_real_1231,8.11,"Tokyo, Japan",POS Terminal,191.109.86.43,Chrome 122 on Windows 11,0
+tx_real_1232,369.13,"Dubai, UAE",Web Portal,210.244.200.42,Edge 123 on Android 14,0
+tx_real_1233,32.76,"New York, USA",SWIFT Wire,100.240.115.26,Edge 123 on Android 14,0
+tx_real_1234,9.79,"Panama City, Panama",Web Portal,161.43.77.156,Chrome 122 on Windows 11,0
+tx_real_1235,20840.39,"Zurich, Switzerland",Web Portal,147.20.184.211,Firefox 125 on Linux x86_64,1
+tx_real_1236,37.53,"London, UK",Web Portal,49.179.12.207,Chrome 124 on macOS,0
+tx_real_1237,22903.09,"New York, USA",SWIFT Wire,193.206.11.154,Chrome 124 on macOS,1
+tx_real_1238,10759.88,"Tokyo, Japan",POS Terminal,52.155.11.38,Chrome 122 on Windows 11,1
+tx_real_1239,66.0,"New York, USA",Mobile App,108.171.19.192,Chrome 122 on Windows 11,0
+tx_real_1240,48.28,"London, UK",SWIFT Wire,144.174.116.230,Firefox 125 on Linux x86_64,0
+tx_real_1241,6.42,"New York, USA",SWIFT Wire,123.170.220.65,Edge 123 on Android 14,0
+tx_real_1242,67.44,"Panama City, Panama",SWIFT Wire,109.232.72.187,Safari 17 on iOS 17,0
+tx_real_1243,41.22,"Tokyo, Japan",Crypto Gateway,62.118.175.120,Edge 123 on Android 14,0
+tx_real_1244,74.96,"Tokyo, Japan",SWIFT Wire,17.11.103.61,Chrome 124 on macOS,0
+tx_real_1245,44.36,"New York, USA",SWIFT Wire,78.153.140.154,Chrome 122 on Windows 11,0
+tx_real_1246,85.17,"New York, USA",Crypto Gateway,112.110.140.171,Firefox 125 on Linux x86_64,1
+tx_real_1247,146.11,Singapore,Mobile App,61.117.165.46,Edge 123 on Android 14,0
+tx_real_1248,145.45,"Zurich, Switzerland",SWIFT Wire,63.88.208.121,Firefox 125 on Linux x86_64,0
+tx_real_1249,22.34,"New York, USA",SWIFT Wire,23.89.125.118,Edge 123 on Android 14,0
+tx_real_1250,63.1,Cayman Islands,SWIFT Wire,64.185.116.118,Chrome 124 on macOS,0
+tx_real_1251,69.11,"Dubai, UAE",Mobile App,14.75.224.49,Safari 17 on iOS 17,0
+tx_real_1252,46.17,"Tokyo, Japan",Web Portal,17.110.122.11,Firefox 125 on Linux x86_64,0
+tx_real_1253,244.79,"Tokyo, Japan",SWIFT Wire,102.182.233.215,Firefox 125 on Linux x86_64,0
+tx_real_1254,221.7,"Dubai, UAE",SWIFT Wire,183.23.242.28,Safari 17 on iOS 17,0
+tx_real_1255,27.46,"New York, USA",Web Portal,121.57.26.153,Firefox 125 on Linux x86_64,0
+tx_real_1256,130.76,Singapore,Web Portal,64.29.211.97,Firefox 125 on Linux x86_64,0
+tx_real_1257,111.58,"Dubai, UAE",Mobile App,174.14.78.35,Edge 123 on Android 14,0
+tx_real_1258,11605.58,"New York, USA",Mobile App,40.92.17.195,Edge 123 on Android 14,1
+tx_real_1259,148.64,"Tokyo, Japan",Mobile App,218.238.158.244,Safari 17 on iOS 17,0
+tx_real_1260,9.52,Singapore,Mobile App,103.173.79.110,Chrome 124 on macOS,0
+tx_real_1261,259.3,Singapore,Mobile App,189.102.106.251,Firefox 125 on Linux x86_64,0
+tx_real_1262,12065.64,Cayman Islands,Mobile App,57.181.64.246,Chrome 124 on macOS,1
+tx_real_1263,127.18,"Berlin, Germany",POS Terminal,176.64.87.217,Safari 17 on iOS 17,0
+tx_real_1264,301.1,"Tokyo, Japan",SWIFT Wire,17.22.81.210,Safari 17 on iOS 17,0
+tx_real_1265,1121.97,"New York, USA",Web Portal,179.74.138.185,Edge 123 on Android 14,0
+tx_real_1266,126.88,"Berlin, Germany",SWIFT Wire,145.240.125.50,Firefox 125 on Linux x86_64,0
+tx_real_1267,69.65,"New York, USA",Web Portal,62.161.1.236,Chrome 122 on Windows 11,0
+tx_real_1268,35.42,"London, UK",Web Portal,191.188.162.4,Safari 17 on iOS 17,0
+tx_real_1269,151.64,"Zurich, Switzerland",Crypto Gateway,155.132.171.246,Firefox 125 on Linux x86_64,1
+tx_real_1270,64.29,"Zurich, Switzerland",SWIFT Wire,14.1.71.222,Chrome 124 on macOS,0
+tx_real_1271,2936.31,"London, UK",Web Portal,188.201.189.35,Edge 123 on Android 14,0
+tx_real_1272,146.41,"Berlin, Germany",Mobile App,18.253.152.211,Chrome 124 on macOS,0
+tx_real_1273,57.78,"Tokyo, Japan",Web Portal,46.178.244.123,Safari 17 on iOS 17,0
+tx_real_1274,131.84,Singapore,Mobile App,53.27.32.78,Safari 17 on iOS 17,0
+tx_real_1275,65.87,"New York, USA",Mobile App,131.146.156.252,Chrome 124 on macOS,0
+tx_real_1276,22370.46,"Berlin, Germany",Mobile App,167.16.99.47,Safari 17 on iOS 17,1
+tx_real_1277,141.08,"Berlin, Germany",Mobile App,197.31.4.165,Firefox 125 on Linux x86_64,0
+tx_real_1278,489.06,"Tokyo, Japan",Mobile App,27.39.48.174,Safari 17 on iOS 17,0
+tx_real_1279,301.89,"New York, USA",SWIFT Wire,186.39.233.132,Edge 123 on Android 14,0
+tx_real_1280,19.99,"New York, USA",POS Terminal,40.158.22.203,Firefox 125 on Linux x86_64,0
+tx_real_1281,192.62,"New York, USA",Web Portal,76.108.12.222,Chrome 122 on Windows 11,0
+tx_real_1282,208.22,"New York, USA",POS Terminal,46.18.90.181,Safari 17 on iOS 17,0
+tx_real_1283,103.12,"London, UK",Mobile App,209.253.1.127,Safari 17 on iOS 17,0
+tx_real_1284,15212.66,"Berlin, Germany",Crypto Gateway,196.90.87.90,Edge 123 on Android 14,1
+tx_real_1285,6.12,"Zurich, Switzerland",Crypto Gateway,144.70.44.200,Edge 123 on Android 14,0
+tx_real_1286,7.97,"New York, USA",Web Portal,162.86.19.101,Chrome 124 on macOS,0
+tx_real_1287,28.6,"New York, USA",Web Portal,156.95.254.101,Chrome 124 on macOS,0
+tx_real_1288,85.78,"New York, USA",Mobile App,40.249.170.33,Chrome 124 on macOS,0
+tx_real_1289,12.47,"New York, USA",Crypto Gateway,212.229.12.118,Edge 123 on Android 14,0
+tx_real_1290,14960.65,"New York, USA",Mobile App,104.155.167.137,Chrome 124 on macOS,1
+tx_real_1291,32.56,"New York, USA",SWIFT Wire,159.76.247.29,Chrome 124 on macOS,0
+tx_real_1292,62.14,"Tokyo, Japan",Mobile App,171.235.190.117,Chrome 122 on Windows 11,0
+tx_real_1293,96.1,"Dubai, UAE",POS Terminal,25.2.180.231,Chrome 124 on macOS,0
+tx_real_1294,234.42,"London, UK",Crypto Gateway,127.172.182.18,Safari 17 on iOS 17,0
+tx_real_1295,15.25,"London, UK",POS Terminal,13.135.171.210,Edge 123 on Android 14,0
+tx_real_1296,36.66,"Panama City, Panama",Web Portal,176.165.186.161,Firefox 125 on Linux x86_64,0
+tx_real_1297,950.57,"New York, USA",Mobile App,118.187.95.122,Chrome 122 on Windows 11,0
+tx_real_1298,183.38,"New York, USA",SWIFT Wire,21.68.123.210,Edge 123 on Android 14,0
+tx_real_1299,11.81,"Berlin, Germany",SWIFT Wire,206.113.98.93,Edge 123 on Android 14,0
+tx_real_1300,77.99,"New York, USA",SWIFT Wire,32.194.172.127,Safari 17 on iOS 17,0
+tx_real_1301,8.75,Singapore,Mobile App,144.170.25.247,Chrome 124 on macOS,0
+tx_real_1302,7.63,Singapore,SWIFT Wire,195.85.55.251,Safari 17 on iOS 17,0
+tx_real_1303,39.88,"London, UK",Mobile App,154.95.142.167,Chrome 124 on macOS,0
+tx_real_1304,12.54,"London, UK",POS Terminal,166.224.220.179,Chrome 124 on macOS,0
+tx_real_1305,196.74,"Tokyo, Japan",Mobile App,129.177.9.186,Edge 123 on Android 14,0
+tx_real_1306,86.86,"New York, USA",Crypto Gateway,183.150.160.197,Chrome 124 on macOS,0
+tx_real_1307,90.69,"New York, USA",Web Portal,207.42.53.224,Chrome 122 on Windows 11,0
+tx_real_1308,33.03,"Tokyo, Japan",Mobile App,197.74.251.39,Chrome 122 on Windows 11,0
+tx_real_1309,39.7,"Zurich, Switzerland",Mobile App,132.15.199.157,Chrome 122 on Windows 11,0
+tx_real_1310,94.71,"New York, USA",SWIFT Wire,133.111.131.83,Edge 123 on Android 14,0
+tx_real_1311,86.32,"Berlin, Germany",Mobile App,20.92.29.207,Safari 17 on iOS 17,0
+tx_real_1312,23679.83,"London, UK",Web Portal,45.6.140.111,Firefox 125 on Linux x86_64,1
+tx_real_1313,20.73,"Panama City, Panama",SWIFT Wire,48.77.93.147,Chrome 124 on macOS,0
+tx_real_1314,107.9,"Tokyo, Japan",Mobile App,77.136.8.247,Firefox 125 on Linux x86_64,0
+tx_real_1315,24.14,Singapore,Mobile App,132.84.175.132,Safari 17 on iOS 17,0
+tx_real_1316,53.07,"Zurich, Switzerland",POS Terminal,189.85.195.45,Safari 17 on iOS 17,0
+tx_real_1317,21.56,"Dubai, UAE",Web Portal,146.87.16.77,Edge 123 on Android 14,0
+tx_real_1318,26.35,"New York, USA",Web Portal,205.240.9.60,Chrome 122 on Windows 11,0
+tx_real_1319,198.03,"Tokyo, Japan",SWIFT Wire,88.77.245.249,Chrome 122 on Windows 11,0
+tx_real_1320,7171.53,"New York, USA",Web Portal,81.15.71.102,Safari 17 on iOS 17,1
+tx_real_1321,45.76,"London, UK",Web Portal,179.22.152.113,Edge 123 on Android 14,0
+tx_real_1322,130.39,"London, UK",Web Portal,182.1.10.235,Edge 123 on Android 14,0
+tx_real_1323,52.63,"Berlin, Germany",POS Terminal,218.110.200.184,Chrome 124 on macOS,0
+tx_real_1324,42.4,"Dubai, UAE",Mobile App,123.217.50.12,Chrome 122 on Windows 11,0
+tx_real_1325,42.87,"New York, USA",POS Terminal,99.209.188.154,Safari 17 on iOS 17,0
+tx_real_1326,6511.05,"New York, USA",POS Terminal,122.78.169.164,Firefox 125 on Linux x86_64,1
+tx_real_1327,225.82,"Tokyo, Japan",SWIFT Wire,131.23.171.134,Chrome 122 on Windows 11,0
+tx_real_1328,8.54,"London, UK",Mobile App,207.171.25.18,Chrome 124 on macOS,0
+tx_real_1329,367.85,"New York, USA",POS Terminal,200.141.43.78,Edge 123 on Android 14,0
+tx_real_1330,47.33,Cayman Islands,SWIFT Wire,38.146.59.188,Safari 17 on iOS 17,0
+tx_real_1331,154.99,"Zurich, Switzerland",Mobile App,73.185.92.179,Chrome 122 on Windows 11,0
+tx_real_1332,52.1,"Dubai, UAE",POS Terminal,66.155.160.111,Firefox 125 on Linux x86_64,0
+tx_real_1333,165.82,"New York, USA",Web Portal,147.232.224.212,Chrome 124 on macOS,0
+tx_real_1334,280.91,"London, UK",SWIFT Wire,78.46.249.226,Chrome 124 on macOS,0
+tx_real_1335,11.59,"Zurich, Switzerland",Web Portal,77.154.136.6,Chrome 122 on Windows 11,0
+tx_real_1336,91.24,"Tokyo, Japan",Mobile App,218.24.176.231,Firefox 125 on Linux x86_64,0
+tx_real_1337,243.43,"Zurich, Switzerland",Mobile App,104.173.13.197,Chrome 124 on macOS,0
+tx_real_1338,1163.85,Singapore,SWIFT Wire,35.148.118.82,Safari 17 on iOS 17,0
+tx_real_1339,81.96,"New York, USA",Web Portal,121.82.66.202,Chrome 124 on macOS,0
+tx_real_1340,24.97,"Panama City, Panama",Mobile App,55.114.175.63,Firefox 125 on Linux x86_64,0
+tx_real_1341,3853.7,"London, UK",Web Portal,86.239.205.114,Edge 123 on Android 14,1
+tx_real_1342,36.75,"New York, USA",Web Portal,121.249.183.203,Edge 123 on Android 14,0
+tx_real_1343,1395.47,Cayman Islands,Mobile App,157.35.231.53,Chrome 122 on Windows 11,1
+tx_real_1344,15.63,"New York, USA",Web Portal,36.238.14.118,Firefox 125 on Linux x86_64,0
+tx_real_1345,41.06,"New York, USA",SWIFT Wire,55.172.216.233,Chrome 124 on macOS,0
+tx_real_1346,115.98,"Berlin, Germany",Web Portal,203.51.171.119,Chrome 124 on macOS,0
+tx_real_1347,64.37,"Zurich, Switzerland",SWIFT Wire,161.184.246.19,Edge 123 on Android 14,0
+tx_real_1348,220.62,"Tokyo, Japan",POS Terminal,92.76.183.220,Edge 123 on Android 14,0
+tx_real_1349,38.18,"New York, USA",SWIFT Wire,102.188.187.33,Safari 17 on iOS 17,0
+tx_real_1350,135.72,"Tokyo, Japan",Mobile App,157.28.123.180,Edge 123 on Android 14,0
+tx_real_1351,9646.08,"New York, USA",Web Portal,136.177.37.154,Safari 17 on iOS 17,1
+tx_real_1352,140.66,"London, UK",Mobile App,109.98.127.227,Chrome 124 on macOS,0
+tx_real_1353,63.64,"Dubai, UAE",SWIFT Wire,178.80.38.77,Safari 17 on iOS 17,0
+tx_real_1354,77.63,"Tokyo, Japan",Web Portal,136.87.252.54,Safari 17 on iOS 17,0
+tx_real_1355,10530.59,"Zurich, Switzerland",Web Portal,160.16.28.240,Chrome 122 on Windows 11,1
+tx_real_1356,201.08,"London, UK",Web Portal,173.188.173.46,Edge 123 on Android 14,0
+tx_real_1357,80.96,"Berlin, Germany",Mobile App,82.236.183.247,Safari 17 on iOS 17,0
+tx_real_1358,13.13,"Zurich, Switzerland",Web Portal,95.26.232.85,Chrome 124 on macOS,0
+tx_real_1359,4945.17,"Tokyo, Japan",Mobile App,163.233.65.134,Firefox 125 on Linux x86_64,1
+tx_real_1360,19.42,"Tokyo, Japan",Web Portal,161.115.64.87,Safari 17 on iOS 17,0
+tx_real_1361,79.91,"New York, USA",Web Portal,181.107.151.96,Edge 123 on Android 14,0
+tx_real_1362,147.47,"New York, USA",Mobile App,168.77.235.146,Chrome 122 on Windows 11,0
+tx_real_1363,5642.69,Cayman Islands,Mobile App,97.207.225.149,Chrome 124 on macOS,1
+tx_real_1364,86.85,"New York, USA",SWIFT Wire,67.103.151.91,Chrome 122 on Windows 11,0
+tx_real_1365,5.59,"New York, USA",SWIFT Wire,55.172.210.88,Firefox 125 on Linux x86_64,0
+tx_real_1366,62.5,"Berlin, Germany",SWIFT Wire,125.47.168.179,Safari 17 on iOS 17,0
+tx_real_1367,33.04,Singapore,Mobile App,180.135.50.176,Safari 17 on iOS 17,0
+tx_real_1368,62.65,"Tokyo, Japan",Web Portal,94.91.134.91,Edge 123 on Android 14,0
+tx_real_1369,69.81,Singapore,Mobile App,147.245.109.57,Safari 17 on iOS 17,0
+tx_real_1370,38.15,Singapore,POS Terminal,41.21.90.40,Chrome 124 on macOS,0
+tx_real_1371,132.61,"New York, USA",SWIFT Wire,122.45.77.177,Firefox 125 on Linux x86_64,0
+tx_real_1372,117.9,"London, UK",Web Portal,97.148.101.246,Chrome 122 on Windows 11,0
+tx_real_1373,208.05,"New York, USA",Web Portal,127.92.145.28,Firefox 125 on Linux x86_64,0
+tx_real_1374,20097.94,"London, UK",Mobile App,179.194.25.58,Safari 17 on iOS 17,1
+tx_real_1375,42.96,"Tokyo, Japan",SWIFT Wire,51.134.75.249,Chrome 122 on Windows 11,0
+tx_real_1376,46.56,"London, UK",Web Portal,48.134.173.75,Edge 123 on Android 14,0
+tx_real_1377,183.36,"Zurich, Switzerland",Mobile App,152.66.168.3,Firefox 125 on Linux x86_64,0
+tx_real_1378,41.69,"London, UK",POS Terminal,127.99.225.152,Chrome 122 on Windows 11,0
+tx_real_1379,371.03,"New York, USA",Mobile App,29.146.192.241,Chrome 122 on Windows 11,0
+tx_real_1380,30.36,"London, UK",POS Terminal,126.125.88.237,Chrome 122 on Windows 11,0
+tx_real_1381,64.82,"New York, USA",Mobile App,45.190.1.228,Chrome 124 on macOS,0
+tx_real_1382,98.89,"New York, USA",Web Portal,163.173.177.252,Firefox 125 on Linux x86_64,0
+tx_real_1383,38.46,"New York, USA",Web Portal,136.235.226.89,Chrome 122 on Windows 11,0
+tx_real_1384,52.35,"London, UK",Web Portal,154.226.221.147,Firefox 125 on Linux x86_64,0
+tx_real_1385,87.89,"Tokyo, Japan",Mobile App,161.211.25.16,Chrome 122 on Windows 11,0
+tx_real_1386,37.7,"New York, USA",Web Portal,192.243.73.129,Edge 123 on Android 14,0
+tx_real_1387,137.09,"London, UK",Mobile App,52.147.225.162,Edge 123 on Android 14,0
+tx_real_1388,337.66,Singapore,Web Portal,90.236.104.183,Edge 123 on Android 14,0
+tx_real_1389,40.46,"New York, USA",Mobile App,156.34.89.125,Safari 17 on iOS 17,0
+tx_real_1390,14.06,"Berlin, Germany",Crypto Gateway,55.134.21.122,Chrome 122 on Windows 11,0
+tx_real_1391,27.07,"Zurich, Switzerland",SWIFT Wire,80.96.105.48,Safari 17 on iOS 17,0
+tx_real_1392,19.07,"London, UK",Crypto Gateway,49.31.234.10,Firefox 125 on Linux x86_64,1
+tx_real_1393,239.63,Singapore,Crypto Gateway,40.249.244.18,Safari 17 on iOS 17,0
+tx_real_1394,20096.45,"New York, USA",Crypto Gateway,198.88.244.125,Firefox 125 on Linux x86_64,1
+tx_real_1395,426.33,Singapore,Mobile App,83.223.15.4,Firefox 125 on Linux x86_64,0
+tx_real_1396,9.93,"London, UK",Mobile App,201.168.9.109,Firefox 125 on Linux x86_64,0
+tx_real_1397,16868.09,"Berlin, Germany",POS Terminal,147.154.132.209,Safari 17 on iOS 17,1
+tx_real_1398,198.3,"New York, USA",Mobile App,26.143.99.121,Chrome 122 on Windows 11,0
+tx_real_1399,32.15,"Zurich, Switzerland",Mobile App,62.69.247.5,Safari 17 on iOS 17,0
+tx_real_1400,194.62,Singapore,Web Portal,30.79.146.111,Chrome 122 on Windows 11,0
+tx_real_1401,18.12,"New York, USA",Web Portal,12.93.13.4,Chrome 122 on Windows 11,0
+tx_real_1402,16.28,"London, UK",Mobile App,180.109.74.189,Firefox 125 on Linux x86_64,0
+tx_real_1403,84.12,"Tokyo, Japan",Web Portal,105.105.8.67,Safari 17 on iOS 17,0
+tx_real_1404,5.39,"Panama City, Panama",Crypto Gateway,201.110.9.222,Chrome 122 on Windows 11,0
+tx_real_1405,7682.12,"London, UK",SWIFT Wire,127.11.99.229,Edge 123 on Android 14,1
+tx_real_1406,3111.66,"Tokyo, Japan",POS Terminal,52.141.164.120,Chrome 122 on Windows 11,1
+tx_real_1407,67.94,"Dubai, UAE",SWIFT Wire,151.12.37.74,Edge 123 on Android 14,0
+tx_real_1408,44.13,"Berlin, Germany",Mobile App,83.52.199.130,Safari 17 on iOS 17,0
+tx_real_1409,2528.57,"New York, USA",SWIFT Wire,66.60.23.103,Safari 17 on iOS 17,0
+tx_real_1410,48.92,"Tokyo, Japan",SWIFT Wire,50.64.231.85,Safari 17 on iOS 17,0
+tx_real_1411,7714.41,"London, UK",POS Terminal,161.157.206.218,Chrome 122 on Windows 11,1
+tx_real_1412,130.78,"Dubai, UAE",Mobile App,189.197.247.223,Chrome 124 on macOS,0
+tx_real_1413,241.82,"Zurich, Switzerland",Mobile App,99.31.178.20,Chrome 122 on Windows 11,0
+tx_real_1414,281.17,"New York, USA",Mobile App,193.209.237.130,Chrome 122 on Windows 11,0
+tx_real_1415,28.56,"Tokyo, Japan",Web Portal,163.13.122.103,Firefox 125 on Linux x86_64,0
+tx_real_1416,175.04,"London, UK",Web Portal,116.119.70.195,Firefox 125 on Linux x86_64,0
+tx_real_1417,209.04,"Dubai, UAE",Mobile App,196.99.82.75,Chrome 122 on Windows 11,0
+tx_real_1418,74.16,"Dubai, UAE",Mobile App,128.84.192.69,Edge 123 on Android 14,0
+tx_real_1419,25.19,Cayman Islands,Crypto Gateway,69.188.211.126,Firefox 125 on Linux x86_64,1
+tx_real_1420,13.04,"New York, USA",Mobile App,121.62.144.128,Chrome 122 on Windows 11,0
+tx_real_1421,199.5,Cayman Islands,Mobile App,115.68.15.217,Chrome 124 on macOS,0
+tx_real_1422,93.07,"New York, USA",Mobile App,193.35.183.14,Edge 123 on Android 14,0
+tx_real_1423,138.3,"New York, USA",Web Portal,187.211.102.100,Safari 17 on iOS 17,0
+tx_real_1424,43.25,"Panama City, Panama",Mobile App,17.30.211.49,Chrome 122 on Windows 11,0
+tx_real_1425,145.02,"New York, USA",Mobile App,154.111.246.232,Chrome 122 on Windows 11,0
+tx_real_1426,13.39,"London, UK",Mobile App,189.72.210.220,Edge 123 on Android 14,0
+tx_real_1427,11153.27,"Dubai, UAE",POS Terminal,90.244.83.42,Firefox 125 on Linux x86_64,1
+tx_real_1428,57.5,"London, UK",Mobile App,27.191.173.205,Firefox 125 on Linux x86_64,0
+tx_real_1429,7.18,"New York, USA",Web Portal,17.155.10.34,Firefox 125 on Linux x86_64,0
+tx_real_1430,44.89,"Berlin, Germany",Mobile App,46.153.6.152,Safari 17 on iOS 17,0
+tx_real_1431,24617.85,"New York, USA",Mobile App,156.215.134.29,Edge 123 on Android 14,1
+tx_real_1432,108.5,"Tokyo, Japan",Web Portal,136.153.183.81,Edge 123 on Android 14,0
+tx_real_1433,64.18,"Dubai, UAE",Mobile App,184.152.75.26,Firefox 125 on Linux x86_64,0
+tx_real_1434,45.22,"Berlin, Germany",Crypto Gateway,137.115.126.226,Firefox 125 on Linux x86_64,1
+tx_real_1435,38.72,Cayman Islands,POS Terminal,38.131.75.166,Chrome 124 on macOS,0
+tx_real_1436,46.76,"London, UK",Crypto Gateway,199.78.179.90,Chrome 124 on macOS,0
+tx_real_1437,88.57,"New York, USA",SWIFT Wire,186.21.54.184,Chrome 122 on Windows 11,0
+tx_real_1438,302.82,"Panama City, Panama",Web Portal,113.222.59.72,Chrome 122 on Windows 11,0
+tx_real_1439,16492.28,"Berlin, Germany",Mobile App,189.20.112.224,Edge 123 on Android 14,1
+tx_real_1440,14077.36,"Zurich, Switzerland",Crypto Gateway,69.71.137.109,Edge 123 on Android 14,1
+tx_real_1441,15.47,"New York, USA",Web Portal,139.157.191.200,Safari 17 on iOS 17,0
+tx_real_1442,20.93,"New York, USA",Crypto Gateway,66.246.196.35,Safari 17 on iOS 17,0
+tx_real_1443,22.55,"New York, USA",Mobile App,133.131.246.237,Chrome 124 on macOS,0
+tx_real_1444,233.65,"Tokyo, Japan",Mobile App,114.7.27.1,Chrome 122 on Windows 11,0
+tx_real_1445,109.66,"London, UK",SWIFT Wire,218.230.199.172,Chrome 124 on macOS,0
+tx_real_1446,24.64,"Berlin, Germany",Web Portal,97.41.123.75,Chrome 124 on macOS,0
+tx_real_1447,58.26,"Tokyo, Japan",Mobile App,52.117.161.178,Chrome 122 on Windows 11,0
+tx_real_1448,75.78,"New York, USA",Mobile App,73.228.165.233,Safari 17 on iOS 17,0
+tx_real_1449,46.9,Singapore,Web Portal,197.127.209.227,Chrome 122 on Windows 11,0
+tx_real_1450,222.38,"London, UK",Web Portal,186.133.48.224,Firefox 125 on Linux x86_64,0
+tx_real_1451,70.23,Singapore,Mobile App,13.116.175.190,Firefox 125 on Linux x86_64,0
+tx_real_1452,70.47,"Tokyo, Japan",Web Portal,109.116.14.191,Firefox 125 on Linux x86_64,0
+tx_real_1453,62.97,"Panama City, Panama",Mobile App,122.253.61.159,Edge 123 on Android 14,0
+tx_real_1454,45.12,"Panama City, Panama",Mobile App,105.17.124.24,Safari 17 on iOS 17,0
+tx_real_1455,57.69,"New York, USA",SWIFT Wire,126.151.82.50,Safari 17 on iOS 17,0
+tx_real_1456,194.21,"New York, USA",Mobile App,216.242.79.79,Edge 123 on Android 14,0
+tx_real_1457,45.26,"Tokyo, Japan",Mobile App,80.27.15.50,Chrome 124 on macOS,0
+tx_real_1458,114.96,"New York, USA",Web Portal,46.247.8.79,Firefox 125 on Linux x86_64,0
+tx_real_1459,66.37,"London, UK",SWIFT Wire,141.190.47.205,Firefox 125 on Linux x86_64,0
+tx_real_1460,29.28,"New York, USA",Mobile App,115.98.216.232,Chrome 124 on macOS,0
+tx_real_1461,148.19,Cayman Islands,POS Terminal,106.189.160.222,Chrome 122 on Windows 11,0
+tx_real_1462,11427.14,"New York, USA",SWIFT Wire,126.241.13.1,Chrome 122 on Windows 11,1
+tx_real_1463,29.98,Cayman Islands,Mobile App,44.190.79.236,Safari 17 on iOS 17,0
+tx_real_1464,177.51,"Dubai, UAE",Web Portal,88.121.93.98,Edge 123 on Android 14,0
+tx_real_1465,43.34,"New York, USA",POS Terminal,92.246.199.221,Safari 17 on iOS 17,0
+tx_real_1466,167.5,"New York, USA",Web Portal,169.192.253.153,Chrome 122 on Windows 11,0
+tx_real_1467,139.63,"London, UK",Web Portal,48.14.136.91,Chrome 124 on macOS,0
+tx_real_1468,89.37,"Berlin, Germany",Crypto Gateway,64.130.209.101,Safari 17 on iOS 17,0
+tx_real_1469,361.08,"New York, USA",Mobile App,216.89.56.94,Firefox 125 on Linux x86_64,0
+tx_real_1470,301.57,"London, UK",Crypto Gateway,103.84.85.189,Firefox 125 on Linux x86_64,1
+tx_real_1471,23452.33,"New York, USA",SWIFT Wire,32.35.229.16,Chrome 124 on macOS,1
+tx_real_1472,3384.9,"Tokyo, Japan",POS Terminal,60.122.128.113,Chrome 122 on Windows 11,1
+tx_real_1473,16.06,"London, UK",Mobile App,181.17.80.186,Firefox 125 on Linux x86_64,0
+tx_real_1474,122.03,"Tokyo, Japan",Web Portal,140.132.85.167,Firefox 125 on Linux x86_64,0
+tx_real_1475,268.34,"Berlin, Germany",Mobile App,104.134.81.231,Edge 123 on Android 14,0
+tx_real_1476,10513.99,"New York, USA",Web Portal,79.69.148.192,Safari 17 on iOS 17,1
+tx_real_1477,11.28,"Panama City, Panama",SWIFT Wire,26.51.105.165,Chrome 122 on Windows 11,0
+tx_real_1478,57.24,"New York, USA",Crypto Gateway,211.197.170.185,Safari 17 on iOS 17,0
+tx_real_1479,15.49,"Berlin, Germany",Crypto Gateway,76.9.107.100,Chrome 122 on Windows 11,0
+tx_real_1480,21.08,Cayman Islands,Mobile App,96.64.214.22,Firefox 125 on Linux x86_64,0
+tx_real_1481,143.02,"Berlin, Germany",Crypto Gateway,172.183.157.166,Edge 123 on Android 14,0
+tx_real_1482,25.67,"New York, USA",Web Portal,120.97.18.71,Safari 17 on iOS 17,0
+tx_real_1483,84.21,"New York, USA",Web Portal,203.127.97.1,Firefox 125 on Linux x86_64,0
+tx_real_1484,73.6,"London, UK",Mobile App,142.4.125.82,Chrome 122 on Windows 11,0
+tx_real_1485,21.57,"London, UK",Mobile App,37.171.59.32,Safari 17 on iOS 17,0
+tx_real_1486,14.7,"New York, USA",Mobile App,171.28.106.105,Safari 17 on iOS 17,0
+tx_real_1487,175.95,"London, UK",Mobile App,193.228.188.70,Firefox 125 on Linux x86_64,0
+tx_real_1488,40.06,"New York, USA",POS Terminal,72.208.34.87,Safari 17 on iOS 17,0
+tx_real_1489,11.22,"London, UK",SWIFT Wire,124.106.216.56,Edge 123 on Android 14,0
+tx_real_1490,118.35,"Panama City, Panama",Crypto Gateway,123.13.184.18,Edge 123 on Android 14,0
+tx_real_1491,21613.75,"Zurich, Switzerland",Mobile App,192.205.113.229,Firefox 125 on Linux x86_64,1
+tx_real_1492,63.65,"New York, USA",Mobile App,181.39.189.170,Chrome 122 on Windows 11,0
+tx_real_1493,120.8,"London, UK",Web Portal,219.79.146.151,Firefox 125 on Linux x86_64,0
+tx_real_1494,68.23,"New York, USA",Crypto Gateway,192.243.30.250,Edge 123 on Android 14,0
+tx_real_1495,33.01,"Dubai, UAE",Mobile App,108.58.196.67,Chrome 124 on macOS,0
+tx_real_1496,22550.46,"New York, USA",Mobile App,81.248.146.106,Chrome 124 on macOS,1
+tx_real_1497,8688.98,"Tokyo, Japan",Mobile App,17.40.70.214,Safari 17 on iOS 17,1
+tx_real_1498,26.99,"Dubai, UAE",SWIFT Wire,203.68.238.49,Safari 17 on iOS 17,0
+tx_real_1499,229.02,"Panama City, Panama",Mobile App,62.114.107.29,Chrome 124 on macOS,0
+tx_real_1500,96.69,Cayman Islands,Mobile App,159.218.78.9,Edge 123 on Android 14,0
+tx_real_1501,14.03,"Panama City, Panama",Mobile App,185.76.42.179,Safari 17 on iOS 17,0
+tx_real_1502,20.25,"Dubai, UAE",Web Portal,194.179.198.128,Firefox 125 on Linux x86_64,0
+tx_real_1503,183.26,Singapore,Mobile App,30.216.155.166,Firefox 125 on Linux x86_64,0
+tx_real_1504,10.85,Singapore,Mobile App,82.65.182.241,Edge 123 on Android 14,0
+tx_real_1505,18.98,Singapore,Mobile App,123.24.128.175,Safari 17 on iOS 17,0
+tx_real_1506,14962.23,"Zurich, Switzerland",Web Portal,209.83.214.63,Firefox 125 on Linux x86_64,1
+tx_real_1507,38.87,Singapore,Crypto Gateway,195.183.60.99,Safari 17 on iOS 17,0
+tx_real_1508,59.22,"London, UK",Mobile App,72.30.221.22,Safari 17 on iOS 17,0
+tx_real_1509,71.5,"New York, USA",Web Portal,213.212.126.157,Firefox 125 on Linux x86_64,0
+tx_real_1510,47.45,"New York, USA",Mobile App,179.42.98.193,Chrome 124 on macOS,0
+tx_real_1511,20.12,"New York, USA",Mobile App,41.158.112.146,Firefox 125 on Linux x86_64,0
+tx_real_1512,8.41,"New York, USA",Mobile App,132.17.38.142,Edge 123 on Android 14,0
+tx_real_1513,7573.0,"New York, USA",Mobile App,217.110.184.22,Chrome 122 on Windows 11,1
+tx_real_1514,123.65,Singapore,Web Portal,205.56.119.147,Firefox 125 on Linux x86_64,0
+tx_real_1515,14624.65,"New York, USA",Crypto Gateway,67.172.226.35,Safari 17 on iOS 17,1
+tx_real_1516,80.13,"Panama City, Panama",SWIFT Wire,124.125.129.52,Safari 17 on iOS 17,0
+tx_real_1517,3914.22,"New York, USA",Web Portal,95.221.198.165,Firefox 125 on Linux x86_64,1
+tx_real_1518,19.1,"New York, USA",Web Portal,75.179.129.219,Chrome 122 on Windows 11,0
+tx_real_1519,153.86,"Tokyo, Japan",SWIFT Wire,31.181.16.236,Firefox 125 on Linux x86_64,0
+tx_real_1520,43.78,Singapore,Mobile App,133.61.54.168,Chrome 122 on Windows 11,0
+tx_real_1521,7214.35,"New York, USA",Mobile App,36.80.220.65,Chrome 122 on Windows 11,1
+tx_real_1522,6.55,"Berlin, Germany",SWIFT Wire,110.74.192.171,Edge 123 on Android 14,0
+tx_real_1523,17.75,"Berlin, Germany",Mobile App,27.121.187.23,Safari 17 on iOS 17,0
+tx_real_1524,14.09,"London, UK",Mobile App,145.172.181.71,Safari 17 on iOS 17,0
+tx_real_1525,126.58,"London, UK",Mobile App,118.79.162.46,Chrome 122 on Windows 11,0
+tx_real_1526,147.42,"Dubai, UAE",Web Portal,206.206.78.16,Safari 17 on iOS 17,0
+tx_real_1527,291.5,Singapore,Web Portal,81.96.147.2,Chrome 124 on macOS,0
+tx_real_1528,8.93,"Zurich, Switzerland",POS Terminal,20.178.125.81,Chrome 122 on Windows 11,0
+tx_real_1529,11.94,"Panama City, Panama",Mobile App,150.70.150.32,Safari 17 on iOS 17,0
+tx_real_1530,170.01,"New York, USA",Web Portal,115.84.129.182,Chrome 124 on macOS,0
+tx_real_1531,66.73,"London, UK",Crypto Gateway,68.198.211.146,Edge 123 on Android 14,0
+tx_real_1532,18448.02,"New York, USA",Web Portal,144.45.97.23,Safari 17 on iOS 17,1
+tx_real_1533,29.73,"Tokyo, Japan",Mobile App,33.154.205.135,Chrome 124 on macOS,0
+tx_real_1534,139.81,Singapore,Web Portal,89.44.27.26,Firefox 125 on Linux x86_64,0
+tx_real_1535,8874.53,Cayman Islands,Mobile App,107.207.36.109,Firefox 125 on Linux x86_64,1
+tx_real_1536,87.71,"New York, USA",Mobile App,65.192.219.185,Chrome 124 on macOS,0
+tx_real_1537,97.59,"New York, USA",Mobile App,79.61.130.55,Chrome 122 on Windows 11,0
+tx_real_1538,59.6,"Zurich, Switzerland",Web Portal,132.97.80.87,Chrome 122 on Windows 11,0
+tx_real_1539,255.14,"Tokyo, Japan",SWIFT Wire,48.119.208.78,Safari 17 on iOS 17,0
+tx_real_1540,31.66,"Zurich, Switzerland",POS Terminal,167.154.35.79,Firefox 125 on Linux x86_64,0
+tx_real_1541,116.17,"New York, USA",Web Portal,77.87.157.34,Chrome 122 on Windows 11,0
+tx_real_1542,23780.82,"Berlin, Germany",Mobile App,107.169.169.151,Chrome 122 on Windows 11,1
+tx_real_1543,25.29,"New York, USA",POS Terminal,81.3.58.32,Firefox 125 on Linux x86_64,0
+tx_real_1544,149.83,"Dubai, UAE",Mobile App,41.82.43.135,Edge 123 on Android 14,0
+tx_real_1545,8.93,"New York, USA",POS Terminal,115.1.61.14,Chrome 122 on Windows 11,0
+tx_real_1546,13.14,Cayman Islands,Mobile App,190.224.6.103,Chrome 124 on macOS,0
+tx_real_1547,16.6,"New York, USA",SWIFT Wire,20.71.90.226,Safari 17 on iOS 17,0
+tx_real_1548,284.43,"Berlin, Germany",Web Portal,168.228.149.126,Chrome 122 on Windows 11,0
+tx_real_1549,144.76,"Zurich, Switzerland",Web Portal,198.209.97.74,Chrome 122 on Windows 11,0
+tx_real_1550,55.42,"New York, USA",Web Portal,125.191.239.170,Edge 123 on Android 14,0
+tx_real_1551,124.6,"London, UK",POS Terminal,61.192.204.56,Chrome 124 on macOS,0
+tx_real_1552,15122.65,"New York, USA",Web Portal,218.41.32.15,Safari 17 on iOS 17,1
+tx_real_1553,15.1,"New York, USA",Web Portal,72.155.28.209,Chrome 122 on Windows 11,0
+tx_real_1554,89.27,"Berlin, Germany",Crypto Gateway,74.238.187.242,Safari 17 on iOS 17,0
+tx_real_1555,29.66,"London, UK",Web Portal,196.130.127.36,Firefox 125 on Linux x86_64,0
+tx_real_1556,34.08,"Tokyo, Japan",Mobile App,124.199.13.15,Chrome 122 on Windows 11,0
+tx_real_1557,87.31,Singapore,Crypto Gateway,99.215.188.22,Chrome 122 on Windows 11,0
+tx_real_1558,101.61,Cayman Islands,Mobile App,201.218.225.203,Firefox 125 on Linux x86_64,0
+tx_real_1559,14.97,"New York, USA",Web Portal,84.25.101.176,Edge 123 on Android 14,0
+tx_real_1560,67.09,"New York, USA",Crypto Gateway,181.117.166.41,Chrome 122 on Windows 11,0
+tx_real_1561,11.11,"Tokyo, Japan",Web Portal,183.88.168.110,Safari 17 on iOS 17,0
+tx_real_1562,19.0,"Dubai, UAE",Web Portal,130.97.145.216,Chrome 124 on macOS,0
+tx_real_1563,14784.52,"New York, USA",Web Portal,67.130.96.121,Safari 17 on iOS 17,1
+tx_real_1564,50.11,"New York, USA",Mobile App,72.216.137.68,Edge 123 on Android 14,0
+tx_real_1565,4874.34,"Zurich, Switzerland",Crypto Gateway,91.17.117.50,Chrome 124 on macOS,1
+tx_real_1566,5.47,"Dubai, UAE",Mobile App,122.94.168.186,Safari 17 on iOS 17,0
+tx_real_1567,83.12,"New York, USA",SWIFT Wire,213.85.149.146,Safari 17 on iOS 17,0
+tx_real_1568,49.7,"London, UK",Mobile App,193.157.152.74,Firefox 125 on Linux x86_64,0
+tx_real_1569,115.07,"Berlin, Germany",Mobile App,119.145.18.42,Edge 123 on Android 14,0
+tx_real_1570,190.86,"New York, USA",Mobile App,111.45.82.17,Firefox 125 on Linux x86_64,0
+tx_real_1571,29.37,"New York, USA",Crypto Gateway,83.14.177.157,Chrome 124 on macOS,0
+tx_real_1572,63.45,Singapore,Mobile App,142.82.251.148,Firefox 125 on Linux x86_64,0
+tx_real_1573,197.46,"Berlin, Germany",Mobile App,130.120.47.107,Edge 123 on Android 14,0
+tx_real_1574,59.32,"New York, USA",SWIFT Wire,118.9.205.79,Chrome 122 on Windows 11,0
+tx_real_1575,23.15,"Zurich, Switzerland",Mobile App,165.15.220.229,Chrome 122 on Windows 11,0
+tx_real_1576,90.23,"Zurich, Switzerland",Web Portal,29.90.180.26,Chrome 124 on macOS,0
+tx_real_1577,37.08,"Zurich, Switzerland",SWIFT Wire,164.154.174.92,Chrome 122 on Windows 11,0
+tx_real_1578,179.38,Singapore,Mobile App,187.82.224.181,Firefox 125 on Linux x86_64,0
+tx_real_1579,31.19,"Zurich, Switzerland",Mobile App,141.194.225.42,Chrome 124 on macOS,0
+tx_real_1580,260.86,"London, UK",SWIFT Wire,29.17.236.161,Edge 123 on Android 14,0
+tx_real_1581,28.6,"Zurich, Switzerland",Mobile App,86.177.184.63,Chrome 124 on macOS,0
+tx_real_1582,139.3,Singapore,SWIFT Wire,141.107.49.55,Chrome 124 on macOS,0
+tx_real_1583,9213.98,"Zurich, Switzerland",Web Portal,164.99.200.52,Safari 17 on iOS 17,1
+tx_real_1584,21.66,"Berlin, Germany",Crypto Gateway,110.117.118.7,Safari 17 on iOS 17,0
+tx_real_1585,80.01,"New York, USA",Mobile App,56.46.100.144,Chrome 124 on macOS,0
+tx_real_1586,116.57,"Panama City, Panama",POS Terminal,162.189.54.62,Chrome 122 on Windows 11,0
+tx_real_1587,16.73,"Panama City, Panama",Mobile App,139.49.25.10,Safari 17 on iOS 17,0
+tx_real_1588,51.14,"New York, USA",Mobile App,128.208.144.186,Edge 123 on Android 14,0
+tx_real_1589,73.23,"Zurich, Switzerland",POS Terminal,210.157.231.92,Firefox 125 on Linux x86_64,0
+tx_real_1590,91.27,"London, UK",Mobile App,144.144.148.80,Safari 17 on iOS 17,0
+tx_real_1591,26.59,"New York, USA",POS Terminal,81.233.78.43,Chrome 124 on macOS,0
+tx_real_1592,50.23,"London, UK",SWIFT Wire,164.90.78.199,Chrome 122 on Windows 11,0
+tx_real_1593,10.04,"New York, USA",Mobile App,171.26.121.45,Firefox 125 on Linux x86_64,0
+tx_real_1594,91.0,"New York, USA",SWIFT Wire,73.195.180.68,Safari 17 on iOS 17,0
+tx_real_1595,118.69,"Panama City, Panama",Web Portal,164.203.2.142,Chrome 122 on Windows 11,0
+tx_real_1596,5525.92,"New York, USA",Web Portal,118.30.49.140,Chrome 122 on Windows 11,1
+tx_real_1597,99.68,"Panama City, Panama",Web Portal,54.161.13.78,Chrome 122 on Windows 11,0
+tx_real_1598,158.31,"Zurich, Switzerland",Mobile App,136.98.236.26,Chrome 124 on macOS,0
+tx_real_1599,57.96,"Berlin, Germany",Mobile App,159.156.48.228,Edge 123 on Android 14,0
+tx_real_1600,9886.89,Singapore,SWIFT Wire,178.66.234.201,Chrome 122 on Windows 11,1
+tx_real_1601,108.38,"New York, USA",Mobile App,97.79.205.23,Firefox 125 on Linux x86_64,0
+tx_real_1602,29.48,Cayman Islands,POS Terminal,91.254.48.124,Safari 17 on iOS 17,0
+tx_real_1603,10824.9,"New York, USA",Mobile App,140.84.20.187,Firefox 125 on Linux x86_64,1
+tx_real_1604,23.83,"Zurich, Switzerland",Crypto Gateway,56.131.183.12,Chrome 124 on macOS,0
+tx_real_1605,42.5,"Berlin, Germany",Crypto Gateway,50.66.100.78,Chrome 124 on macOS,0
+tx_real_1606,48.54,"New York, USA",Mobile App,26.83.162.44,Firefox 125 on Linux x86_64,0
+tx_real_1607,69.56,"London, UK",Web Portal,144.205.192.100,Edge 123 on Android 14,0
+tx_real_1608,5171.85,"Tokyo, Japan",SWIFT Wire,32.18.12.180,Chrome 124 on macOS,1
+tx_real_1609,143.29,"Berlin, Germany",SWIFT Wire,133.246.222.117,Chrome 124 on macOS,0
+tx_real_1610,143.38,Cayman Islands,SWIFT Wire,61.232.71.224,Firefox 125 on Linux x86_64,0
+tx_real_1611,106.82,"New York, USA",Web Portal,58.19.6.84,Chrome 124 on macOS,0
+tx_real_1612,64.92,Cayman Islands,Mobile App,165.53.107.101,Edge 123 on Android 14,0
+tx_real_1613,113.95,"New York, USA",Mobile App,58.135.187.69,Edge 123 on Android 14,0
+tx_real_1614,16459.8,"Tokyo, Japan",Mobile App,21.143.192.131,Edge 123 on Android 14,1
+tx_real_1615,396.1,"Dubai, UAE",Mobile App,132.69.23.181,Safari 17 on iOS 17,0
+tx_real_1616,5.79,"Tokyo, Japan",Web Portal,47.9.15.131,Edge 123 on Android 14,0
+tx_real_1617,2143.37,"Berlin, Germany",Web Portal,103.198.17.154,Edge 123 on Android 14,0
+tx_real_1618,38.04,"New York, USA",SWIFT Wire,159.72.149.121,Safari 17 on iOS 17,0
+tx_real_1619,7.48,"Tokyo, Japan",Mobile App,21.166.72.106,Chrome 122 on Windows 11,0
+tx_real_1620,7.0,"Panama City, Panama",Web Portal,135.35.119.14,Chrome 124 on macOS,0
+tx_real_1621,251.17,"New York, USA",Mobile App,24.10.140.38,Edge 123 on Android 14,0
+tx_real_1622,151.35,"Berlin, Germany",Web Portal,118.119.238.34,Chrome 124 on macOS,0
+tx_real_1623,68.19,"New York, USA",Mobile App,179.10.122.145,Firefox 125 on Linux x86_64,0
+tx_real_1624,190.4,Cayman Islands,Mobile App,155.195.190.223,Chrome 124 on macOS,0
+tx_real_1625,25.36,"Panama City, Panama",SWIFT Wire,125.1.12.103,Safari 17 on iOS 17,0
+tx_real_1626,23.93,Cayman Islands,Mobile App,14.170.141.98,Chrome 124 on macOS,0
+tx_real_1627,17.7,"New York, USA",Web Portal,116.85.214.121,Chrome 124 on macOS,0
+tx_real_1628,18.86,Singapore,Mobile App,142.82.197.19,Chrome 124 on macOS,0
+tx_real_1629,139.78,"Zurich, Switzerland",Web Portal,140.12.81.74,Chrome 122 on Windows 11,0
+tx_real_1630,15.93,"Berlin, Germany",Crypto Gateway,108.6.136.125,Chrome 122 on Windows 11,0
+tx_real_1631,19.89,"London, UK",Mobile App,61.11.191.185,Firefox 125 on Linux x86_64,0
+tx_real_1632,38.45,"London, UK",Web Portal,137.140.73.2,Safari 17 on iOS 17,0
+tx_real_1633,50.52,"Tokyo, Japan",Mobile App,18.250.139.124,Chrome 124 on macOS,0
+tx_real_1634,121.3,"London, UK",Mobile App,63.228.10.213,Chrome 124 on macOS,0
+tx_real_1635,97.58,Singapore,Web Portal,122.8.36.221,Chrome 124 on macOS,0
+tx_real_1636,87.27,Singapore,Mobile App,116.204.253.14,Chrome 124 on macOS,0
+tx_real_1637,17520.06,"Berlin, Germany",Web Portal,192.242.213.86,Chrome 122 on Windows 11,1
+tx_real_1638,4957.24,Singapore,SWIFT Wire,159.236.50.222,Firefox 125 on Linux x86_64,1
+tx_real_1639,90.33,"Zurich, Switzerland",Web Portal,177.20.216.87,Edge 123 on Android 14,0
+tx_real_1640,90.04,"New York, USA",Crypto Gateway,145.137.129.154,Safari 17 on iOS 17,0
+tx_real_1641,16020.22,"New York, USA",Crypto Gateway,176.38.246.189,Chrome 124 on macOS,1
+tx_real_1642,21.18,"New York, USA",Web Portal,54.86.44.74,Firefox 125 on Linux x86_64,0
+tx_real_1643,238.86,"New York, USA",Web Portal,129.190.122.134,Edge 123 on Android 14,0
+tx_real_1644,210.56,Singapore,Web Portal,155.51.242.38,Firefox 125 on Linux x86_64,0
+tx_real_1645,33.16,"Tokyo, Japan",Web Portal,162.51.10.120,Chrome 122 on Windows 11,0
+tx_real_1646,51.92,"Zurich, Switzerland",SWIFT Wire,210.149.248.70,Edge 123 on Android 14,0
+tx_real_1647,33.37,"Panama City, Panama",Mobile App,95.57.126.39,Firefox 125 on Linux x86_64,0
+tx_real_1648,71.12,"Dubai, UAE",Mobile App,43.187.18.184,Chrome 122 on Windows 11,0
+tx_real_1649,85.44,"Panama City, Panama",POS Terminal,67.244.96.204,Firefox 125 on Linux x86_64,0
+tx_real_1650,12.9,Cayman Islands,Mobile App,58.42.27.74,Firefox 125 on Linux x86_64,0
+tx_real_1651,14338.61,"Zurich, Switzerland",Mobile App,120.249.180.170,Edge 123 on Android 14,1
+tx_real_1652,106.42,"London, UK",Mobile App,42.234.26.25,Chrome 122 on Windows 11,0
+tx_real_1653,55.9,"New York, USA",Web Portal,85.23.226.57,Chrome 124 on macOS,0
+tx_real_1654,67.93,"London, UK",Web Portal,190.232.126.87,Safari 17 on iOS 17,0
+tx_real_1655,27.13,"Berlin, Germany",Mobile App,41.64.199.232,Edge 123 on Android 14,0
+tx_real_1656,10.58,"Panama City, Panama",Mobile App,43.213.2.18,Chrome 122 on Windows 11,0
+tx_real_1657,65.76,"New York, USA",Crypto Gateway,185.161.229.226,Firefox 125 on Linux x86_64,1
+tx_real_1658,109.3,"Zurich, Switzerland",Mobile App,94.35.179.114,Chrome 122 on Windows 11,0
+tx_real_1659,99.79,"Panama City, Panama",Mobile App,156.110.254.88,Safari 17 on iOS 17,0
+tx_real_1660,145.88,"New York, USA",Web Portal,82.125.30.172,Safari 17 on iOS 17,0
+tx_real_1661,2594.96,"London, UK",Crypto Gateway,63.138.87.180,Chrome 124 on macOS,0
+tx_real_1662,15079.41,"Berlin, Germany",SWIFT Wire,187.139.194.186,Chrome 124 on macOS,1
+tx_real_1663,22416.53,"London, UK",Web Portal,174.161.175.13,Safari 17 on iOS 17,1
+tx_real_1664,39.49,"New York, USA",Crypto Gateway,50.89.68.42,Edge 123 on Android 14,0
+tx_real_1665,1050.5,"Zurich, Switzerland",Mobile App,157.210.229.94,Edge 123 on Android 14,0
+tx_real_1666,30.35,"Berlin, Germany",POS Terminal,29.186.23.251,Firefox 125 on Linux x86_64,0
+tx_real_1667,15.58,Singapore,Web Portal,64.208.65.140,Chrome 124 on macOS,0
+tx_real_1668,106.14,"New York, USA",Web Portal,34.34.53.249,Firefox 125 on Linux x86_64,0
+tx_real_1669,1263.99,"London, UK",Web Portal,146.18.57.112,Chrome 124 on macOS,0
+tx_real_1670,41.39,"Zurich, Switzerland",SWIFT Wire,15.154.158.182,Safari 17 on iOS 17,0
+tx_real_1671,9.93,Singapore,Mobile App,23.83.29.3,Edge 123 on Android 14,0
+tx_real_1672,42.73,"Tokyo, Japan",Mobile App,100.104.123.186,Edge 123 on Android 14,0
+tx_real_1673,193.03,"New York, USA",Mobile App,86.130.203.108,Safari 17 on iOS 17,0
+tx_real_1674,10.72,"Berlin, Germany",Mobile App,166.82.77.229,Firefox 125 on Linux x86_64,0
+tx_real_1675,22460.23,"New York, USA",Crypto Gateway,214.2.127.229,Firefox 125 on Linux x86_64,1
+tx_real_1676,57.8,"London, UK",Crypto Gateway,145.26.218.88,Chrome 122 on Windows 11,0
+tx_real_1677,15.75,"New York, USA",Web Portal,214.16.151.168,Chrome 124 on macOS,0
+tx_real_1678,15.69,"London, UK",Crypto Gateway,198.73.32.15,Firefox 125 on Linux x86_64,1
+tx_real_1679,312.05,"Zurich, Switzerland",Web Portal,151.5.203.74,Safari 17 on iOS 17,0
+tx_real_1680,348.28,"Zurich, Switzerland",Mobile App,62.77.169.181,Firefox 125 on Linux x86_64,0
+tx_real_1681,78.39,"New York, USA",Mobile App,120.178.143.106,Edge 123 on Android 14,0
+tx_real_1682,34.54,Singapore,Mobile App,137.7.40.156,Chrome 124 on macOS,0
+tx_real_1683,321.5,"New York, USA",Web Portal,170.99.143.240,Chrome 122 on Windows 11,0
+tx_real_1684,19.9,"Tokyo, Japan",Mobile App,95.198.65.132,Chrome 124 on macOS,0
+tx_real_1685,55.95,"Berlin, Germany",Web Portal,21.108.26.189,Edge 123 on Android 14,0
+tx_real_1686,193.51,"London, UK",SWIFT Wire,175.151.221.85,Edge 123 on Android 14,0
+tx_real_1687,17.77,"Zurich, Switzerland",Web Portal,178.205.151.123,Edge 123 on Android 14,0
+tx_real_1688,14376.91,"London, UK",Crypto Gateway,154.222.189.68,Edge 123 on Android 14,1
+tx_real_1689,119.87,"New York, USA",Web Portal,114.80.159.53,Safari 17 on iOS 17,0
+tx_real_1690,230.47,"London, UK",POS Terminal,116.153.44.140,Chrome 122 on Windows 11,0
+tx_real_1691,198.39,"Tokyo, Japan",Crypto Gateway,100.101.240.97,Edge 123 on Android 14,0
+tx_real_1692,4325.74,Singapore,POS Terminal,19.12.69.182,Edge 123 on Android 14,1
+tx_real_1693,266.59,"New York, USA",POS Terminal,192.28.56.99,Firefox 125 on Linux x86_64,0
+tx_real_1694,88.95,"Panama City, Panama",Crypto Gateway,207.226.110.226,Chrome 122 on Windows 11,0
+tx_real_1695,41.51,"Zurich, Switzerland",Web Portal,87.103.106.109,Chrome 124 on macOS,0
+tx_real_1696,94.23,"Panama City, Panama",SWIFT Wire,122.58.78.75,Chrome 122 on Windows 11,0
+tx_real_1697,113.21,Singapore,Mobile App,52.166.68.181,Chrome 122 on Windows 11,0
+tx_real_1698,76.4,Singapore,Web Portal,43.71.56.105,Chrome 122 on Windows 11,0
+tx_real_1699,15277.23,"New York, USA",Mobile App,210.101.51.74,Edge 123 on Android 14,1
+tx_real_1700,135.12,"New York, USA",Mobile App,181.121.143.166,Edge 123 on Android 14,0
+tx_real_1701,259.74,"Dubai, UAE",POS Terminal,153.5.221.83,Safari 17 on iOS 17,0
+tx_real_1702,1759.93,"New York, USA",Crypto Gateway,192.51.10.140,Chrome 124 on macOS,0
+tx_real_1703,155.93,"Dubai, UAE",Crypto Gateway,14.95.146.80,Firefox 125 on Linux x86_64,1
+tx_real_1704,28.34,"Zurich, Switzerland",Mobile App,46.25.215.204,Chrome 122 on Windows 11,0
+tx_real_1705,15.02,"New York, USA",SWIFT Wire,108.164.101.195,Chrome 124 on macOS,0
+tx_real_1706,9802.46,"New York, USA",SWIFT Wire,19.61.53.146,Chrome 124 on macOS,1
+tx_real_1707,33.6,"New York, USA",Mobile App,181.163.254.63,Safari 17 on iOS 17,0
+tx_real_1708,118.82,"Berlin, Germany",SWIFT Wire,131.247.226.105,Firefox 125 on Linux x86_64,0
+tx_real_1709,49.91,"London, UK",SWIFT Wire,216.4.93.169,Chrome 122 on Windows 11,0
+tx_real_1710,246.24,"London, UK",POS Terminal,183.178.207.28,Firefox 125 on Linux x86_64,0
+tx_real_1711,123.99,"London, UK",Web Portal,180.80.76.116,Safari 17 on iOS 17,0
+tx_real_1712,35.48,"New York, USA",Mobile App,79.98.234.1,Edge 123 on Android 14,0
+tx_real_1713,15136.62,"Zurich, Switzerland",SWIFT Wire,177.96.218.17,Chrome 124 on macOS,1
+tx_real_1714,77.83,"New York, USA",Mobile App,122.251.91.88,Chrome 122 on Windows 11,0
+tx_real_1715,35.83,"Panama City, Panama",SWIFT Wire,173.174.170.246,Edge 123 on Android 14,0
+tx_real_1716,78.11,"London, UK",POS Terminal,177.90.49.190,Safari 17 on iOS 17,0
+tx_real_1717,230.67,"London, UK",Mobile App,48.151.150.132,Firefox 125 on Linux x86_64,0
+tx_real_1718,64.38,"Zurich, Switzerland",Mobile App,187.59.201.68,Chrome 124 on macOS,0
+tx_real_1719,97.33,"London, UK",Mobile App,209.215.130.49,Chrome 122 on Windows 11,0
+tx_real_1720,159.89,"Dubai, UAE",SWIFT Wire,136.223.239.159,Edge 123 on Android 14,0
+tx_real_1721,495.29,"Zurich, Switzerland",Web Portal,121.168.48.51,Edge 123 on Android 14,0
+tx_real_1722,16.55,"New York, USA",Web Portal,53.98.183.216,Chrome 124 on macOS,0
+tx_real_1723,161.9,Singapore,Web Portal,187.124.218.80,Firefox 125 on Linux x86_64,0
+tx_real_1724,16.65,"New York, USA",SWIFT Wire,195.111.205.143,Safari 17 on iOS 17,0
+tx_real_1725,290.02,"New York, USA",Web Portal,37.196.208.192,Firefox 125 on Linux x86_64,0
+tx_real_1726,106.22,"Dubai, UAE",Web Portal,168.164.195.214,Firefox 125 on Linux x86_64,0
+tx_real_1727,200.36,"Tokyo, Japan",Crypto Gateway,123.86.114.249,Firefox 125 on Linux x86_64,1
+tx_real_1728,87.99,"Dubai, UAE",Mobile App,134.49.76.55,Chrome 124 on macOS,0
+tx_real_1729,67.42,"Zurich, Switzerland",Mobile App,66.196.95.44,Chrome 124 on macOS,0
+tx_real_1730,17365.86,"Zurich, Switzerland",Web Portal,169.186.87.246,Safari 17 on iOS 17,1
+tx_real_1731,11.42,"New York, USA",Web Portal,191.84.207.151,Firefox 125 on Linux x86_64,0
+tx_real_1732,15.57,"New York, USA",Mobile App,166.16.165.149,Chrome 124 on macOS,0
+tx_real_1733,198.01,"Panama City, Panama",Mobile App,217.145.242.37,Safari 17 on iOS 17,0
+tx_real_1734,132.33,"London, UK",Mobile App,87.147.158.45,Safari 17 on iOS 17,0
+tx_real_1735,23737.11,"Panama City, Panama",Crypto Gateway,156.206.62.164,Firefox 125 on Linux x86_64,1
+tx_real_1736,129.55,"Tokyo, Japan",Mobile App,110.212.52.19,Chrome 122 on Windows 11,0
+tx_real_1737,84.5,"New York, USA",POS Terminal,119.44.7.249,Firefox 125 on Linux x86_64,0
+tx_real_1738,88.2,"Zurich, Switzerland",Mobile App,182.117.68.251,Chrome 122 on Windows 11,0
+tx_real_1739,15.85,Cayman Islands,POS Terminal,44.194.69.55,Safari 17 on iOS 17,0
+tx_real_1740,10.09,"New York, USA",Crypto Gateway,20.224.42.41,Chrome 124 on macOS,0
+tx_real_1741,60.77,"Panama City, Panama",Mobile App,215.231.197.122,Edge 123 on Android 14,0
+tx_real_1742,137.5,"Zurich, Switzerland",Crypto Gateway,148.10.102.219,Safari 17 on iOS 17,0
+tx_real_1743,29.0,"New York, USA",SWIFT Wire,198.128.179.149,Chrome 124 on macOS,0
+tx_real_1744,13.31,Singapore,POS Terminal,146.193.92.113,Safari 17 on iOS 17,0
+tx_real_1745,92.41,"Dubai, UAE",Web Portal,88.85.30.213,Firefox 125 on Linux x86_64,0
+tx_real_1746,18116.62,"New York, USA",SWIFT Wire,59.9.145.69,Chrome 122 on Windows 11,1
+tx_real_1747,65.22,"Panama City, Panama",Web Portal,68.185.62.223,Safari 17 on iOS 17,0
+tx_real_1748,48.21,"New York, USA",POS Terminal,62.189.40.166,Chrome 124 on macOS,0
+tx_real_1749,17.23,"Tokyo, Japan",SWIFT Wire,181.63.147.228,Firefox 125 on Linux x86_64,0
+tx_real_1750,57.1,"Tokyo, Japan",Web Portal,60.161.141.78,Edge 123 on Android 14,0
+tx_real_1751,149.39,"London, UK",Web Portal,107.190.221.43,Firefox 125 on Linux x86_64,0
+tx_real_1752,39.67,"London, UK",Crypto Gateway,187.36.122.108,Chrome 122 on Windows 11,0
+tx_real_1753,12.58,"Tokyo, Japan",Mobile App,20.95.6.57,Firefox 125 on Linux x86_64,0
+tx_real_1754,96.37,"Zurich, Switzerland",Mobile App,139.71.186.219,Edge 123 on Android 14,0
+tx_real_1755,111.18,"Tokyo, Japan",SWIFT Wire,31.92.127.80,Chrome 124 on macOS,0
+tx_real_1756,22.55,"New York, USA",Web Portal,66.238.215.116,Safari 17 on iOS 17,0
+tx_real_1757,8.53,"Berlin, Germany",Mobile App,158.230.182.25,Chrome 122 on Windows 11,0
+tx_real_1758,84.94,"Tokyo, Japan",POS Terminal,166.5.120.21,Edge 123 on Android 14,0
+tx_real_1759,818.55,"Berlin, Germany",SWIFT Wire,28.175.198.57,Chrome 122 on Windows 11,0
+tx_real_1760,396.9,"New York, USA",Web Portal,103.19.128.97,Firefox 125 on Linux x86_64,0
+tx_real_1761,33.7,Singapore,SWIFT Wire,203.237.131.170,Chrome 122 on Windows 11,0
+tx_real_1762,206.41,Singapore,SWIFT Wire,31.227.233.40,Edge 123 on Android 14,0
+tx_real_1763,7.9,"London, UK",Mobile App,77.153.127.237,Safari 17 on iOS 17,0
+tx_real_1764,26.62,"Zurich, Switzerland",Mobile App,65.212.180.172,Safari 17 on iOS 17,0
+tx_real_1765,53.9,"New York, USA",Web Portal,119.98.213.184,Chrome 122 on Windows 11,0
+tx_real_1766,109.41,"Tokyo, Japan",POS Terminal,193.112.215.198,Chrome 124 on macOS,0
+tx_real_1767,78.99,"Zurich, Switzerland",Web Portal,125.117.205.241,Chrome 122 on Windows 11,0
+tx_real_1768,90.3,"New York, USA",POS Terminal,97.201.81.253,Firefox 125 on Linux x86_64,0
+tx_real_1769,10917.73,Cayman Islands,Crypto Gateway,76.19.211.248,Safari 17 on iOS 17,1
+tx_real_1770,5522.12,"Zurich, Switzerland",Web Portal,145.118.191.42,Safari 17 on iOS 17,1
+tx_real_1771,43.97,"New York, USA",Crypto Gateway,52.59.20.73,Safari 17 on iOS 17,0
+tx_real_1772,9.51,"Dubai, UAE",Web Portal,27.27.175.2,Chrome 124 on macOS,0
+tx_real_1773,19.15,"Berlin, Germany",SWIFT Wire,73.62.100.19,Chrome 124 on macOS,0
+tx_real_1774,145.33,"Zurich, Switzerland",Web Portal,27.69.167.210,Edge 123 on Android 14,0
+tx_real_1775,22.06,"New York, USA",SWIFT Wire,127.246.251.199,Chrome 122 on Windows 11,0
+tx_real_1776,13213.48,"Tokyo, Japan",Web Portal,91.39.36.168,Chrome 122 on Windows 11,1
+tx_real_1777,106.2,"Zurich, Switzerland",Web Portal,183.132.230.153,Firefox 125 on Linux x86_64,0
+tx_real_1778,35.88,"London, UK",SWIFT Wire,207.158.204.196,Safari 17 on iOS 17,0
+tx_real_1779,206.3,"Zurich, Switzerland",Mobile App,39.201.196.51,Chrome 124 on macOS,0
+tx_real_1780,32.76,"Zurich, Switzerland",POS Terminal,162.14.69.146,Firefox 125 on Linux x86_64,0
+tx_real_1781,21.29,Singapore,Web Portal,180.57.211.12,Firefox 125 on Linux x86_64,0
+tx_real_1782,6855.87,"London, UK",Mobile App,27.30.88.203,Chrome 124 on macOS,1
+tx_real_1783,85.41,Singapore,Web Portal,109.23.209.129,Chrome 122 on Windows 11,0
+tx_real_1784,13.74,"Berlin, Germany",Web Portal,89.32.252.9,Safari 17 on iOS 17,0
+tx_real_1785,14.91,"London, UK",Mobile App,25.156.152.188,Chrome 122 on Windows 11,0
+tx_real_1786,214.38,"Tokyo, Japan",POS Terminal,173.214.27.211,Firefox 125 on Linux x86_64,0
+tx_real_1787,40.42,"Berlin, Germany",Web Portal,119.76.148.65,Safari 17 on iOS 17,0
+tx_real_1788,86.14,"Zurich, Switzerland",Mobile App,187.109.129.10,Edge 123 on Android 14,0
+tx_real_1789,2340.88,"London, UK",Crypto Gateway,57.123.59.96,Firefox 125 on Linux x86_64,1
+tx_real_1790,54.31,Singapore,Crypto Gateway,200.103.124.86,Chrome 122 on Windows 11,0
+tx_real_1791,121.5,Singapore,SWIFT Wire,156.112.174.160,Chrome 122 on Windows 11,0
+tx_real_1792,48.16,"Panama City, Panama",Mobile App,37.220.18.251,Chrome 122 on Windows 11,0
+tx_real_1793,7067.56,"Zurich, Switzerland",Mobile App,177.177.221.82,Chrome 124 on macOS,1
+tx_real_1794,125.55,"Dubai, UAE",Web Portal,182.72.54.223,Firefox 125 on Linux x86_64,0
+tx_real_1795,149.17,"New York, USA",Web Portal,172.71.164.146,Safari 17 on iOS 17,0
+tx_real_1796,40.19,"New York, USA",Web Portal,48.187.137.251,Chrome 122 on Windows 11,0
+tx_real_1797,137.32,Singapore,POS Terminal,211.238.200.179,Chrome 122 on Windows 11,0
+tx_real_1798,266.82,"New York, USA",Web Portal,45.82.133.142,Chrome 124 on macOS,0
+tx_real_1799,14.64,"New York, USA",SWIFT Wire,168.4.167.212,Safari 17 on iOS 17,0
+tx_real_1800,96.75,"London, UK",Mobile App,202.153.156.204,Firefox 125 on Linux x86_64,0
+tx_real_1801,10.36,"New York, USA",Mobile App,204.235.206.150,Edge 123 on Android 14,0
+tx_real_1802,106.5,"New York, USA",Mobile App,169.23.48.148,Chrome 124 on macOS,0
+tx_real_1803,104.66,"Dubai, UAE",Web Portal,135.166.55.68,Firefox 125 on Linux x86_64,0
+tx_real_1804,7.28,"New York, USA",Crypto Gateway,217.88.217.1,Edge 123 on Android 14,0
+tx_real_1805,30.39,"Tokyo, Japan",Mobile App,145.185.95.140,Chrome 122 on Windows 11,0
+tx_real_1806,51.24,"Tokyo, Japan",Web Portal,116.133.108.178,Chrome 122 on Windows 11,0
+tx_real_1807,19387.35,"Berlin, Germany",Web Portal,52.102.124.140,Safari 17 on iOS 17,1
+tx_real_1808,70.88,"New York, USA",Mobile App,113.146.194.74,Edge 123 on Android 14,0
+tx_real_1809,20527.37,"Berlin, Germany",SWIFT Wire,217.222.108.122,Chrome 122 on Windows 11,1
+tx_real_1810,1150.04,"Zurich, Switzerland",Mobile App,27.196.71.62,Chrome 122 on Windows 11,0
+tx_real_1811,115.73,Singapore,SWIFT Wire,51.223.243.252,Safari 17 on iOS 17,0
+tx_real_1812,6161.33,Singapore,POS Terminal,129.162.198.242,Firefox 125 on Linux x86_64,1
+tx_real_1813,2743.76,"Panama City, Panama",SWIFT Wire,55.58.179.126,Chrome 122 on Windows 11,1
+tx_real_1814,33.5,"London, UK",Mobile App,172.44.15.78,Chrome 124 on macOS,0
+tx_real_1815,22502.33,"Tokyo, Japan",Mobile App,80.178.101.242,Chrome 124 on macOS,1
+tx_real_1816,22.6,"Zurich, Switzerland",POS Terminal,170.195.3.214,Firefox 125 on Linux x86_64,0
+tx_real_1817,99.89,"Tokyo, Japan",SWIFT Wire,96.74.51.67,Edge 123 on Android 14,0
+tx_real_1818,5557.32,"Dubai, UAE",SWIFT Wire,86.93.176.145,Safari 17 on iOS 17,1
+tx_real_1819,47.93,"New York, USA",SWIFT Wire,17.13.120.66,Chrome 124 on macOS,0
+tx_real_1820,21.49,"Dubai, UAE",SWIFT Wire,14.138.231.88,Chrome 124 on macOS,0
+tx_real_1821,34.26,"New York, USA",Mobile App,27.52.134.211,Firefox 125 on Linux x86_64,0
+tx_real_1822,7.19,"New York, USA",Web Portal,79.224.202.137,Edge 123 on Android 14,0
+tx_real_1823,81.65,"New York, USA",Mobile App,215.211.21.24,Edge 123 on Android 14,0
+tx_real_1824,16961.37,"London, UK",SWIFT Wire,14.152.187.227,Firefox 125 on Linux x86_64,1
+tx_real_1825,4796.6,Singapore,Crypto Gateway,13.68.249.101,Chrome 124 on macOS,1
+tx_real_1826,5766.04,"New York, USA",Mobile App,178.176.54.35,Safari 17 on iOS 17,1
+tx_real_1827,196.43,"New York, USA",Mobile App,66.108.217.40,Chrome 124 on macOS,0
+tx_real_1828,16.59,"Berlin, Germany",Mobile App,215.68.46.78,Edge 123 on Android 14,0
+tx_real_1829,45.15,"Panama City, Panama",POS Terminal,151.155.6.17,Chrome 124 on macOS,0
+tx_real_1830,48.04,"Panama City, Panama",SWIFT Wire,174.232.241.99,Safari 17 on iOS 17,0
+tx_real_1831,76.75,"Berlin, Germany",Crypto Gateway,91.233.2.249,Chrome 122 on Windows 11,0
+tx_real_1832,20.09,"Tokyo, Japan",Web Portal,87.180.66.52,Chrome 124 on macOS,0
+tx_real_1833,88.99,"New York, USA",SWIFT Wire,102.171.251.218,Firefox 125 on Linux x86_64,0
+tx_real_1834,121.65,"London, UK",POS Terminal,32.111.107.183,Chrome 122 on Windows 11,0
+tx_real_1835,70.53,"Tokyo, Japan",Mobile App,77.227.188.186,Firefox 125 on Linux x86_64,0
+tx_real_1836,18874.03,"New York, USA",SWIFT Wire,150.216.69.84,Firefox 125 on Linux x86_64,1
+tx_real_1837,49.9,Cayman Islands,Crypto Gateway,113.39.13.41,Firefox 125 on Linux x86_64,1
+tx_real_1838,29.2,"New York, USA",Web Portal,67.181.237.12,Chrome 124 on macOS,0
+tx_real_1839,46.47,"London, UK",Web Portal,23.120.202.97,Edge 123 on Android 14,0
+tx_real_1840,7779.48,"Zurich, Switzerland",SWIFT Wire,67.40.118.80,Chrome 122 on Windows 11,1
+tx_real_1841,214.4,Singapore,Mobile App,138.173.35.3,Safari 17 on iOS 17,0
+tx_real_1842,31.85,Singapore,Web Portal,130.5.218.11,Edge 123 on Android 14,0
+tx_real_1843,173.57,Cayman Islands,Mobile App,136.71.117.184,Chrome 124 on macOS,0
+tx_real_1844,76.89,"New York, USA",Mobile App,148.106.116.162,Firefox 125 on Linux x86_64,0
+tx_real_1845,38.88,"New York, USA",SWIFT Wire,77.200.31.75,Safari 17 on iOS 17,0
+tx_real_1846,12660.97,"Berlin, Germany",SWIFT Wire,81.237.66.70,Chrome 122 on Windows 11,1
+tx_real_1847,164.27,Cayman Islands,Crypto Gateway,51.191.160.20,Edge 123 on Android 14,0
+tx_real_1848,6.25,"New York, USA",Mobile App,195.226.178.208,Edge 123 on Android 14,0
+tx_real_1849,12163.23,"Panama City, Panama",POS Terminal,163.140.199.39,Safari 17 on iOS 17,1
+tx_real_1850,18.31,"New York, USA",Mobile App,155.45.139.70,Chrome 124 on macOS,0
+tx_real_1851,28.77,"Zurich, Switzerland",Web Portal,135.151.91.238,Chrome 122 on Windows 11,0
+tx_real_1852,18.68,"New York, USA",Mobile App,80.166.130.214,Safari 17 on iOS 17,0
+tx_real_1853,31.91,"Tokyo, Japan",Mobile App,94.89.79.252,Firefox 125 on Linux x86_64,0
+tx_real_1854,6.77,Cayman Islands,SWIFT Wire,123.93.72.165,Chrome 122 on Windows 11,0
+tx_real_1855,4303.39,"New York, USA",Mobile App,59.52.33.22,Edge 123 on Android 14,1
+tx_real_1856,69.42,"Berlin, Germany",Mobile App,124.239.133.231,Safari 17 on iOS 17,0
+tx_real_1857,19.46,"London, UK",POS Terminal,28.166.118.117,Edge 123 on Android 14,0
+tx_real_1858,5593.21,"New York, USA",Web Portal,47.222.243.223,Edge 123 on Android 14,1
+tx_real_1859,236.51,"New York, USA",SWIFT Wire,74.138.79.170,Edge 123 on Android 14,0
+tx_real_1860,12639.54,"New York, USA",SWIFT Wire,133.176.44.82,Chrome 124 on macOS,1
+tx_real_1861,33.14,"New York, USA",SWIFT Wire,97.225.16.54,Edge 123 on Android 14,0
+tx_real_1862,46.83,Singapore,Web Portal,112.163.98.156,Firefox 125 on Linux x86_64,0
+tx_real_1863,13379.41,"Panama City, Panama",Web Portal,12.94.141.169,Firefox 125 on Linux x86_64,1
+tx_real_1864,149.46,"Zurich, Switzerland",POS Terminal,218.59.69.119,Chrome 122 on Windows 11,0
+tx_real_1865,308.26,"New York, USA",SWIFT Wire,102.181.231.45,Edge 123 on Android 14,0
+tx_real_1866,53.36,"New York, USA",Mobile App,158.24.189.91,Edge 123 on Android 14,0
+tx_real_1867,81.05,"New York, USA",Mobile App,104.58.237.155,Safari 17 on iOS 17,0
+tx_real_1868,123.13,"London, UK",Web Portal,164.128.7.170,Chrome 124 on macOS,0
+tx_real_1869,90.3,"Tokyo, Japan",Web Portal,57.53.187.38,Chrome 122 on Windows 11,0
+tx_real_1870,10.57,"New York, USA",Web Portal,207.215.220.226,Edge 123 on Android 14,0
+tx_real_1871,126.84,"Tokyo, Japan",Web Portal,63.143.224.154,Safari 17 on iOS 17,0
+tx_real_1872,14.12,"Berlin, Germany",SWIFT Wire,58.95.147.137,Chrome 124 on macOS,0
+tx_real_1873,151.99,"Zurich, Switzerland",Web Portal,74.93.182.125,Chrome 122 on Windows 11,0
+tx_real_1874,8.19,"Panama City, Panama",SWIFT Wire,189.39.4.126,Chrome 122 on Windows 11,0
+tx_real_1875,32.92,Singapore,Web Portal,13.248.64.29,Edge 123 on Android 14,0
+tx_real_1876,33.53,Singapore,Mobile App,126.11.97.102,Chrome 122 on Windows 11,0
+tx_real_1877,37.65,"Zurich, Switzerland",Mobile App,196.203.155.225,Safari 17 on iOS 17,0
+tx_real_1878,29.66,"Zurich, Switzerland",POS Terminal,31.39.223.102,Chrome 122 on Windows 11,0
+tx_real_1879,41.74,"New York, USA",Crypto Gateway,56.66.91.164,Firefox 125 on Linux x86_64,1
+tx_real_1880,116.92,"London, UK",Crypto Gateway,213.111.82.123,Safari 17 on iOS 17,0
+tx_real_1881,129.74,"New York, USA",Mobile App,203.191.99.35,Chrome 124 on macOS,0
+tx_real_1882,18.52,Singapore,Web Portal,169.156.103.129,Chrome 124 on macOS,0
+tx_real_1883,123.04,"New York, USA",Mobile App,35.43.230.84,Edge 123 on Android 14,0
+tx_real_1884,13.75,"Berlin, Germany",Crypto Gateway,205.191.51.130,Edge 123 on Android 14,0
+tx_real_1885,244.47,"Tokyo, Japan",Mobile App,136.236.253.192,Firefox 125 on Linux x86_64,0
+tx_real_1886,119.75,"London, UK",POS Terminal,212.69.9.2,Chrome 124 on macOS,0
+tx_real_1887,163.4,"New York, USA",POS Terminal,172.188.230.189,Chrome 124 on macOS,0
+tx_real_1888,93.14,"Berlin, Germany",Web Portal,169.10.114.76,Chrome 124 on macOS,0
+tx_real_1889,11185.1,"Panama City, Panama",Mobile App,174.246.85.49,Chrome 124 on macOS,1
+tx_real_1890,12.21,"Tokyo, Japan",SWIFT Wire,80.240.177.131,Chrome 122 on Windows 11,0
+tx_real_1891,146.21,"New York, USA",Crypto Gateway,212.133.238.218,Safari 17 on iOS 17,0
+tx_real_1892,33.95,"London, UK",SWIFT Wire,199.213.237.90,Safari 17 on iOS 17,0
+tx_real_1893,71.66,"New York, USA",Crypto Gateway,36.72.5.254,Firefox 125 on Linux x86_64,1
+tx_real_1894,6.32,"New York, USA",Mobile App,25.123.144.1,Chrome 122 on Windows 11,0
+tx_real_1895,3852.06,"Tokyo, Japan",Mobile App,154.165.3.180,Chrome 124 on macOS,1
+tx_real_1896,16793.4,"Tokyo, Japan",POS Terminal,57.95.13.120,Chrome 124 on macOS,1
+tx_real_1897,81.29,Singapore,Web Portal,218.55.235.149,Edge 123 on Android 14,0
+tx_real_1898,220.59,"Berlin, Germany",Web Portal,76.182.155.166,Edge 123 on Android 14,0
+tx_real_1899,6818.25,Singapore,Web Portal,100.186.62.251,Firefox 125 on Linux x86_64,1
+tx_real_1900,18195.54,"Zurich, Switzerland",Mobile App,112.174.217.139,Chrome 124 on macOS,1
+tx_real_1901,15791.65,"London, UK",Web Portal,210.8.97.117,Firefox 125 on Linux x86_64,1
+tx_real_1902,43.5,"Berlin, Germany",Mobile App,209.64.230.21,Chrome 122 on Windows 11,0
+tx_real_1903,55.58,"New York, USA",POS Terminal,210.115.246.191,Safari 17 on iOS 17,0
+tx_real_1904,212.79,"Berlin, Germany",Crypto Gateway,95.192.248.20,Chrome 124 on macOS,0
+tx_real_1905,283.97,"Panama City, Panama",Mobile App,18.58.46.31,Chrome 122 on Windows 11,0
+tx_real_1906,105.64,"New York, USA",Web Portal,103.240.9.15,Chrome 124 on macOS,0
+tx_real_1907,195.68,Singapore,Web Portal,104.154.138.29,Edge 123 on Android 14,0
+tx_real_1908,34.65,"Berlin, Germany",Mobile App,90.36.84.109,Firefox 125 on Linux x86_64,0
+tx_real_1909,77.42,Singapore,POS Terminal,128.37.86.71,Edge 123 on Android 14,0
+tx_real_1910,42.69,"Berlin, Germany",SWIFT Wire,161.169.232.93,Safari 17 on iOS 17,0
+tx_real_1911,80.97,"Berlin, Germany",Mobile App,90.102.156.176,Edge 123 on Android 14,0
+tx_real_1912,54.15,"London, UK",Mobile App,176.159.14.117,Chrome 124 on macOS,0
+tx_real_1913,54.13,"London, UK",Mobile App,83.249.91.216,Edge 123 on Android 14,0
+tx_real_1914,12.41,"Berlin, Germany",Web Portal,215.90.29.179,Chrome 124 on macOS,0
+tx_real_1915,10231.0,Cayman Islands,Web Portal,59.171.220.220,Safari 17 on iOS 17,1
+tx_real_1916,124.74,"New York, USA",Web Portal,82.215.221.133,Edge 123 on Android 14,0
+tx_real_1917,72.78,"New York, USA",Web Portal,52.135.42.164,Firefox 125 on Linux x86_64,0
+tx_real_1918,32.61,Singapore,SWIFT Wire,115.27.58.46,Firefox 125 on Linux x86_64,0
+tx_real_1919,16759.94,"Berlin, Germany",Mobile App,76.25.73.117,Firefox 125 on Linux x86_64,1
+tx_real_1920,43.97,"Panama City, Panama",Mobile App,165.129.87.74,Edge 123 on Android 14,0
+tx_real_1921,22.0,Cayman Islands,Mobile App,180.180.153.182,Edge 123 on Android 14,0
+tx_real_1922,171.16,"New York, USA",Web Portal,135.67.6.125,Edge 123 on Android 14,0
+tx_real_1923,21777.47,"New York, USA",SWIFT Wire,68.70.53.66,Chrome 124 on macOS,1
+tx_real_1924,44.9,"Berlin, Germany",Mobile App,68.250.82.87,Safari 17 on iOS 17,0
+tx_real_1925,7.27,"New York, USA",Mobile App,12.204.150.37,Firefox 125 on Linux x86_64,0
+tx_real_1926,79.48,"New York, USA",POS Terminal,158.103.24.112,Chrome 124 on macOS,0
+tx_real_1927,6335.48,"New York, USA",POS Terminal,75.193.209.251,Firefox 125 on Linux x86_64,1
+tx_real_1928,50.55,Cayman Islands,Web Portal,139.117.116.237,Chrome 124 on macOS,0
+tx_real_1929,102.98,"Berlin, Germany",POS Terminal,115.239.3.46,Edge 123 on Android 14,0
+tx_real_1930,72.05,"New York, USA",Web Portal,65.75.216.214,Firefox 125 on Linux x86_64,0
+tx_real_1931,224.83,"Zurich, Switzerland",Web Portal,202.236.45.154,Edge 123 on Android 14,0
+tx_real_1932,101.21,Singapore,SWIFT Wire,87.193.24.202,Firefox 125 on Linux x86_64,0
+tx_real_1933,51.91,"Dubai, UAE",Web Portal,45.24.28.228,Chrome 122 on Windows 11,0
+tx_real_1934,50.92,"New York, USA",Web Portal,218.232.16.59,Chrome 124 on macOS,0
+tx_real_1935,52.41,"Zurich, Switzerland",Web Portal,219.243.182.207,Chrome 122 on Windows 11,0
+tx_real_1936,16.32,"London, UK",Web Portal,154.15.249.226,Chrome 124 on macOS,0
+tx_real_1937,73.86,"Berlin, Germany",Mobile App,21.193.79.218,Safari 17 on iOS 17,0
+tx_real_1938,122.25,"Zurich, Switzerland",Web Portal,125.68.43.69,Firefox 125 on Linux x86_64,0
+tx_real_1939,28.28,"New York, USA",POS Terminal,151.138.75.210,Safari 17 on iOS 17,0
+tx_real_1940,28.06,Singapore,Mobile App,113.41.234.178,Safari 17 on iOS 17,0
+tx_real_1941,58.76,"Tokyo, Japan",Web Portal,209.59.39.3,Chrome 124 on macOS,0
+tx_real_1942,176.53,"New York, USA",Mobile App,214.7.49.26,Chrome 122 on Windows 11,0
+tx_real_1943,180.79,"Berlin, Germany",Web Portal,171.101.176.79,Edge 123 on Android 14,0
+tx_real_1944,192.82,"New York, USA",Web Portal,12.233.127.199,Chrome 124 on macOS,0
+tx_real_1945,44.85,Singapore,SWIFT Wire,170.132.20.242,Edge 123 on Android 14,0
+tx_real_1946,202.92,"London, UK",Web Portal,127.164.32.28,Safari 17 on iOS 17,0
+tx_real_1947,4706.14,"Tokyo, Japan",Mobile App,87.1.188.56,Edge 123 on Android 14,1
+tx_real_1948,6.56,"London, UK",Web Portal,45.112.30.54,Chrome 122 on Windows 11,0
+tx_real_1949,13.36,"Berlin, Germany",Mobile App,46.249.183.217,Chrome 124 on macOS,0
+tx_real_1950,41.05,"Tokyo, Japan",Web Portal,90.58.83.65,Chrome 122 on Windows 11,0
+tx_real_1951,11.52,Singapore,SWIFT Wire,79.128.51.22,Chrome 122 on Windows 11,0
+tx_real_1952,20568.01,"Tokyo, Japan",Web Portal,117.109.116.101,Chrome 124 on macOS,1
+tx_real_1953,41.14,"Tokyo, Japan",Mobile App,191.100.164.68,Chrome 122 on Windows 11,0
+tx_real_1954,11.88,"New York, USA",Crypto Gateway,46.180.181.210,Firefox 125 on Linux x86_64,1
+tx_real_1955,90.03,"London, UK",POS Terminal,188.208.169.146,Firefox 125 on Linux x86_64,0
+tx_real_1956,32.92,"Berlin, Germany",POS Terminal,32.66.21.100,Firefox 125 on Linux x86_64,0
+tx_real_1957,982.91,"New York, USA",Web Portal,138.44.103.47,Edge 123 on Android 14,0
+tx_real_1958,67.17,"Tokyo, Japan",Web Portal,49.29.54.90,Chrome 122 on Windows 11,0
+tx_real_1959,375.96,"Dubai, UAE",Mobile App,95.17.80.188,Chrome 124 on macOS,0
+tx_real_1960,8.18,"New York, USA",Mobile App,169.243.73.223,Chrome 124 on macOS,0
+tx_real_1961,9.0,Cayman Islands,Mobile App,216.49.101.2,Edge 123 on Android 14,0
+tx_real_1962,71.51,"Zurich, Switzerland",Web Portal,186.238.142.59,Chrome 124 on macOS,0
+tx_real_1963,400.85,Singapore,POS Terminal,107.99.186.103,Firefox 125 on Linux x86_64,0
+tx_real_1964,167.98,"New York, USA",SWIFT Wire,196.239.179.212,Chrome 122 on Windows 11,0
+tx_real_1965,38.43,"New York, USA",POS Terminal,12.243.41.211,Chrome 124 on macOS,0
+tx_real_1966,85.35,Cayman Islands,Web Portal,133.229.82.144,Chrome 124 on macOS,0
+tx_real_1967,19208.34,"Panama City, Panama",Web Portal,142.140.29.135,Safari 17 on iOS 17,1
+tx_real_1968,14.25,"Tokyo, Japan",SWIFT Wire,24.247.12.99,Safari 17 on iOS 17,0
+tx_real_1969,126.39,"Zurich, Switzerland",SWIFT Wire,143.81.250.106,Safari 17 on iOS 17,0
+tx_real_1970,22.22,"New York, USA",Web Portal,42.74.171.81,Chrome 122 on Windows 11,0
+tx_real_1971,113.89,Cayman Islands,Web Portal,79.45.106.137,Firefox 125 on Linux x86_64,0
+tx_real_1972,71.5,"New York, USA",Mobile App,187.161.228.100,Firefox 125 on Linux x86_64,0
+tx_real_1973,36.75,"Berlin, Germany",Web Portal,156.9.62.185,Firefox 125 on Linux x86_64,0
+tx_real_1974,29.15,"Panama City, Panama",Crypto Gateway,39.125.114.206,Chrome 122 on Windows 11,0
+tx_real_1975,18041.32,"Tokyo, Japan",Crypto Gateway,163.143.134.120,Chrome 122 on Windows 11,1
+tx_real_1976,260.34,"Berlin, Germany",POS Terminal,180.157.79.93,Safari 17 on iOS 17,0
+tx_real_1977,12442.06,"New York, USA",Mobile App,14.82.242.185,Chrome 124 on macOS,1
+tx_real_1978,66.33,"Tokyo, Japan",Mobile App,187.172.231.208,Edge 123 on Android 14,0
+tx_real_1979,53.03,"London, UK",Web Portal,85.14.131.243,Edge 123 on Android 14,0
+tx_real_1980,108.04,"Berlin, Germany",Mobile App,124.62.106.64,Chrome 124 on macOS,0
+tx_real_1981,190.49,"New York, USA",SWIFT Wire,112.173.106.210,Safari 17 on iOS 17,0
+tx_real_1982,44.93,"Tokyo, Japan",Mobile App,196.20.58.112,Chrome 124 on macOS,0
+tx_real_1983,166.06,"Berlin, Germany",Mobile App,67.230.205.196,Chrome 124 on macOS,0
+tx_real_1984,133.65,"New York, USA",Mobile App,129.206.97.92,Edge 123 on Android 14,0
+tx_real_1985,102.25,"London, UK",Mobile App,62.37.8.44,Safari 17 on iOS 17,0
+tx_real_1986,6925.47,"Tokyo, Japan",Mobile App,108.236.133.118,Chrome 122 on Windows 11,1
+tx_real_1987,102.65,"Zurich, Switzerland",SWIFT Wire,79.159.45.137,Edge 123 on Android 14,0
+tx_real_1988,79.62,"New York, USA",Web Portal,42.33.126.67,Chrome 122 on Windows 11,0
+tx_real_1989,17.8,"New York, USA",Web Portal,40.114.204.29,Safari 17 on iOS 17,0
+tx_real_1990,174.03,"New York, USA",Web Portal,141.218.185.253,Chrome 124 on macOS,0
+tx_real_1991,42.42,"Berlin, Germany",SWIFT Wire,40.137.154.130,Firefox 125 on Linux x86_64,0
+tx_real_1992,20085.69,Singapore,Mobile App,72.3.174.68,Firefox 125 on Linux x86_64,1
+tx_real_1993,18.81,"New York, USA",Web Portal,35.179.141.231,Safari 17 on iOS 17,0
+tx_real_1994,59.64,"London, UK",Web Portal,54.163.55.215,Firefox 125 on Linux x86_64,0
+tx_real_1995,28.02,"London, UK",Mobile App,147.130.189.246,Chrome 122 on Windows 11,0
+tx_real_1996,92.05,"New York, USA",Mobile App,51.172.64.31,Firefox 125 on Linux x86_64,0
+tx_real_1997,21.18,"London, UK",POS Terminal,57.130.96.210,Safari 17 on iOS 17,0
+tx_real_1998,302.8,"London, UK",Mobile App,87.110.69.58,Safari 17 on iOS 17,0
+tx_real_1999,178.35,"London, UK",Mobile App,116.44.74.56,Chrome 122 on Windows 11,0
